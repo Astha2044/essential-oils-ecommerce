@@ -1,0 +1,59 @@
+.section {
+  width: 100%;
+  background-color: #DDE5E0; /* Sage green background from screenshot */
+  padding: 6rem 2rem;
+  margin: 0; /* Removed margin to eliminate white gaps */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-green-dark);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #4B5563;
+  font-size: 1rem;
+}
+
+.unlockBtn {
+  background-color: var(--color-green-dark);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.unlockBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(55, 83, 65, 0.2);
+}

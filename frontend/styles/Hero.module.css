@@ -1,0 +1,147 @@
+.hero {
+  width: 100%;
+  min-height: 80vh;
+  background-image: url('/images/hero_new.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-position: 70% center;
+    /* Adjust to keep bottles visible on mobile */
+    min-height: 600px;
+  }
+}
+
+.textContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2rem;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@media (min-width: 1024px) {
+  .textContent {
+    padding: 6rem 4rem;
+  }
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-green-dark);
+  line-height: 1.1;
+  max-width: 42rem;
+  animation: fadeUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
+.subtitle {
+  margin-top: 1.5rem;
+  color: #4B5563;
+  /* gray-600 */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 28rem;
+  font-family: var(--font-sans);
+  animation: fadeUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: fadeUp 0.8s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.primaryBtn {
+  background-color: var(--color-green-dark);
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 2.5rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.primaryBtn:hover {
+  background-color: var(--color-green-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(55, 83, 65, 0.2);
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  border: 2px solid var(--color-green-dark);
+  color: var(--color-green-dark);
+  font-weight: 600;
+  padding: 0.8rem 2.5rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.secondaryBtn:hover {
+  background-color: var(--color-green-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.infoText {
+  margin-top: 1.5rem;
+  color: #6B7280;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  animation: fadeUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

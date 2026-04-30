@@ -1,0 +1,139 @@
+.section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0 2rem; /* Reduced top */
+}
+
+@media (min-width: 1024px) {
+    .section {
+        padding: 3rem 4rem 0 4rem; /* Reduced top for desktop */
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-green-dark);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.arrows {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.arrowBtn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid #D1D5DB;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4B5563;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arrowBtn:hover {
+    border-color: var(--color-green-dark);
+    color: var(--color-green-dark);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.stars {
+    display: flex;
+    gap: 0.25rem;
+    color: #FBBF24;
+    /* yellow-400 */
+}
+
+.quote {
+    color: #4B5563;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    flex: 1;
+    /* Pushes author block to bottom if text heights vary */
+}
+
+.authorBlock {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.authorInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.authorName {
+    font-weight: 700;
+    color: #111827;
+    font-size: 0.875rem;
+}
+
+.authorRole {
+    color: #6B7280;
+    font-size: 0.75rem;
+}
