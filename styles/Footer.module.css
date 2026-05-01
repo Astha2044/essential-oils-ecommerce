@@ -29,6 +29,10 @@
 
 .leftCol {
   flex: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 3rem;
 }
 
 .footerLogo {
@@ -40,10 +44,18 @@
 
 .footerBrand {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-shrink: 0;
 }
 
 .brandTitle {
@@ -202,7 +214,6 @@
   opacity: 0.6;
 }
 
-/* Popup Message */
 .popup {
   position: fixed;
   top: 6rem;

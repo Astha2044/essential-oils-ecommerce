@@ -21,14 +21,26 @@ export default function Footer() {
         <div className={styles.mainContent}>
 
           <div className={styles.leftCol}>
-            <div className={styles.footerBrand}>
-              <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.footerLogo} />
-              <p className={styles.brandTitle}>VS Natural &amp; Essentials</p>
+
+            {/* Brand + Social as one unit */}
+            <div className={styles.brandCol}>
+              <div className={styles.footerBrand}>
+                <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.footerLogo} />
+                <p className={styles.brandTitle}>VS Natural &amp; Essentials</p>
+              </div>
+              <div className={styles.socialIcons}>
+                <a href="#" className={styles.socialIcon}><FaFacebookF /></a>
+                <a href="#" className={styles.socialIcon}><FaInstagram /></a>
+                <a href="#" className={styles.socialIcon}><FaTwitter /></a>
+                <a href="#" className={styles.socialIcon}><FaPinterestP /></a>
+                <a href="#" className={styles.socialIcon}><FaYoutube /></a>
+              </div>
             </div>
 
+            {/* Links Grid beside brand */}
             <div className={styles.linksGrid}>
               <div className={styles.linksBlock}>
-                <h4 className={styles.blockTitle}>Quick links</h4>
+                <h4 className={styles.blockTitle}>Quick Links</h4>
                 <ul className={styles.list}>
                   <li><a href="#">Shop All</a></li>
                   <li><a href="#">New Arrivals</a></li>
@@ -37,7 +49,8 @@ export default function Footer() {
               </div>
 
               <div className={styles.linksBlock}>
-                <ul className={styles.list} style={{ marginTop: '1.75rem' }}>
+                <h4 className={styles.blockTitle}>Collections</h4>
+                <ul className={styles.list}>
                   <li><a href="#">Lavender Collection</a></li>
                   <li><a href="#">Peppermint Collection</a></li>
                   <li><a href="#">Bergamot Collection</a></li>
@@ -45,7 +58,8 @@ export default function Footer() {
               </div>
 
               <div className={styles.linksBlock}>
-                <ul className={styles.list} style={{ marginTop: '1.75rem' }}>
+                <h4 className={styles.blockTitle}>Company</h4>
+                <ul className={styles.list}>
                   <li><a href="#">Wellness Hub</a></li>
                   <li><a href="#">About</a></li>
                   <li><a href="#">Contact</a></li>
@@ -53,13 +67,6 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className={styles.socialIcons}>
-              <a href="#" className={styles.socialIcon}><FaFacebookF /></a>
-              <a href="#" className={styles.socialIcon}><FaInstagram /></a>
-              <a href="#" className={styles.socialIcon}><FaTwitter /></a>
-              <a href="#" className={styles.socialIcon}><FaPinterestP /></a>
-              <a href="#" className={styles.socialIcon}><FaYoutube /></a>
-            </div>
           </div>
 
           <div className={styles.rightCol}>
