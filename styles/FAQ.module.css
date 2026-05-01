@@ -2,12 +2,12 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 2rem 2rem 2rem 2rem; /* Reduced top and bottom */
+  padding: 1rem 2rem 2rem 2rem;
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding: 3rem 4rem 3rem 4rem; /* Reduced top and bottom */
+    padding: 1.5rem 4rem 3rem 4rem;
   }
 }
 
@@ -71,8 +71,13 @@
 }
 
 @keyframes morph {
-  0% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
-  100% { border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%; }
+  0% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+
+  100% {
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+  }
 }
 
 .image {
@@ -103,8 +108,15 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Right Column: Accordion */
@@ -179,7 +191,8 @@
 }
 
 .accordionBody.show {
-  max-height: 200px; /* Adjust based on content */
+  max-height: 200px;
+  /* Adjust based on content */
   padding-bottom: 1.5rem;
 }
 

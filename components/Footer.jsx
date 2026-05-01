@@ -1,7 +1,19 @@
+'use client';
+
+import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaPinterestP, FaYoutube } from "react-icons/fa";
 import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubscribe = () => {
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 3000);
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -53,7 +65,7 @@ export default function Footer() {
             <h4 className={styles.blockTitle}>Subscribe to our Newsletter</h4>
             <div className={styles.newsletter}>
               <input type="email" placeholder="Enter your email" className={styles.emailInput} suppressHydrationWarning />
-              <button className={styles.subscribeBtn} suppressHydrationWarning>Subscribe</button>
+              <button className={styles.subscribeBtn} onClick={handleSubscribe} suppressHydrationWarning>Subscribe</button>
             </div>
           </div>
 
@@ -70,6 +82,13 @@ export default function Footer() {
         </div>
 
       </div>
+
+      {/* Popup Message */}
+      {showPopup && (
+        <div className={styles.popup}>
+          Successfully Subscribed!
+        </div>
+      )}
     </footer>
   );
 }

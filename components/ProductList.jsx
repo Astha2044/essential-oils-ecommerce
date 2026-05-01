@@ -14,8 +14,8 @@ export default function ProductList() {
     { name: "Soothe Roman Chamomile Oil", price: 38.00, image: "/images/img3.png" },
     { name: "Invigorate Peppermint Oil", price: 28.00, image: "/images/img4.png" },
     { name: "Balance Geranium Essential Oil", price: 26.00, image: "/images/img5.png" },
-    { name: "Relax Frankincense Oil", price: 38.00, image: "/images/img6.jpg" },
     { name: "Awaken Eucalyptus Oil", price: 28.00, image: "/images/img7.jpg" },
+    { name: "Relax Frankincense Oil", price: 38.00, image: "/images/img6.jpg" },
     { name: "Ground Vetiver Essential Oil", price: 38.00, image: "/images/img8.jpg" }
   ];
 
@@ -24,10 +24,10 @@ export default function ProductList() {
       <h2 className={styles.heading}>
         Our Product
       </h2>
-      
+
       <div className={styles.categories}>
         {categories.map((cat, idx) => (
-          <button 
+          <button
             key={idx}
             className={`${styles.categoryBtn} ${activeCategory === cat ? styles.activeCategory : ''}`}
             onClick={() => setActiveCategory(cat)}
