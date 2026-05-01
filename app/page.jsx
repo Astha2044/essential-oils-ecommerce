@@ -11,7 +11,7 @@ import styles from "../styles/page.module.css";
 export default function Home() {
   return (
     <div className={styles.main}>
-      
+
       {/* Top Section (White) */}
       <div className={styles.topSection}>
         <Navbar />
@@ -21,14 +21,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Middle Section (Beige) */}
       <main className={styles.middleSection}>
         <ProductList />
         <FAQ />
         <Testimonial />
       </main>
 
-      {/* Bottom Section */}
       <div className={styles.bottomSection}>
         <PromoBanner />
         <Footer />

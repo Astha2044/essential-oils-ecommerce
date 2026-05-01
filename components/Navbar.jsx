@@ -14,13 +14,11 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      
-      {/* Logo */}
+
       <div className={styles.logoContainer}>
         <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.logoIcon} />
       </div>
 
-      {/* Hamburger Menu Icon (Mobile Only) */}
       <div className={styles.mobileMenuBtn} onClick={toggleMenu}>
         {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
       </div>
@@ -35,9 +33,11 @@ export default function Navbar() {
         <Link href="/" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
         <Link href="/about" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
         <Link href="/products" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
-        <Link href="/help" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Help</Link>
+        <Link href="/benefits" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Benefits</Link>
+        <Link href="/how-it-works" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>How it works</Link>
+        <Link href="/blog" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
         <Link href="/contact" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-        
+
         {/* Actions for Mobile inside menu */}
         <div className={styles.mobileActions}>
           <button className={styles.signInBtn} suppressHydrationWarning>

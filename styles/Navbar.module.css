@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #F4F1EA;
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -21,8 +21,7 @@
 
 .logoIcon {
   width: auto;
-  height: 3.5rem;
-  /* Adjusted logo size */
+  height: 7rem;
   object-fit: contain;
 }
 
@@ -82,8 +81,8 @@
 
 .navLink {
   color: var(--color-green-dark);
-  font-weight: 600;
-  font-size: 1.15rem;
+  font-weight: bold;
+  font-size: 1.5rem;
   /* Improved size */
   letter-spacing: 0.02em;
   transition: all 0.3s ease;
@@ -185,7 +184,8 @@
   }
 
   .logoContainer {
-    width: 25%;
+    width: auto;
+    flex-shrink: 0;
   }
 
   .mobileMenuBtn {
@@ -200,20 +200,20 @@
     position: static;
     flex-direction: row;
     justify-content: center;
-    width: 50%;
+    flex: 1;
     max-width: none;
     height: auto;
     background-color: transparent;
     padding: 0;
-    gap: 2.5rem;
+    gap: 1.75rem;
     box-shadow: none;
     transition: none;
   }
 
   .navLink {
-    font-size: 1.05rem;
-    /* Increased for desktop */
+    font-size: 1rem;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .navLink:hover {
@@ -232,7 +232,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 1.25rem;
-    width: 25%;
+    gap: 1.5rem;
+    width: auto;
+    flex-shrink: 0;
   }
 }

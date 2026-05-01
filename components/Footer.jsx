@@ -17,13 +17,15 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        
-        {/* Main Content Area */}
+
         <div className={styles.mainContent}>
-          
+
           <div className={styles.leftCol}>
-            <h2 className={styles.brandTitle}>VS Natural & Essentials</h2>
-            
+            <div className={styles.footerBrand}>
+              <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.footerLogo} />
+              <p className={styles.brandTitle}>VS Natural &amp; Essentials</p>
+            </div>
+
             <div className={styles.linksGrid}>
               <div className={styles.linksBlock}>
                 <h4 className={styles.blockTitle}>Quick links</h4>
@@ -47,7 +49,6 @@ export default function Footer() {
                   <li><a href="#">Wellness Hub</a></li>
                   <li><a href="#">About</a></li>
                   <li><a href="#">Contact</a></li>
-                  {/* <li><a href="#">Privacy</a></li> */}
                 </ul>
               </div>
             </div>
@@ -71,7 +72,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Copyright Bar */}
         <div className={styles.bottomBar}>
           <p>Copyright © 2026 VS Naturals & Essentials</p>
           <div className={styles.legalLinks}>
@@ -83,7 +83,6 @@ export default function Footer() {
 
       </div>
 
-      {/* Popup Message */}
       {showPopup && (
         <div className={styles.popup}>
           Successfully Subscribed!
