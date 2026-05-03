@@ -6,15 +6,16 @@ import FAQ from "../components/FAQ";
 import Testimonial from "../components/Testimonial";
 import Benefits from "../components/Benefits";
 import PromoBanner from "../components/PromoBanner";
+import BrandStory from "../components/BrandStory";
 import styles from "../styles/page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.main}>
-
-      {/* Top Section (White) */}
+      <Navbar />
+      
+      {/* Hero & Benefits with overlap for premium look */}
       <div className={styles.topSection}>
-        <Navbar />
         <Hero />
         <div className={styles.benefitsWrapper}>
           <Benefits />
@@ -23,8 +24,9 @@ export default function Home() {
 
       <main className={styles.middleSection}>
         <ProductList />
-        <FAQ />
+        <BrandStory />
         <Testimonial />
+        <FAQ />
       </main>
 
       <div className={styles.bottomSection}>

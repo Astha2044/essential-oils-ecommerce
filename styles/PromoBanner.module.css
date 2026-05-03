@@ -1,26 +1,56 @@
 .section {
   width: 100%;
-  background-color: #DDE5E0; /* Sage green background from screenshot */
-  padding: 6rem 2rem;
-  margin: 0; /* Removed margin to eliminate white gaps */
+  background-color: var(--color-beige);
+  padding: clamp(3rem, 8vh, 6rem) 1rem;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(55, 83, 65, 0.03) 0%, transparent 70%);
+  transform: rotate(-15deg);
 }
 
 .container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
-  gap: 2rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  z-index: 2;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .container {
     flex-direction: row;
-    text-align: left;
+    align-items: center;
   }
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(55, 83, 65, 0.1);
+  color: var(--color-green-dark);
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 auto 1.5rem auto;
 }
 
 .content {
@@ -29,31 +59,142 @@
 
 .title {
   font-family: var(--font-serif);
-  font-size: 2.25rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   color: var(--color-green-dark);
-  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  margin: 0 auto 1.5rem auto;
+  max-width: 950px;
 }
 
 .subtitle {
   color: #4B5563;
-  font-size: 1rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin: 0 auto clamp(2rem, 5vh, 4rem) auto;
+  max-width: 850px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(2rem, 6vh, 4rem);
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.featureItem:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(55, 83, 65, 0.08);
+}
+
+.featureIcon {
+  font-size: 1.75rem;
+  color: var(--color-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureText {
+  display: flex;
+  flex-direction: column;
+}
+
+.featureText strong {
+  color: var(--color-green-dark);
+  font-size: 1.1rem;
+}
+
+.featureText span {
+  font-size: 0.9rem;
+  color: #6B7280;
+}
+
+.disclaimerBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: rgba(55, 83, 65, 0.05);
+  border-radius: 1rem;
+  border: 1px solid rgba(55, 83, 65, 0.05);
+  width: fit-content;
+  margin: 0 auto 2.5rem auto;
+}
+
+.disclaimerIcon {
+  font-size: 1.1rem;
+  color: var(--color-green-primary);
+  display: flex;
+  align-items: center;
+}
+
+.disclaimerText {
+  font-size: 0.9rem;
+  color: var(--color-green-dark);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.actionSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .unlockBtn {
   background-color: var(--color-green-dark);
   color: white;
-  padding: 1rem 2.5rem;
+  padding: 1.1rem 3.5rem;
   border-radius: 9999px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  border: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--color-green-dark);
   cursor: pointer;
   white-space: nowrap;
+  box-shadow: 0 10px 20px rgba(55, 83, 65, 0.15);
+  text-decoration: none;
+  display: inline-block;
 }
 
 .unlockBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(55, 83, 65, 0.2);
+  background-color: white;
+  color: var(--color-green-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(55, 83, 65, 0.1);
+}
+
+@media (max-width: 768px) {
+  .featureItem {
+    padding: 1.25rem;
+  }
+
+  .unlockBtn {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    justify-content: center;
+  }
 }

@@ -50,7 +50,7 @@ export default function Testimonial() {
               ))}
             </div>
             
-            <p className={styles.quote}>{t.text}</p>
+            <p className={styles.quote}>"{t.text}"</p>
             
             <div className={styles.authorBlock}>
               <img src={t.avatar} alt={t.name} className={styles.avatar} />

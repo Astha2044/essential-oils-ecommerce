@@ -26,7 +26,6 @@ export default function Footer() {
             <div className={styles.brandCol}>
               <div className={styles.footerBrand}>
                 <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.footerLogo} />
-                <p className={styles.brandTitle}>VS Natural &amp; Essentials</p>
               </div>
               <div className={styles.socialIcons}>
                 <a href="#" className={styles.socialIcon}><FaFacebookF /></a>
