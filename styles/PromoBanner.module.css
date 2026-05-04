@@ -1,152 +1,140 @@
 .section {
   width: 100%;
   background-color: var(--color-beige);
-  padding: clamp(3rem, 8vh, 6rem) 1rem;
+  padding: 5rem 0;
+  /* Reduced from section-padding-y */
+
   margin: 0;
   position: relative;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
 }
 
-.section::before {
+.section::after {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 60%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(55, 83, 65, 0.03) 0%, transparent 70%);
-  transform: rotate(-15deg);
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .container {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: 0 var(--container-px);
   position: relative;
   z-index: 2;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    flex-direction: row;
-    align-items: center;
-  }
+.content {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .badge {
   display: inline-block;
-  background-color: rgba(55, 83, 65, 0.1);
+  background-color: rgba(98, 146, 98, 0.5);
+  backdrop-filter: blur(12px);
   color: var(--color-green-dark);
-  padding: 0.5rem 1.25rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0 auto 1.5rem auto;
-}
+  letter-spacing: 0.15em;
+  border: 1px solid rgb(44, 69, 44);
+  box-shadow: 0 10px 30px rgba(55, 83, 65, 0.05);
+  margin-bottom: 1.5rem;
 
-.content {
-  flex: 1;
 }
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   color: var(--color-green-dark);
   line-height: 1.1;
-  margin: 0 auto 1.5rem auto;
-  max-width: 950px;
+  margin-bottom: 1.5rem;
+
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
+  font-size: clamp(1.1rem, 2vw, 1rem);
+  line-height: 1.7;
   color: #4B5563;
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.6;
-  margin: 0 auto clamp(2rem, 5vh, 4rem) auto;
-  max-width: 850px;
+  margin: 0 auto 2.5rem auto;
+
+  max-width: 800px;
 }
 
 .featuresGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-  margin-bottom: clamp(2rem, 6vh, 4rem);
-  width: 100%;
-}
+  gap: 1.5rem;
+  /* Reduced from 2.5rem */
+  margin-bottom: 2.5rem;
 
-@media (max-width: 600px) {
-  .featuresGrid {
-    grid-template-columns: 1fr;
-  }
+
 }
 
 .featureItem {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1.5rem;
-  background-color: white;
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
-}
-
-.featureItem:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(55, 83, 65, 0.08);
+  gap: 1.5rem;
+  text-align: center;
 }
 
 .featureIcon {
-  font-size: 1.75rem;
-  color: var(--color-green-dark);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-green-dark);
+  color: white;
+  border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 15px 35px rgba(55, 83, 65, 0.08);
+  border: 1px solid rgba(55, 83, 65, 0.05);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.featureText {
-  display: flex;
-  flex-direction: column;
+.featureItem:hover .featureIcon {
+  background-color: var(--color-green-primary);
+  color: white;
+  transform: translateY(-10px) rotate(-5deg);
 }
 
 .featureText strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
   color: var(--color-green-dark);
-  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
 }
 
 .featureText span {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #6B7280;
 }
 
 .disclaimerBox {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   background-color: rgba(55, 83, 65, 0.05);
   border-radius: 1rem;
-  border: 1px solid rgba(55, 83, 65, 0.05);
-  width: fit-content;
-  margin: 0 auto 2.5rem auto;
+  border: 1px solid rgba(55, 83, 65, 0.1);
+  margin-bottom: 2rem;
 }
 
 .disclaimerIcon {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--color-green-primary);
-  display: flex;
-  align-items: center;
 }
 
 .disclaimerText {
@@ -157,34 +145,30 @@
 }
 
 .actionSection {
-  width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
 }
 
 .unlockBtn {
   background-color: var(--color-green-dark);
   color: white;
-  padding: 1.1rem 3.5rem;
-  border-radius: 9999px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
   font-weight: 700;
-  font-size: 1.05rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--color-green-dark);
-  cursor: pointer;
-  white-space: nowrap;
-  box-shadow: 0 10px 20px rgba(55, 83, 65, 0.15);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 15px 35px rgba(55, 83, 65, 0.2);
   text-decoration: none;
-  display: inline-block;
 }
 
 .unlockBtn:hover {
-  background-color: white;
-  color: var(--color-green-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(55, 83, 65, 0.1);
+  background-color: var(--color-green-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(55, 83, 65, 0.25);
 }
+
 
 @media (max-width: 768px) {
   .featureItem {

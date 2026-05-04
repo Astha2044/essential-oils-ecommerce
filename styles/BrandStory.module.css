@@ -1,8 +1,7 @@
 .section {
-  padding: var(--section-padding-y) 0;
-  background-color: white;
   overflow: hidden;
 }
+
 
 .container {
   max-width: 1300px;
@@ -29,55 +28,108 @@
   justify-content: center;
 }
 
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  /* Matched to FAQ image size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .imageFrame {
   position: relative;
   z-index: 2;
-  border-radius: 20rem 20rem 4rem 4rem;
+  border-radius: 18rem 18rem 4rem 4rem;
+
   overflow: hidden;
   box-shadow: 0 50px 100px rgba(55, 83, 65, 0.1);
+  width: 100%;
+  background-color: white;
 }
 
 .image {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.imageColumn:hover .image {
+.imageWrapper:hover .image {
   transform: scale(1.05);
 }
 
 .imageDecoration {
   position: absolute;
-  inset: -1.5rem;
-  border: 1px dashed var(--color-green-primary);
-  border-radius: 22rem 22rem 5rem 5rem;
-  opacity: 0.15;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
-  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
 }
 
-.imageColumn:hover .imageDecoration {
-  transform: scale(1.08) rotate(-3deg);
-  opacity: 0.3;
+.imageDecoration::before,
+.imageDecoration::after {
+  content: "";
+  position: absolute;
+  inset: -1.25rem;
+  /* Slightly more spacing for premium look */
+  border: 1px dashed var(--color-green-primary);
+  border-radius: 18rem 18rem 4rem 4rem;
+
+  opacity: 0.2;
+  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageDecoration::after {
+  transform: scale(1.05) rotate(2deg);
+  border-style: solid;
+  opacity: 0.1;
+}
+
+.imageWrapper:hover .imageDecoration::before {
+  transform: scale(1.08) rotate(-2deg);
+  opacity: 0.4;
+}
+
+.imageWrapper:hover .imageDecoration::after {
+  transform: scale(1.12) rotate(4deg);
+  opacity: 0.2;
 }
 
 .glassBadge {
   position: absolute;
   bottom: 10%;
-  right: -2rem;
-  background: rgba(255, 255, 255, 0.85);
+  right: 0;
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
-  padding: 1.5rem 2.5rem;
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 2rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   z-index: 3;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.25rem;
+  animation: softFloat 5s ease-in-out infinite;
 }
+
+@keyframes softFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
 
 .glassBadge strong {
   font-family: var(--font-serif);
@@ -106,7 +158,7 @@
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   color: var(--color-green-dark);
   line-height: 1.2;
   margin-bottom: 2rem;

@@ -23,12 +23,10 @@ export default function Navbar() {
         {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
       </div>
 
-      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className={styles.mobileOverlay} onClick={() => setIsMobileMenuOpen(false)} />
       )}
 
-      {/* Centered Links (Desktop + Mobile overlay) */}
       <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
         <Link href="/" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
         <Link href="/about" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
@@ -38,7 +36,6 @@ export default function Navbar() {
         <Link href="/blog" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
         <Link href="/contact" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
 
-        {/* Actions for Mobile inside menu */}
         <div className={styles.mobileActions}>
           <button className={styles.signInBtn} suppressHydrationWarning>
             Sign In
@@ -46,7 +43,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Actions (Desktop Right) */}
       <div className={styles.actions}>
         <div className={styles.iconBtn}><FiSearch /></div>
         <div className={styles.iconBtn}><FiShoppingCart /></div>

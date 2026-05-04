@@ -5,16 +5,20 @@
 }
 
 .topSection {
-  background-color: var(--color-background);
+  background-color: var(--color-beige);
+  /* Start with beige for hero */
   position: relative;
 }
 
-.benefitsWrapper {
-  position: relative;
-  z-index: 10;
-  padding: 0;
-  margin-top: -3rem;
 
+.whiteSection {
+  background-color: #ffffff;
+  padding: var(--section-padding-y) 0;
+}
+
+.beigeSection {
+  background-color: var(--color-beige);
+  padding: var(--section-padding-y) 0;
 }
 
 .middleSection {
@@ -26,8 +30,9 @@
   position: relative;
 }
 
+
 .bottomSection {
-  background-color: var(--color-background);
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
 }

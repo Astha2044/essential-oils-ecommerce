@@ -36,7 +36,6 @@
   padding: 0 var(--container-px);
 }
 
-/* About Hero Section */
 .aboutHero {
   width: 100%;
   height: 60vh;
@@ -139,7 +138,8 @@
   width: 100%;
   max-width: 480px;
   height: auto;
-  border-radius: 12rem 12rem 2rem 2rem; /* Sophisticated arched top */
+  border-radius: 12rem 12rem 2rem 2rem;
+  /* Sophisticated arched top */
   box-shadow: 0 40px 100px rgba(55, 83, 65, 0.15);
   position: relative;
   z-index: 2;
@@ -220,7 +220,6 @@
   color: var(--color-green-dark);
 }
 
-/* Features Section */
 .featuresSection {
   padding: var(--section-padding-y) 0;
   background-color: white;
@@ -272,29 +271,88 @@
   line-height: 1.6;
 }
 
-/* Philosophy Section */
+/* Distillation Process */
+.processSection {
+  background-color: white;
+  padding: var(--section-padding-y) 0;
+}
+
+.centeredTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--color-green-dark);
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+}
+
+.processItem {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--color-beige);
+  border-radius: 2rem;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.processItem:hover {
+  transform: translateY(-10px);
+}
+
+.processStep {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  color: var(--color-green-soft);
+  opacity: 0.5;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.processItem h4 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-green-dark);
+  margin-bottom: 1rem;
+}
+
+.processItem p {
+  color: #6B7280;
+  line-height: 1.7;
+}
+
+/* Philosophy & Stats */
 .philosophySection {
   padding: var(--section-padding-y) 0;
-  background-color: var(--color-beige);
-  text-align: center;
+  background-color: var(--color-green-dark);
+  color: white;
 }
 
 .philosophyContent {
+  text-align: center;
   max-width: 900px;
   margin: 0 auto;
 }
 
+.philosophySection .sectionTitle {
+  color: white;
+}
+
 .philosophyText {
   font-size: 1.25rem;
-  line-height: 1.7;
-  color: #4B5563;
-  margin-bottom: 4rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 5rem;
 }
 
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .statItem {
@@ -303,18 +361,26 @@
   gap: 0.5rem;
 }
 
-.statItem strong {
+.statNumber {
   font-family: var(--font-serif);
-  font-size: 3rem;
-  color: var(--color-green-dark);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--color-green-soft);
+  line-height: 1;
 }
 
-.statItem span {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.statLabel {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
 }
 
 @keyframes softFadeUp {
@@ -322,6 +388,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -329,13 +396,29 @@
 }
 
 @keyframes softFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes organicBreathe {
-  0%, 100% { transform: scale(1) rotate(0deg); border-radius: 12rem 12rem 2rem 2rem; }
-  50% { transform: scale(1.05) rotate(2deg); border-radius: 10rem 14rem 3rem 1rem; }
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    border-radius: 12rem 12rem 2rem 2rem;
+  }
+
+  50% {
+    transform: scale(1.05) rotate(2deg);
+    border-radius: 10rem 14rem 3rem 1rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -343,7 +426,7 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .signature {
     justify-content: center;
     display: flex;
@@ -355,11 +438,11 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .aboutHero {
     height: 50vh;
   }
-  
+
   .heroTitle {
     font-size: 2.5rem;
   }

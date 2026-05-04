@@ -17,16 +17,30 @@ export default function Home() {
       {/* Hero & Benefits with overlap for premium look */}
       <div className={styles.topSection}>
         <Hero />
-        <div className={styles.benefitsWrapper}>
-          <Benefits />
-        </div>
       </div>
 
+
       <main className={styles.middleSection}>
-        <ProductList />
-        <BrandStory />
-        <Testimonial />
-        <FAQ />
+        <section className={styles.whiteSection}>
+          <Benefits />
+        </section>
+
+        <section className={styles.whiteSection}>
+          <ProductList />
+        </section>
+
+        
+        <section className={styles.beigeSection}>
+          <BrandStory />
+        </section>
+        
+        <section className={styles.whiteSection}>
+          <Testimonial />
+        </section>
+        
+        <section className={styles.beigeSection}>
+          <FAQ />
+        </section>
       </main>
 
       <div className={styles.bottomSection}>
@@ -35,5 +49,6 @@ export default function Home() {
       </div>
 
     </div>
+
   );
 }

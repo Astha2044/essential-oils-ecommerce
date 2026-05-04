@@ -79,6 +79,30 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Distillation Process Section */}
+        <section className={styles.processSection}>
+          <div className={styles.container}>
+            <h2 className={styles.centeredTitle}>The Art of Distillation</h2>
+            <div className={styles.processGrid}>
+              <div className={styles.processItem}>
+                <div className={styles.processStep}>01</div>
+                <h4>Ethical Harvest</h4>
+                <p>We pick our botanicals at the peak of their potency, respecting natural cycles.</p>
+              </div>
+              <div className={styles.processItem}>
+                <div className={styles.processStep}>02</div>
+                <h4>Slow Distillation</h4>
+                <p>Low-pressure steam extraction preserves the delicate aromatic compounds.</p>
+              </div>
+              <div className={styles.processItem}>
+                <div className={styles.processStep}>03</div>
+                <h4>Purity Testing</h4>
+                <p>Every batch is GC/MS tested to ensure zero additives or synthetic fillers.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Pure Potency Section */}
         <section className={styles.philosophySection}>
           <div className={styles.container}>
@@ -89,21 +113,22 @@ export default function AboutPage() {
               </p>
               <div className={styles.statsGrid}>
                 <div className={styles.statItem}>
-                  <strong>100%</strong>
-                  <span>Organic Sourcing</span>
+                  <div className={styles.statNumber}>100%</div>
+                  <div className={styles.statLabel}>Organic Sourcing</div>
                 </div>
                 <div className={styles.statItem}>
-                  <strong>50+</strong>
-                  <span>Pure Botanicals</span>
+                  <div className={styles.statNumber}>50+</div>
+                  <div className={styles.statLabel}>Pure Botanicals</div>
                 </div>
                 <div className={styles.statItem}>
-                  <strong>0</strong>
-                  <span>Synthetic Additives</span>
+                  <div className={styles.statNumber}>0</div>
+                  <div className={styles.statLabel}>Synthetic Additives</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>

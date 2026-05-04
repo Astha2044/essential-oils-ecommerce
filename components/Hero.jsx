@@ -11,13 +11,15 @@ export default function Hero() {
       <div className={styles.container}>
         <div className={styles.contentWrapper}>
           
+          <div className={styles.badge} suppressHydrationWarning>Natural & Pure</div>
+
           <h1 className={styles.title} suppressHydrationWarning>
-            Pure Peppermint<br />
-            Essential Oil
+            Experience the Essence of<br />
+            Pure Botanical Oils
           </h1>
 
           <p className={styles.subtitle} suppressHydrationWarning>
-            Refresh your senses and revitalize your everyday with the natural goodness of peppermint.
+            Nurture your body and soul with our meticulously crafted, therapeutic-grade essential oils. 100% natural, ethically sourced, and pure.
           </p>
 
           <div className={styles.features}>
@@ -41,10 +43,10 @@ export default function Hero() {
 
           <div className={styles.buttons}>
             <button className={styles.primaryBtn} suppressHydrationWarning>
-              Shop Now
+              Shop Collection
             </button>
             <button className={styles.secondaryBtn} suppressHydrationWarning>
-              Learn More
+              Explore Benefits
             </button>
           </div>
 

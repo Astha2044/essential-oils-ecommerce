@@ -1,15 +1,19 @@
 .benefitsContainer {
-  padding: var(--section-padding-y) 0;
-  background-color: #ffffff;
+  padding: 0;
+  background-color: transparent;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--container-px);
+  padding: var(--section-padding-y) var(--container-px);
+  background-color: #ffffff;
+  position: relative;
+  z-index: 5;
 }
+
 
 .header {
   text-align: center;
@@ -29,7 +33,8 @@
 
 .mainTitle {
   font-family: var(--font-serif);
-  font-size: var(--h2-size);
+  /* font-size: var(--h2-size); */
+  font-size: clamp(2.5rem, 5vw, 3.2rem);
   color: var(--color-green-dark);
   margin-bottom: 1.5rem;
   line-height: 1.2;
@@ -44,9 +49,10 @@
 .contentWrapper {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
 }
+
 
 @media (min-width: 1024px) {
   .contentWrapper {
@@ -65,28 +71,43 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
 
 @media (min-width: 1024px) {
   .columnLeft .benefitItem {
     flex-direction: row;
-    text-align: right;
+    /* Icon on Left, Text on Right */
+    text-align: left;
+    justify-content: flex-start;
+    gap: 1.5rem;
   }
 
   .columnRight .benefitItem {
-    flex-direction: row-reverse;
+    flex-direction: row;
+    /* Icon on Left, Text on Right */
     text-align: left;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .benefitTextContent {
+    flex: 1;
   }
 }
 
+
+
+
 .iconWrapper {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   flex-shrink: 0;
 }
+
 
 .iconArchedFrame {
   position: relative;
@@ -95,15 +116,16 @@
   height: 100%;
   background-color: var(--color-green-soft);
   color: var(--color-green-dark);
-  border-radius: 2rem 2rem 0.5rem 0.5rem;
+  border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
   /* Brand arched shape */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   border: 1px solid rgba(55, 83, 65, 0.1);
 }
+
 
 .benefitItem:hover .iconArchedFrame {
   background-color: var(--color-green-dark);
@@ -149,7 +171,10 @@
 .imageBox {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .archedImageFrame {
@@ -158,13 +183,15 @@
   border-radius: 18rem 18rem 4rem 4rem;
   overflow: hidden;
   box-shadow: 0 40px 80px rgba(55, 83, 65, 0.15);
+  width: 100%;
+  background-color: white;
 }
 
 .centerImage {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .imageBox:hover .centerImage {
@@ -173,18 +200,40 @@
 
 .imageBloomingDecoration {
   position: absolute;
-  inset: -1.5rem;
-  border: 1px dashed var(--color-green-primary);
-  border-radius: 20rem 20rem 5rem 5rem;
-  opacity: 0.15;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
-  transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
 }
 
-.imageBox:hover .imageBloomingDecoration {
-  transform: scale(1.1) rotate(3deg);
-  opacity: 0.3;
+.imageBloomingDecoration::before,
+.imageBloomingDecoration::after {
+  content: "";
+  position: absolute;
+  inset: -1.25rem;
+  border: 1px dashed var(--color-green-primary);
+  border-radius: 18rem 18rem 4rem 4rem;
+  opacity: 0.2;
+  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.imageBloomingDecoration::after {
+  transform: scale(1.05) rotate(2deg);
+  border-style: solid;
+  opacity: 0.1;
+}
+
+.imageBox:hover .imageBloomingDecoration::before {
+  transform: scale(1.08) rotate(-2deg);
+  opacity: 0.4;
+}
+
+.imageBox:hover .imageBloomingDecoration::after {
+  transform: scale(1.12) rotate(4deg);
+  opacity: 0.2;
+}
+
 
 @media (max-width: 1023px) {
   .column {

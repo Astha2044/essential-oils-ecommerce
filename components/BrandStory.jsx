@@ -7,20 +7,23 @@ export default function BrandStory() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.contentGrid}>
-          
+
           {/* Image Column */}
           <div className={styles.imageColumn}>
-            <div className={styles.imageFrame}>
-              <Image 
-                src="/images/lavender_bottle.png" 
-                alt="Brand Story" 
-                width={600} 
-                height={700}
-                className={styles.image}
-              />
+            <div className={styles.imageWrapper}>
               <div className={styles.imageDecoration}></div>
+              <div className={styles.imageFrame}>
+                <Image
+                  src="/images/lavender_bottle.png"
+                  alt="Brand Story"
+                  width={600}
+                  height={700}
+                  className={styles.image}
+                />
+              </div>
             </div>
             <div className={styles.glassBadge}>
+
               <strong>100% Pure</strong>
               <span>Nature's Essence</span>
             </div>
@@ -30,7 +33,7 @@ export default function BrandStory() {
           <div className={styles.textColumn}>
             <span className={styles.preTitle}>Our Heritage</span>
             <h2 className={styles.title}>From Soil to Soul: Our Botanical Journey</h2>
-            
+
             <p className={styles.description}>
               Every drop of our essential oil tells a story of devotion to purity. We partner with local farmers who respect the earth, ensuring that our plants are harvested at their peak potency.
             </p>
