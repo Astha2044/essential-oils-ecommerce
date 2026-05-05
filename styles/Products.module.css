@@ -5,7 +5,6 @@
   flex-direction: column;
 }
 
-/* Shop Hero */
 .shopHero {
   width: 100%;
   height: 65vh;
@@ -58,7 +57,6 @@
   line-height: 1.6;
 }
 
-/* Main Container */
 .mainContainer {
   max-width: 1300px;
   margin: 0 auto;
@@ -73,7 +71,6 @@
   z-index: 10;
 }
 
-/* Toolbar */
 .toolbar {
   background-color: white;
   padding: 1.5rem 3rem;
@@ -133,12 +130,11 @@
   color: var(--color-green-dark);
 }
 
-/* Grid */
 .productsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem 2rem;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   animation: fadeIn 1.5s ease-out 0.5s forwards;
   opacity: 0;
 }
@@ -191,10 +187,9 @@
   color: white;
 }
 
-/* Premium Why Section */
 .premiumWhySection {
   background-color: white;
-  padding: 10rem 0;
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -242,7 +237,7 @@
   padding: 3rem 2rem;
   border-radius: 2rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background-color: var(--color-beige);
+  background-color: var(--color-green-soft);
   border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
@@ -283,13 +278,13 @@
 .whyItem p {
   color: #6B7280;
   line-height: 1.7;
+  font-weight: 600;
   font-size: 1rem;
 }
 
-/* Statement Section */
 .statementSection {
   background-color: var(--color-green-dark);
-  padding: 12rem 0;
+  padding: 5rem 0;
   text-align: center;
   position: relative;
 }
@@ -318,10 +313,9 @@
   opacity: 0.8;
 }
 
-/* Premium Trust Section */
 .premiumTrustSection {
   background-color: var(--color-beige);
-  padding: 10rem 0;
+  padding: 3rem 0;
 }
 
 .trustGrid {
@@ -380,16 +374,15 @@
   line-height: 1.7;
 }
 
-/* Premium Newsletter Section */
 .premiumNewsletterSection {
-  padding: 10rem 0;
+  padding: 6rem 0;
   background-color: white;
 }
 
 .newsletterCard {
   background-color: var(--color-green-dark);
   border-radius: 4rem;
-  padding: 8rem 4rem;
+  padding: 4rem 1rem;
   text-align: center;
   color: white;
   position: relative;
@@ -423,7 +416,7 @@
   font-size: 1.25rem;
   opacity: 0.85;
   line-height: 1.8;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .newsletterForm {
@@ -449,6 +442,14 @@
   color: var(--color-green-dark);
 }
 
+.newsletterInput:-webkit-autofill,
+.newsletterInput:-webkit-autofill:hover,
+.newsletterInput:-webkit-autofill:focus,
+.newsletterInput:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--color-green-dark) !important;
+}
+
 .newsletterSubmit {
   background-color: var(--color-green-dark);
   color: white;
@@ -459,11 +460,11 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); */
 }
 
 .newsletterSubmit:hover {
-  background-color: var(--color-green-primary);
+  /* background-color: var(--color-green-primary); */
   transform: translateX(5px);
 }
 

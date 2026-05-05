@@ -4,14 +4,13 @@ import styles from "../styles/Product.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FiShoppingCart, FiEye } from "react-icons/fi";
 
 export default function ProductCard({ id, name, price, image }) {
   const router = useRouter();
 
   const handleBuyNow = (e) => {
     e.preventDefault();
-    router.push("/checkout");
+    router.push("/products");
   };
 
   return (
@@ -20,18 +19,18 @@ export default function ProductCard({ id, name, price, image }) {
         <div className={styles.imageDecoration}></div>
         <div className={styles.archedFrame}>
           {image ? (
-            <Image 
-              src={image} 
-              alt={name} 
-              width={350} 
-              height={400} 
-              className={styles.image} 
+            <Image
+              src={image}
+              alt={name}
+              width={350}
+              height={400}
+              className={styles.image}
             />
           ) : (
             <div className={styles.placeholder}></div>
           )}
         </div>
-        
+
         <div className={styles.glassBadge}>
           <span>Best Seller</span>
         </div>
@@ -49,12 +48,22 @@ export default function ProductCard({ id, name, price, image }) {
 
         <div className={styles.footer}>
           <p className={styles.price}>${price ? price.toFixed(2) : "0.00"}</p>
-          <button 
+          <button
             onClick={handleBuyNow}
-            className={styles.buyNowBtn} 
+            className={styles.buyNowBtn}
             suppressHydrationWarning
           >
             Buy Now
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              router.push('/contact');
+            }}
+            className={styles.contactBtn}
+            suppressHydrationWarning
+          >
+            Contact Us
           </button>
         </div>
       </div>

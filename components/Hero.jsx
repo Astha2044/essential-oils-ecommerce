@@ -1,4 +1,5 @@
 import styles from "../styles/Hero.module.css";
+import Link from "next/link";
 import { FaLeaf, FaDroplet, FaSpa, FaFlask } from "react-icons/fa6";
 import { FiArrowRight } from "react-icons/fi";
 import { PiPlantLight } from "react-icons/pi";
@@ -42,12 +43,12 @@ export default function Hero() {
           </div>
 
           <div className={styles.buttons}>
-            <button className={styles.primaryBtn} suppressHydrationWarning>
+            <Link href="/products" className={styles.primaryBtn} suppressHydrationWarning>
               Shop Collection
-            </button>
-            <button className={styles.secondaryBtn} suppressHydrationWarning>
+            </Link>
+            <Link href="/benefits" className={styles.secondaryBtn} suppressHydrationWarning>
               Explore Benefits
-            </button>
+            </Link>
           </div>
 
         </div>

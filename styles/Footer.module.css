@@ -1,7 +1,10 @@
 .footer {
   width: 100%;
   background-color: #E6EEE9;
-  padding: clamp(3rem, 8vh, 6rem) var(--container-px);
+  padding-top: clamp(3rem, 8vh, 6rem);
+  padding-bottom: 1.5rem;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
   font-family: var(--font-sans);
 }
 
@@ -115,7 +118,7 @@
 }
 
 .socialIcons {
-  margin-top: 0.5rem;
+  margin-top: 3rem;
   display: flex;
   gap: 0.65rem;
   flex-wrap: wrap;
@@ -168,7 +171,8 @@
   border-radius: 9999px;
   border: 1px solid #E5E7EB;
   background-color: white;
-  font-size: 1.15rem; /* Increased for consistency */
+  font-size: 1.15rem;
+  /* Increased for consistency */
   outline: none;
   color: #1a1a1a;
 }
@@ -180,7 +184,7 @@
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
   font-weight: 600;
-  font-size: 1.15rem; /* Increased for impact */
+  font-size: 1.15rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -228,7 +232,6 @@
   color: var(--color-green-primary);
 }
 
-/* Standardized Site-Wide Success Popup - Top Right */
 .popup {
   position: fixed;
   top: 2rem;
@@ -249,6 +252,7 @@
     transform: translateY(-40px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;

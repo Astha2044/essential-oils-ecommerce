@@ -12,8 +12,8 @@ export default function ProductList() {
 
 
   // Filter products based on activeCategory
-  const filteredProducts = activeCategory === "Shop All" 
-    ? ALL_PRODUCTS 
+  const filteredProducts = activeCategory === "Shop All"
+    ? ALL_PRODUCTS
     : ALL_PRODUCTS.filter(product => product.category === activeCategory);
 
 
@@ -52,4 +52,4 @@ export default function ProductList() {
     </section>
   );
 }
-
+

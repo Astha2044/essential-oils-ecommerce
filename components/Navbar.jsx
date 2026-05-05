@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FiSearch, FiShoppingCart, FiHeart, FiMenu, FiX } from "react-icons/fi";
+import { FiSearch, FiMenu, FiX } from "react-icons/fi";
 import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
@@ -19,8 +19,11 @@ export default function Navbar() {
         <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.logoIcon} />
       </div>
 
-      <div className={styles.mobileMenuBtn} onClick={toggleMenu}>
-        {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+      <div className={styles.mobileHeaderRight}>
+        <div className={styles.iconBtn}><FiSearch /></div>
+        <div className={styles.mobileMenuBtn} onClick={toggleMenu}>
+          {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </div>
       </div>
 
       {isMobileMenuOpen && (
@@ -34,20 +37,16 @@ export default function Navbar() {
         <Link href="/benefits" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Benefits</Link>
         <Link href="/how-it-works" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>How it works</Link>
         <Link href="/blog" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
-        <Link href="/contact" className={styles.navLink} onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-
         <div className={styles.mobileActions}>
-          <button className={styles.signInBtn} suppressHydrationWarning>
-            Sign In
-          </button>
+          <Link href="/contact" className={styles.signInBtnMobile} onClick={() => setIsMobileMenuOpen(false)} suppressHydrationWarning>
+            Contact Us
+          </Link>
         </div>
       </div>
 
       <div className={styles.actions}>
         <div className={styles.iconBtn}><FiSearch /></div>
-        <div className={styles.iconBtn}><FiShoppingCart /></div>
-        <div className={styles.iconBtn}><FiHeart /></div>
-        <button className={styles.signInBtn} suppressHydrationWarning>Sign In</button>
+        <Link href="/contact" className={styles.signInBtn} suppressHydrationWarning>Contact Us</Link>
       </div>
 
     </nav>

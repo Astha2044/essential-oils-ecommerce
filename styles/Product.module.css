@@ -2,7 +2,6 @@
   position: relative;
 }
 
-
 .heading {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -230,7 +229,6 @@
 }
 
 
-
 .info {
   text-align: center;
   padding: 0 0.5rem;
@@ -239,8 +237,6 @@
   flex: 1;
   align-items: center;
 }
-
-
 
 .name {
   font-family: var(--font-serif);
@@ -262,7 +258,6 @@
   -webkit-box-orient: vertical;
 }
 
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -273,9 +268,6 @@
   width: 100%;
 }
 
-
-
-
 .price {
   font-size: 1.25rem;
   font-weight: 700;
@@ -285,7 +277,6 @@
 
 .buyNowBtn {
   background-color: var(--color-green-dark);
-  /* Replacing light hover with solid dark green */
   color: white;
   border: 1px solid var(--color-green-dark);
   width: 100%;
@@ -301,8 +292,32 @@
 }
 
 .buyNowBtn:hover {
+  background-color: var(--color-green-primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(55, 83, 65, 0.1);
+}
+
+.contactBtn {
   background-color: transparent;
   color: var(--color-green-dark);
+  border: 1px solid var(--color-green-dark);
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.contactBtn:hover {
+  background-color: var(--color-green-dark);
+  color: white;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(55, 83, 65, 0.1);
 }

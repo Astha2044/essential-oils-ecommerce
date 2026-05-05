@@ -20,7 +20,7 @@ export default function ProductsPage() {
   return (
     <div className={styles.productsPage}>
       <Navbar />
-      
+
       {/* Shop Hero Section */}
       <header className={styles.shopHero}>
         <div className={styles.heroContent}>
@@ -77,7 +77,6 @@ export default function ProductsPage() {
         </section>
       </main>
 
-      {/* Premium Why Choose Section */}
       <section className={styles.premiumWhySection}>
         <div className={styles.whyBackground}></div>
         <div className={styles.mainContainer}>
