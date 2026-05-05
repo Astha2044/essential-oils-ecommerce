@@ -30,6 +30,7 @@ export default function ProductList() {
             className={`${styles.categoryBtn} ${activeCategory === cat ? styles.activeCategory : ''}`}
             onClick={() => setActiveCategory(cat)}
             type="button"
+            suppressHydrationWarning
           >
             {cat}
           </button>
