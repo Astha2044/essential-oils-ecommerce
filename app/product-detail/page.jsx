@@ -9,6 +9,7 @@ import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaMinus, FaPlus, FaCartPlu
 import styles from "../../styles/ProductDetail.module.css";
 
 export default function ProductDetailPage() {
+  const [activeImage, setActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("benefits");
 
@@ -16,10 +17,13 @@ export default function ProductDetailPage() {
     name: "Peppermint Essential Oil",
     price: 24.99,
     description: "Pure, therapeutic-grade peppermint oil distilled from the finest Mentha piperita leaves. Experience the cooling, invigorating aroma that clears the mind and refreshes the soul.",
-    image: "/images/img4.png",
+    images: ["/images/img4.png", "/images/product_1.png", "/images/img10.png"],
     scientificName: "Mentha Piperita",
     origin: "Italy",
     extraction: "Steam Distilled",
+    purity: "100% Pure & Organic",
+    note: "Strong, Fresh, Menthol",
+    plantPart: "Leaves & Flowers",
     benefits: [
       "Naturally cooling and refreshing for the skin",
       "Helps promote mental clarity and focus",
@@ -50,10 +54,10 @@ export default function ProductDetailPage() {
                 <div className={styles.imageDecoration}></div>
                 <div className={styles.archedFrame}>
                   <Image
-                    src={product.image}
+                    src={product.images[activeImage]}
                     alt={product.name}
-                    width={600}
-                    height={700}
+                    width={500}
+                    height={600}
                     className={styles.image}
                     priority
                   />
@@ -61,6 +65,19 @@ export default function ProductDetailPage() {
                 <div className={styles.floatingBadge}>
                   <FaLeaf /> 100% Organic
                 </div>
+              </div>
+
+              {/* Thumbnails */}
+              <div className={styles.thumbnails}>
+                {product.images.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className={`${styles.thumbnail} ${activeImage === idx ? styles.active : ""}`}
+                    onClick={() => setActiveImage(idx)}
+                  >
+                    <img src={img} alt={`Thumbnail ${idx + 1}`} className={styles.thumbImage} />
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -87,19 +104,9 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Purchase Controls */}
-              <div className={styles.purchaseControls}>
-                <div className={styles.quantitySelector}>
-                  <button onClick={() => setQuantity(Math.max(1, quantity - 1))}><FaMinus /></button>
-                  <span>{quantity}</span>
-                  <button onClick={() => setQuantity(quantity + 1)}><FaPlus /></button>
-                </div>
-                <button className={styles.addToCartBtn}>
-                  <FaCartPlus /> Add to Cart
-                </button>
-              </div>
 
-              <Link href="/checkout" className={styles.buyNowBtn}>
+
+              <Link href="/contact" className={styles.buyNowBtn}>
                 Buy Now
               </Link>
 
@@ -109,24 +116,62 @@ export default function ProductDetailPage() {
                   <button
                     className={activeTab === "benefits" ? styles.activeTab : ""}
                     onClick={() => setActiveTab("benefits")}
+                    suppressHydrationWarning
                   >
                     Benefits
                   </button>
                   <button
+                    className={activeTab === "details" ? styles.activeTab : ""}
+                    onClick={() => setActiveTab("details")}
+                    suppressHydrationWarning
+                  >
+                    Information
+                  </button>
+                  <button
                     className={activeTab === "usage" ? styles.activeTab : ""}
                     onClick={() => setActiveTab("usage")}
+                    suppressHydrationWarning
                   >
                     How to Use
                   </button>
                 </div>
                 <div className={styles.tabContent}>
-                  {activeTab === "benefits" ? (
+                  {activeTab === "benefits" && (
                     <ul className={styles.benefitList}>
                       {product.benefits.map((b, i) => (
                         <li key={i}><FaLeaf /> {b}</li>
                       ))}
                     </ul>
-                  ) : (
+                  )}
+                  {activeTab === "details" && (
+                    <div className={styles.specGrid}>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Botanical Name</span>
+                        <span className={styles.specValue}>{product.scientificName}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Extraction</span>
+                        <span className={styles.specValue}>{product.extraction}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Aromatic Note</span>
+                        <span className={styles.specValue}>{product.note}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Plant Part</span>
+                        <span className={styles.specValue}>{product.plantPart}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Purity</span>
+                        <span className={styles.specValue}>{product.purity}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Origin</span>
+                        <span className={styles.specValue}>{product.origin}</span>
+                      </div>
+                    </div>
+                  )}
+                  {activeTab === "usage" && (
                     <p className={styles.usageText}>{product.usage}</p>
                   )}
                 </div>

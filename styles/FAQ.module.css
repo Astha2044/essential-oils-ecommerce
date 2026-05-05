@@ -133,8 +133,6 @@
   }
 }
 
-
-
 /* Accordion Styling */
 .accordion {
   display: flex;
@@ -156,7 +154,7 @@
 }
 
 .accordionHeader {
-  padding: 1.75rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -166,7 +164,7 @@
 
 .question {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--color-green-dark);
   margin: 0;
   padding-right: 2rem;
@@ -216,7 +214,7 @@
   }
 
   .accordionHeader {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .question {

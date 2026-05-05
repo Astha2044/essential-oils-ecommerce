@@ -20,7 +20,7 @@ const POSTS = [
     date: "May 5, 2024",
     category: "Lifestyle",
     excerpt: "Integrating essential oils into your routine doesn't have to be complicated. Discover our top tips for morning and evening aromatherapy.",
-    image: "/images/product_2.png"
+    image: "/images/img10.png"
   },
   {
     id: 3,

@@ -10,7 +10,7 @@ export default function ProductCard({ id, name, price, image }) {
 
   const handleBuyNow = (e) => {
     e.preventDefault();
-    router.push("/products");
+    router.push("/contact");
   };
 
   return (
