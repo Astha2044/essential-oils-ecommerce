@@ -1,4 +1,8 @@
-"use client";
+export const metadata = {
+  title: "Therapeutic Benefits | VS Naturals",
+  description: "Discover the therapeutic benefits of essential oils for mind and body.",
+};
+
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import styles from "../../styles/BenefitsPage.module.css";

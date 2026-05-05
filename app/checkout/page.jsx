@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Checkout | VS Naturals",
+  description: "Securely checkout your premium essential oils order.",
+};
+
 export default function CheckoutPage() {
   return (
     <div style={{ padding: '4rem', textAlign: 'center', fontFamily: 'serif' }}>

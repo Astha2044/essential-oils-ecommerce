@@ -9,11 +9,16 @@ import PromoBanner from "../components/PromoBanner";
 import BrandStory from "../components/BrandStory";
 import styles from "../styles/page.module.css";
 
+export const metadata = {
+  title: "VS Naturals & Essentials | Premium Essential Oils",
+  description: "Discover pure, potent, and beautifully crafted essential oils for wellness and aromatherapy.",
+};
+
 export default function Home() {
   return (
     <div className={styles.main}>
       <Navbar />
-      
+
       {/* Hero & Benefits with overlap for premium look */}
       <div className={styles.topSection}>
         <Hero />
@@ -29,15 +34,15 @@ export default function Home() {
           <ProductList />
         </section>
 
-        
+
         <section className={styles.beigeSection}>
           <BrandStory />
         </section>
-        
+
         <section className={styles.whiteSection}>
           <Testimonial />
         </section>
-        
+
         <section className={styles.beigeSection}>
           <FAQ />
         </section>

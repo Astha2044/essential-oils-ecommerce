@@ -43,7 +43,7 @@ export default function ContactPage() {
                   <h2 className={styles.sectionTitle}>Get In Touch</h2>
                   <p className={styles.sectionSubtitle}>We typically respond within 24 hours.</p>
                 </div>
-                
+
                 <div className={styles.contactList}>
                   <div className={styles.contactItem}>
                     <div className={styles.iconCircle}><FaLocationDot /></div>
@@ -85,34 +85,34 @@ export default function ContactPage() {
                   <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.inputGroup}>
                       <label>Your Name</label>
-                      <input 
-                        type="text" 
-                        placeholder="John Doe" 
-                        required 
+                      <input
+                        type="text"
+                        placeholder="John Doe"
+                        required
                         value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className={styles.input}
                       />
                     </div>
                     <div className={styles.inputGroup}>
                       <label>Email Address</label>
-                      <input 
-                        type="email" 
-                        placeholder="john@example.com" 
-                        required 
+                      <input
+                        type="email"
+                        placeholder="john@example.com"
+                        required
                         value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className={styles.input}
                       />
                     </div>
                     <div className={styles.inputGroup}>
                       <label>Your Message</label>
-                      <textarea 
-                        rows="5" 
-                        placeholder="How can we help you today?" 
+                      <textarea
+                        rows="5"
+                        placeholder="How can we help you today?"
                         required
                         value={formData.message}
-                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className={styles.textarea}
                       ></textarea>
                     </div>

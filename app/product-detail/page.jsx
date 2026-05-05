@@ -49,8 +49,8 @@ export default function ProductDetailPage() {
               <div className={styles.imageWrapper}>
                 <div className={styles.imageDecoration}></div>
                 <div className={styles.archedFrame}>
-                  <Image 
-                    src={product.image} 
+                  <Image
+                    src={product.image}
                     alt={product.name}
                     width={600}
                     height={700}
@@ -68,7 +68,7 @@ export default function ProductDetailPage() {
             <div className={styles.contentColumn}>
               <span className={styles.category}>{product.scientificName} • {product.origin}</span>
               <h1 className={styles.title}>{product.name}</h1>
-              
+
               <div className={styles.priceSection}>
                 <span className={styles.price}>${product.price.toFixed(2)}</span>
                 <span className={styles.stockBadge}>In Stock</span>
@@ -106,14 +106,14 @@ export default function ProductDetailPage() {
               {/* Tabs Section */}
               <div className={styles.tabsContainer}>
                 <div className={styles.tabsHeader}>
-                  <button 
-                    className={activeTab === "benefits" ? styles.activeTab : ""} 
+                  <button
+                    className={activeTab === "benefits" ? styles.activeTab : ""}
                     onClick={() => setActiveTab("benefits")}
                   >
                     Benefits
                   </button>
-                  <button 
-                    className={activeTab === "usage" ? styles.activeTab : ""} 
+                  <button
+                    className={activeTab === "usage" ? styles.activeTab : ""}
                     onClick={() => setActiveTab("usage")}
                   >
                     How to Use
