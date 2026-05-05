@@ -1,89 +1,110 @@
-import { FaDroplet, FaWind, FaSun, FaClock, FaLeaf, FaShieldHeart } from "react-icons/fa6";
-import styles from "../styles/Benefits.module.css";
+import { FaFaceSmile, FaDroplet, FaWind, FaSun, FaClock, FaHeartPulse } from "react-icons/fa6";
+import styles from "../styles/BenefitsHero.module.css";
+import Image from "next/image";
 
-const benefits = [
+const leftBenefits = [
+  {
+    title: "Revitalize The Skin",
+    desc: "Reduces wrinkles and prevents dryness with potent botanical antioxidants.",
+    icon: <FaFaceSmile />
+  },
   {
     title: "Deep Hydration",
-    desc: "Keep your skin hydrated and glowing all day long with our nutrient-rich formulas.",
-    icon: <FaDroplet size={24} />
+    desc: "Locks in moisture to prevent dryness and maintain a supple glow.",
+    icon: <FaDroplet />
   },
   {
-    title: "Calming Effect",
-    desc: "Relieve stress and tension with the soothing power of pure aromatherapy.",
-    icon: <FaWind size={24} />
+    title: "Refined Texture",
+    desc: "Reduces rough patches and blemishes for a smooth, porcelain finish.",
+    icon: <FaWind />
+  }
+];
+
+const rightBenefits = [
+  {
+    title: "Luminous Glow",
+    desc: "Provides a natural, healthy radiance that shines from within.",
+    icon: <FaSun />
   },
   {
-    title: "Natural Glow",
-    desc: "Achieve a healthy, radiant complexion naturally with botanical extracts.",
-    icon: <FaSun size={24} />
+    title: "Timeless Beauty",
+    desc: "Rejuvenates fine lines and restores the skin's youthful elasticity.",
+    icon: <FaClock />
   },
   {
-    title: "Anti-Aging",
-    desc: "Reduce the appearance of fine lines and wrinkles with powerful antioxidants.",
-    icon: <FaClock size={24} />
-  },
-  {
-    title: "Pure & Organic",
-    desc: "No harsh chemicals, only 100% pure and organic botanical extracts for your skin.",
-    icon: <FaLeaf size={24} />
-  },
-  {
-    title: "Quick Absorption",
-    desc: "Our non-greasy formula absorbs quickly, leaving your skin soft and smooth.",
-    icon: <FaShieldHeart size={24} />
+    title: "Zen Massages",
+    desc: "Enhances your ritual by providing a silky, therapeutic application.",
+    icon: <FaHeartPulse />
   }
 ];
 
 export default function Benefits() {
-  // Split benefits for layout: 3 on left, 3 on right
-  const leftBenefits = benefits.slice(0, 3);
-  const rightBenefits = benefits.slice(3, 6);
-
   return (
-    <section className={styles.section}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>What are The Benefits of Using This Product</h2>
-        <p className={styles.subtitle}>
-          Discover the natural power of our essential oils and how they can transform your daily self-care routine.
-        </p>
-      </div>
-
-      <div className={styles.content}>
-        {/* Left Column */}
-        <div className={styles.column}>
-          {leftBenefits.map((item, idx) => (
-            <div key={idx} className={styles.benefitItem}>
-              <div className={styles.iconWrapper}>
-                {item.icon}
-              </div>
-              <div className={styles.itemText}>
-                <h4 className={styles.itemTitle}>{item.title}</h4>
-                <p className={styles.itemDesc}>{item.desc}</p>
-              </div>
-            </div>
-          ))}
+    <section className={styles.benefitsContainer}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <span className={styles.preTitle}>Our Philosophy</span>
+          <h2 className={styles.mainTitle}>Botanical Wisdom for Soil & Soul</h2>
+          <p className={styles.mainSubtitle}>
+            Our therapeutic-grade oils are meticulously extracted to preserve nature's most potent healing properties, offering transformative benefits for your daily wellness ritual.
+          </p>
         </div>
 
-        {/* Center Image */}
-        <div className={styles.centerColumn}>
-          <div className={styles.imageWrapper}>
-            <img src="/images/eucalyptus_bottle.png" alt="Essential Oil Bottle" className={styles.centerImage} />
+        <div className={styles.contentWrapper}>
+          <div className={`${styles.column} ${styles.columnLeft}`}>
+            {leftBenefits.map((item, idx) => (
+              <div
+                key={idx}
+                className={styles.benefitItem}
+              >
+                <div className={styles.iconWrapper}>
+                  <div className={styles.iconDecoration}></div>
+                  <div className={styles.iconArchedFrame}>
+                    {item.icon}
+                  </div>
+                </div>
+                <div className={styles.benefitTextContent}>
+                  <h3 className={styles.benefitTitle}>{item.title}</h3>
+                  <p className={styles.benefitText}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
 
-        {/* Right Column */}
-        <div className={styles.column}>
-          {rightBenefits.map((item, idx) => (
-            <div key={idx} className={styles.benefitItem}>
-              <div className={styles.iconWrapper}>
-                {item.icon}
+          <div className={styles.centerColumn}>
+            <div className={styles.imageBox}>
+              <div className={styles.archedImageFrame}>
+                <Image
+                  src="/images/ref.jpeg"
+                  alt="Peppermint Essential Oil"
+                  width={500}
+                  height={700}
+                  className={styles.centerImage}
+                />
               </div>
-              <div className={styles.itemText}>
-                <h4 className={styles.itemTitle}>{item.title}</h4>
-                <p className={styles.itemDesc}>{item.desc}</p>
-              </div>
+              <div className={styles.imageBloomingDecoration}></div>
             </div>
-          ))}
+          </div>
+
+          <div className={`${styles.column} ${styles.columnRight}`}>
+            {rightBenefits.map((item, idx) => (
+              <div
+                key={idx}
+                className={styles.benefitItem}
+              >
+                <div className={styles.iconWrapper}>
+                  <div className={styles.iconDecoration}></div>
+                  <div className={styles.iconArchedFrame}>
+                    {item.icon}
+                  </div>
+                </div>
+                <div className={styles.benefitTextContent}>
+                  <h3 className={styles.benefitTitle}>{item.title}</h3>
+                  <p className={styles.benefitText}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

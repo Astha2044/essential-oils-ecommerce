@@ -6,34 +6,49 @@ import FAQ from "../components/FAQ";
 import Testimonial from "../components/Testimonial";
 import Benefits from "../components/Benefits";
 import PromoBanner from "../components/PromoBanner";
+import BrandStory from "../components/BrandStory";
 import styles from "../styles/page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.main}>
+      <Navbar />
       
-      {/* Top Section (White) */}
+      {/* Hero & Benefits with overlap for premium look */}
       <div className={styles.topSection}>
-        <Navbar />
         <Hero />
-        <div className={styles.benefitsWrapper}>
-          <Benefits />
-        </div>
       </div>
 
-      {/* Middle Section (Beige) */}
+
       <main className={styles.middleSection}>
-        <ProductList />
-        <FAQ />
-        <Testimonial />
+        <section className={styles.whiteSection}>
+          <Benefits />
+        </section>
+
+        <section className={styles.whiteSection}>
+          <ProductList />
+        </section>
+
+        
+        <section className={styles.beigeSection}>
+          <BrandStory />
+        </section>
+        
+        <section className={styles.whiteSection}>
+          <Testimonial />
+        </section>
+        
+        <section className={styles.beigeSection}>
+          <FAQ />
+        </section>
       </main>
 
-      {/* Bottom Section */}
       <div className={styles.bottomSection}>
         <PromoBanner />
         <Footer />
       </div>
 
     </div>
+
   );
 }

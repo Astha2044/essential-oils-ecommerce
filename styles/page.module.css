@@ -2,41 +2,37 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 .topSection {
-  background-color: var(--color-background);
+  background-color: var(--color-beige);
+  /* Start with beige for hero */
   position: relative;
 }
 
-.benefitsWrapper {
-  position: relative;
-  z-index: 10;
-  padding: 0;
+
+.whiteSection {
+  background-color: #ffffff;
+  padding: var(--section-padding-y) 0;
+}
+
+.beigeSection {
+  background-color: var(--color-beige);
+  padding: var(--section-padding-y) 0;
 }
 
 .middleSection {
-  background-color: var(--color-beige);
-  padding-top: 1rem;
-  padding-bottom: 6rem;
+  background-color: #ffffff;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 0;
   position: relative;
 }
 
-@media (min-width: 1024px) {
-  .middleSection {
-    padding-top: 2rem;
-    padding-bottom: 10rem;
-  }
-}
-
-
 
 .bottomSection {
-  background-color: var(--color-background);
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
 }

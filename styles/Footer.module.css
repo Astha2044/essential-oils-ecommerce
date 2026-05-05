@@ -1,8 +1,10 @@
 .footer {
   width: 100%;
-  background-color: #F4F1EA;
-  padding: 5rem 2rem 3rem 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #E6EEE9;
+  padding-top: clamp(3rem, 8vh, 6rem);
+  padding-bottom: 1.5rem;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
   font-family: var(--font-sans);
 }
 
@@ -29,15 +31,49 @@
 
 .leftCol {
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .leftCol {
+    flex-direction: row;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+}
+
+.footerLogo {
+  height: clamp(80px, 15vw, 110px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex-shrink: 0;
 }
 
 .brandTitle {
   font-family: var(--font-serif);
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 600;
   color: var(--color-green-dark);
-  margin-bottom: 2.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
+  margin: 0;
 }
 
 .linksGrid {
@@ -49,6 +85,7 @@
 @media (min-width: 768px) {
   .linksGrid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
 }
 
@@ -57,7 +94,6 @@
   font-weight: 700;
   color: var(--color-green-dark);
   margin-bottom: 1.5rem;
-  /* font-family: var(--font-sans); */
 }
 
 .list {
@@ -69,21 +105,23 @@
 }
 
 .list a {
-  color: #1a1a1a;
+  color: #2D4636;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .list a:hover {
-  opacity: 0.7;
+  color: var(--color-green-primary);
+  transform: translateX(3px);
 }
 
 .socialIcons {
   margin-top: 3rem;
   display: flex;
-  gap: 0.8rem;
+  gap: 0.65rem;
+  flex-wrap: wrap;
 }
 
 .socialIcon {
@@ -104,9 +142,10 @@
 }
 
 .rightCol {
-  flex: 1.2;
+  flex: 1;
   width: 100%;
-  max-width: 500px;
+  max-width: 420px;
+  padding-top: 0.25rem;
 }
 
 .rightCol .blockTitle {
@@ -115,8 +154,15 @@
 
 .newsletter {
   display: flex;
+  flex-direction: column;
   gap: 0.75rem;
   width: 100%;
+}
+
+@media (min-width: 480px) {
+  .newsletter {
+    flex-direction: row;
+  }
 }
 
 .emailInput {
@@ -125,7 +171,8 @@
   border-radius: 9999px;
   border: 1px solid #E5E7EB;
   background-color: white;
-  font-size: 1rem;
+  font-size: 1.15rem;
+  /* Increased for consistency */
   outline: none;
   color: #1a1a1a;
 }
@@ -134,12 +181,10 @@
   background-color: #2D4636;
   color: white;
   border: 1px solid transparent;
-  border-radius: 9999px;
-  border: none;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.15rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -155,12 +200,12 @@
 /* Bottom Bar */
 .bottomBar {
   padding-top: 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(55, 83, 65, 0.1);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
-  color: #1a1a1a;
+  color: #375341;
   font-size: 0.95rem;
   font-weight: 500;
 }
@@ -178,33 +223,33 @@
 }
 
 .legalLinks a {
-  color: #1a1a1a;
+  color: #375341;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .legalLinks a:hover {
-  opacity: 0.6;
+  color: var(--color-green-primary);
 }
 
-/* Popup Message */
 .popup {
   position: fixed;
-  top: 6rem;
+  top: 2rem;
   right: 2rem;
   background-color: var(--color-green-dark, #2D4636);
   color: white;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  font-weight: 600;
-  z-index: 100;
-  animation: slideDown 0.3s ease-out forwards;
+  padding: 1.25rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  z-index: 5000;
+  animation: popupSlideDown 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  pointer-events: none;
 }
 
-@keyframes slideDown {
+@keyframes popupSlideDown {
   from {
-    transform: translateY(-20px);
+    transform: translateY(-40px);
     opacity: 0;
   }
 

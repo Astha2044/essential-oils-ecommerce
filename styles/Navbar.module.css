@@ -2,14 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  padding: 1rem var(--container-px);
+  background-color: rgba(240, 244, 242, 0.9);
+  backdrop-filter: blur(15px);
   position: sticky;
   top: 0;
-  z-index: 50;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(55, 83, 65, 0.05);
   transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(55, 83, 65, 0.05);
 }
 
 .logoContainer {
@@ -21,9 +22,15 @@
 
 .logoIcon {
   width: auto;
-  height: 3.5rem;
-  /* Adjusted logo size */
+  height: 4rem;
   object-fit: contain;
+}
+
+.mobileHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 60;
 }
 
 .mobileMenuBtn {
@@ -82,8 +89,8 @@
 
 .navLink {
   color: var(--color-green-dark);
-  font-weight: 600;
-  font-size: 1.15rem;
+  font-weight: bold;
+  font-size: 1.5rem;
   /* Improved size */
   letter-spacing: 0.02em;
   transition: all 0.3s ease;
@@ -119,7 +126,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: auto;
+  margin-top: 2rem;
 }
 
 .signInBtnMobile {
@@ -132,7 +139,11 @@
   font-size: 1rem;
   cursor: pointer;
   width: 100%;
+  display: block;
+  text-align: center;
+  font-family: var(--font-sans), sans-serif;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .iconBtn {
@@ -181,14 +192,16 @@
 
 @media (min-width: 1024px) {
   .navbar {
-    padding: 0.75rem 4rem;
+    padding: 0.5rem var(--container-px);
   }
 
   .logoContainer {
-    width: 25%;
+    width: auto;
+    flex-shrink: 0;
   }
 
-  .mobileMenuBtn {
+  .mobileMenuBtn,
+  .mobileHeaderRight {
     display: none;
   }
 
@@ -200,20 +213,20 @@
     position: static;
     flex-direction: row;
     justify-content: center;
-    width: 50%;
+    flex: 1;
     max-width: none;
     height: auto;
     background-color: transparent;
     padding: 0;
-    gap: 2.5rem;
+    gap: 1.75rem;
     box-shadow: none;
     transition: none;
   }
 
   .navLink {
-    font-size: 1.05rem;
-    /* Increased for desktop */
+    font-size: 1rem;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .navLink:hover {
@@ -232,7 +245,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 1.25rem;
-    width: 25%;
+    gap: 1.5rem;
+    width: auto;
+    flex-shrink: 0;
   }
 }

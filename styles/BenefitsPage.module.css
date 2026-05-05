@@ -1,0 +1,312 @@
+.main {
+  width: 100%;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+/* Benefits Hero Section */
+.benefitsHero {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(rgba(55, 83, 65, 0.7), rgba(55, 83, 65, 0.7)), url('/images/about.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.heroContent {
+  max-width: 900px;
+  padding: 0 var(--container-px);
+  animation: softFadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: var(--h1-size);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid Section */
+.gridSection {
+  padding: var(--section-padding-y) 0;
+  background-color: white;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: var(--h2-size);
+  color: var(--color-green-dark);
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  color: #6B7280;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.benefitItem {
+  background-color: #fcfdfc;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  border: 1px solid rgba(55, 83, 65, 0.05);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: softFadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.benefitItem:hover {
+  transform: translateY(-12px);
+  background-color: white;
+  box-shadow: 0 30px 60px rgba(55, 83, 65, 0.08);
+  border-color: var(--color-green-soft);
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  background-color: var(--color-green-soft);
+  color: var(--color-green-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin: 0 auto 2rem auto;
+  transition: all 0.5s ease;
+}
+
+.benefitItem:hover .iconWrapper {
+  background-color: var(--color-green-dark);
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.benefitTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-green-dark);
+  margin-bottom: 1rem;
+}
+
+.benefitText {
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* Usage Section */
+.usageSection {
+  padding: var(--section-padding-y) 0;
+  background-color: #f9fafb;
+}
+
+.usageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .usageGrid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.usageImageWrapper {
+  position: relative;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.usageImage {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 12rem 12rem 2rem 2rem;
+  box-shadow: 0 40px 100px rgba(55, 83, 65, 0.15);
+  position: relative;
+  z-index: 2;
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.usageImageWrapper:hover .usageImage {
+  transform: scale(1.02) translateY(-15px);
+}
+
+.imageDecoration {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12rem 12rem 2rem 2rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.imageDecoration::before,
+.imageDecoration::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px dashed var(--color-green-primary);
+  border-radius: 12rem 12rem 2rem 2rem;
+  opacity: 0.2;
+  transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.imageDecoration::after {
+  transform: scale(1.05) rotate(2deg);
+  border-style: solid;
+  opacity: 0.1;
+}
+
+.usageImageWrapper:hover .imageDecoration::before {
+  transform: scale(1.08) rotate(-2deg);
+  opacity: 0.4;
+}
+
+.usageImageWrapper:hover .imageDecoration::after {
+  transform: scale(1.12) rotate(4deg);
+  opacity: 0.2;
+}
+
+.glassBadge {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: softFloat 5s ease-in-out infinite;
+}
+
+.glassBadge span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.glassBadge strong {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-green-dark);
+}
+
+/* Safety Section */
+.safetySection {
+  padding: var(--section-padding-y) 0;
+  background-color: white;
+}
+
+.safetyCard {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fdf2f2;
+  padding: 4rem;
+  border-radius: 2.5rem;
+  text-align: center;
+  border: 1px solid #fee2e2;
+}
+
+.safetyCard p {
+  color: #b91c1c;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.disclaimer {
+  font-weight: 700;
+  color: #991b1b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+
+@keyframes softFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes softFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .safetyCard {
+    padding: 2.5rem;
+  }
+}

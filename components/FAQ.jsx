@@ -36,16 +36,16 @@ export default function FAQ() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        
+
         <div className={styles.leftColumn}>
-          <h2 className={styles.title}>Frequently Asked<br/>Questions</h2>
+          <h2 className={styles.title}>Frequently Asked<br />Questions</h2>
           <p className={styles.subtitle}>
             Frequently asked questions (FAQ) provide answers to common inquiries about our natural essential oils.
           </p>
-          
+
           <div className={styles.imageWrapper}>
             <div className={styles.imageBg}></div>
-            <img src="/images/peppermint_hero.png" alt="Essential Oil Bottle" className={styles.image} />
+            <img src="/images/img1.png" alt="Essential Oil Bottle" className={styles.image} />
             <div className={styles.floatingTag}>100% Organic</div>
           </div>
         </div>
@@ -53,11 +53,11 @@ export default function FAQ() {
         <div className={styles.rightColumn}>
           <div className={styles.accordion}>
             {faqs.map((faq, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`${styles.accordionItem} ${activeIndex === index ? styles.active : ''}`}
               >
-                <div 
+                <div
                   className={styles.accordionHeader}
                   onClick={() => setActiveIndex(activeIndex === index ? -1 : index)}
                 >
