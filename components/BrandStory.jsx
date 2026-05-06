@@ -1,5 +1,6 @@
 import styles from "../styles/BrandStory.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle } from "react-icons/fa6";
 
 export default function BrandStory() {
@@ -7,28 +8,6 @@ export default function BrandStory() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.contentGrid}>
-
-          {/* Image Column */}
-          <div className={styles.imageColumn}>
-            <div className={styles.imageWrapper}>
-              <div className={styles.imageDecoration}></div>
-              <div className={styles.imageFrame}>
-                <Image
-                  src="/images/lavender_bottle.png"
-                  alt="Brand Story"
-                  width={600}
-                  height={700}
-                  className={styles.image}
-                />
-              </div>
-            </div>
-            <div className={styles.glassBadge}>
-
-              <strong>100% Pure</strong>
-              <span>Nature's Essence</span>
-            </div>
-          </div>
-
           {/* Text Column */}
           <div className={styles.textColumn}>
             <span className={styles.preTitle}>Our Heritage</span>
@@ -55,9 +34,29 @@ export default function BrandStory() {
               </div>
             </div>
 
-            <button className={styles.discoverBtn} suppressHydrationWarning>
+            <Link href="/about" className={styles.discoverBtn} suppressHydrationWarning>
               Discover Our Story
-            </button>
+            </Link>
+          </div>
+
+          {/* Image Column */}
+          <div className={styles.imageColumn}>
+            <div className={styles.imageWrapper}>
+              <div className={styles.imageDecoration}></div>
+              <div className={styles.imageFrame}>
+                <Image
+                  src="/images/lavender_bottle.png"
+                  alt="Brand Story"
+                  width={600}
+                  height={700}
+                  className={styles.image}
+                />
+              </div>
+            </div>
+            <div className={styles.glassBadge}>
+              <strong>100% Pure</strong>
+              <span>Nature's Essence</span>
+            </div>
           </div>
         </div>
       </div>

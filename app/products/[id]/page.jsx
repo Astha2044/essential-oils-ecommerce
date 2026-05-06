@@ -5,7 +5,7 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaMinus, FaPlus, FaCartPlus } from "react-icons/fa6";
+import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaMinus, FaPlus, FaCartPlus, FaWhatsapp, FaEnvelope } from "react-icons/fa6";
 import { ALL_PRODUCTS } from "../../../data/products";
 import styles from "../../../styles/ProductDetail.module.css";
 
@@ -102,11 +102,19 @@ export default function ProductDetailPage({ params }) {
                 </div>
               </div>
 
-
-
-              <Link href="/contact" className={styles.buyNowBtn}>
-                Buy Now
-              </Link>
+              <div className={styles.buttonGroup}>
+                <a 
+                  href={`https://wa.me/1234567890?text=Hi, I'm interested in ${product.name}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.whatsappBtn}
+                >
+                  <FaWhatsapp /> WhatsApp
+                </a>
+                <Link href="/contact" className={styles.buyNowBtn}>
+                  Buy Now
+                </Link>
+              </div>
 
               {/* Tabs Section */}
               <div className={styles.tabsContainer}>

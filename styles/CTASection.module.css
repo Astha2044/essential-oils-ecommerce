@@ -1,0 +1,108 @@
+.section {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--color-beige);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.preTitle {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-green-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-green-dark);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4B5563;
+  margin-bottom: 3.5rem;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  background-color: var(--color-green-dark);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 15px 35px rgba(55, 83, 65, 0.2);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.primaryBtn:hover {
+  background-color: var(--color-green-primary);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(55, 83, 65, 0.25);
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  border: 1.5px solid var(--color-green-dark);
+  color: var(--color-green-dark);
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(55, 83, 65, 0.05);
+  transform: translateY(-6px);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+  }
+
+  .btnGroup {
+    gap: 1rem;
+  }
+}

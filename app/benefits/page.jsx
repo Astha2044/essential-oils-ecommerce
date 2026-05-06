@@ -5,7 +5,9 @@ export const metadata = {
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import CTASection from "../../components/CTASection";
 import styles from "../../styles/BenefitsPage.module.css";
+import SafetySection from "../../components/SafetySection";
 import {
   FaFaceSmile,
   FaMagnifyingGlass,
@@ -122,17 +124,9 @@ export default function BenefitsPage() {
           </div>
         </section>
 
-        {/* Safety Section */}
-        <section className={styles.safetySection}>
-          <div className={styles.container}>
-            <div className={styles.safetyCard}>
-              <h2 className={styles.sectionTitle}>Safety & Precautions</h2>
-              <p>While our oils are 100% pure, they are highly potent. Always dilute with a carrier oil before skin application. Avoid contact with eyes and sensitive areas. Keep out of reach of children and consult a professional if pregnant or nursing.</p>
-              <div className={styles.disclaimer}>* External Use Only</div>
-            </div>
-          </div>
-        </section>
+        <SafetySection />
       </main>
+      <CTASection />
       <Footer />
     </>
   );

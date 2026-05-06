@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import CTASection from "../../components/CTASection";
 import styles from "../../styles/Legal.module.css";
 
 export const metadata = {
@@ -43,6 +44,7 @@ export default function TermsPage() {
         </section>
       </main>
 
+      <CTASection />
       <Footer />
     </div>
   );

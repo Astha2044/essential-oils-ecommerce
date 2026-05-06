@@ -2,25 +2,43 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(15px);
+  background-color: transparent;
+  backdrop-filter: none;
   position: sticky;
   top: 1.5rem;
   z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.03);
   margin: 0 auto 2rem auto;
   width: 95%;
   max-width: 1200px;
   border-radius: 9999px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
 }
+
+.navbar.scrolled {
+  top: 0;
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+  padding: 0.6rem 5%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  margin-top: 0;
+}
+
+.navbar.scrolled .logoIcon {
+  height: 3.2rem;
+}
+
+
 
 @media (max-width: 1024px) {
   .navbar {
     top: 1rem;
     width: 92%;
+    border: none;
+    box-shadow: none;
   }
 }
 
@@ -62,14 +80,25 @@
   width: 80%;
   max-width: 300px;
   height: 100vh;
-  background-color: var(--background);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(15px);
   display: flex;
   flex-direction: column;
   padding: 6rem 2rem 2rem 2rem;
   gap: 2rem;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease-in-out;
   z-index: 65;
+}
+
+.mobileMenuClose {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navLinks.mobileOpen {
@@ -196,7 +225,7 @@
 
 @media (min-width: 1024px) {
   .navbar {
-    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    padding: 0.8rem 1rem 0.8rem 2rem;
   }
 
   .logoContainer {
@@ -210,7 +239,8 @@
   .mobileMenuBtn,
   .mobileHeaderRight,
   .mobileOverlay,
-  .mobileActions {
+  .mobileActions,
+  .mobileMenuClose {
     display: none;
   }
 
@@ -234,10 +264,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgba(75, 113, 88, 0.12); /* Visible botanical green background */
+    background-color: rgba(75, 113, 88, 0.12);
+    /* Visible botanical green background */
     padding: 0.3rem;
     border-radius: 9999px;
-    gap: 0.35rem; /* Adjustable gap between links */
+    gap: 0.35rem;
+    /* Adjustable gap between links */
     border: 1px solid rgba(75, 113, 88, 0.08);
   }
 

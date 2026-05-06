@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import CTASection from "../../components/CTASection";
 import styles from "../../styles/HowItWorks.module.css";
 import { FaMagnifyingGlass, FaDroplet, FaHeartPulse } from "react-icons/fa6";
 
@@ -93,6 +94,7 @@ export default function HowItWorksPage() {
           </div>
         </section>
       </main>
+      <CTASection />
       <Footer />
     </>
   );

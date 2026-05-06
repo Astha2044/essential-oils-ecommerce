@@ -246,35 +246,41 @@
   color: var(--color-green-dark);
 }
 
-/* Safety Section */
+/* Usage Section Enhancements */
+.usageText {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.usageList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+.usageItem h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-green-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(55, 83, 65, 0.1);
+  display: inline-block;
+}
+
+.usageItem p {
+  color: #6B7280;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  padding-left: 0;
+}
+
+/* Safety Section placeholder - we use component now */
 .safetySection {
-  padding: var(--section-padding-y) 0;
-  background-color: white;
-}
-
-.safetyCard {
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: #fdf2f2;
-  padding: 4rem;
-  border-radius: 2.5rem;
-  text-align: center;
-  border: 1px solid #fee2e2;
-}
-
-.safetyCard p {
-  color: #b91c1c;
-  line-height: 1.8;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.disclaimer {
-  font-weight: 700;
-  color: #991b1b;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
+  display: none;
 }
 
 @keyframes softFloat {

@@ -7,6 +7,8 @@ import Testimonial from "../components/Testimonial";
 import Benefits from "../components/Benefits";
 import PromoBanner from "../components/PromoBanner";
 import BrandStory from "../components/BrandStory";
+import CTASection from "../components/CTASection";
+import SafetySection from "../components/SafetySection";
 import styles from "../styles/page.module.css";
 
 export const metadata = {
@@ -46,9 +48,11 @@ export default function Home() {
         <section className={styles.beigeSection}>
           <FAQ />
         </section>
+        <SafetySection />
       </main>
 
       <div className={styles.bottomSection}>
+        <CTASection />
         <PromoBanner />
         <Footer />
       </div>

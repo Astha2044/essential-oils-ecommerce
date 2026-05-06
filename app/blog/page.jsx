@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import CTASection from "../../components/CTASection";
 import styles from "../../styles/Blog.module.css";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -153,6 +154,7 @@ export default function BlogPage() {
           </div>
         </section>
       </main>
+      <CTASection />
       <Footer />
 
       {/* Popup Message */}

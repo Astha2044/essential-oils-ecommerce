@@ -2,7 +2,6 @@
   overflow: hidden;
 }
 
-
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -32,13 +31,10 @@
   position: relative;
   width: 100%;
   max-width: 360px;
-  /* Matched to FAQ image size */
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 
 .imageFrame {
   position: relative;
@@ -220,6 +216,7 @@
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--color-green-primary);
   cursor: pointer;
+  display: inline-block;
   transition: all 0.3s ease;
 }
 

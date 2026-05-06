@@ -565,3 +565,37 @@
     font-size: 2rem;
   }
 }
+
+.popup {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background-color: var(--color-green-dark);
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  font-weight: 700;
+  animation: popupSlideDown 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes popupSlideDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .popup {
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+    text-align: center;
+  }
+}

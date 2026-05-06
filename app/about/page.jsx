@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import CTASection from "../../components/CTASection";
 import styles from "../../styles/About.module.css";
 import { FaLeaf, FaDroplet, FaSpa, FaHeart } from "react-icons/fa6";
 import { PiPlantLight } from "react-icons/pi";
@@ -135,6 +136,7 @@ export default function AboutPage() {
         </section>
 
       </main>
+      <CTASection />
       <Footer />
     </>
   );

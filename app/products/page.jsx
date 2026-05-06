@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ProductCard from "../../components/ProductCard";
+import CTASection from "../../components/CTASection";
 import { ALL_PRODUCTS } from "../../data/products";
 import styles from "../../styles/Products.module.css";
 import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaFlask } from "react-icons/fa6";
@@ -12,6 +13,17 @@ const CATEGORIES = ["All", "Essential Oils", "Blends", "Roll-Ons"];
 
 export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [showNewsletterPopup, setShowNewsletterPopup] = useState(false);
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    setShowNewsletterPopup(true);
+    setNewsletterEmail("");
+    setTimeout(() => {
+      setShowNewsletterPopup(false);
+    }, 4000);
+  };
 
   const filteredProducts = activeCategory === "All"
     ? ALL_PRODUCTS
@@ -160,12 +172,14 @@ export default function ProductsPage() {
             <div className={styles.newsletterContent}>
               <h2 className={styles.newsletterTitle}>Elevate Your Botanical Ritual</h2>
               <p className={styles.newsletterText}>Join our exclusive circle to receive botanical guides and priority access to rare distillations.</p>
-              <form className={styles.newsletterForm}>
+              <form className={styles.newsletterForm} onSubmit={handleNewsletterSubmit}>
                 <div className={styles.inputGroup}>
                   <input
                     type="email"
                     placeholder="Your botanical sanctuary email"
                     required
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
                     className={styles.newsletterInput}
                   />
                   <button type="submit" className={styles.newsletterSubmit}>
@@ -178,7 +192,15 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      <CTASection />
       <Footer />
+
+      {/* Success Popup */}
+      {showNewsletterPopup && (
+        <div className={styles.popup}>
+          Welcome to the Circle! Successfully Subscribed.
+        </div>
+      )}
     </div>
   );
 }
