@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaMinus, FaPlus, FaCartPlus, FaWhatsapp, FaEnvelope } from "react-icons/fa6";
 import { ALL_PRODUCTS } from "../../../data/products";
+import ProductCard from "../../../components/ProductCard";
 import styles from "../../../styles/ProductDetail.module.css";
 
 export default function ProductDetailPage({ params }) {
@@ -103,10 +104,10 @@ export default function ProductDetailPage({ params }) {
               </div>
 
               <div className={styles.buttonGroup}>
-                <a 
-                  href={`https://wa.me/1234567890?text=Hi, I'm interested in ${product.name}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href={`https://wa.me/1234567890?text=Hi, I'm interested in ${product.name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={styles.whatsappBtn}
                 >
                   <FaWhatsapp /> WhatsApp
@@ -185,6 +186,32 @@ export default function ProductDetailPage({ params }) {
             </div>
           </div>
         </div>
+
+        {/* Suggested Products Section */}
+        <section className={styles.suggestionsSection}>
+          <div className={styles.container}>
+            <div className={styles.suggestionHeader}>
+              <h2 className={styles.suggestionTitle}>You May Also Like</h2>
+              <div className={styles.suggestionDivider}></div>
+            </div>
+
+            <div className={styles.suggestionGrid}>
+              {ALL_PRODUCTS
+                .filter(p => p.id !== productId)
+                .slice(0, 4)
+                .map(p => (
+                  <ProductCard
+                    key={p.id}
+                    id={p.id}
+                    name={p.name}
+                    price={p.price}
+                    image={p.image}
+                  />
+                ))
+              }
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

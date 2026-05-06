@@ -8,7 +8,7 @@
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: var(--section-padding-y) var(--container-px);
+  padding: 0 var(--container-px);
   background-color: #ffffff;
   position: relative;
   z-index: 5;
@@ -234,6 +234,29 @@
   opacity: 0.2;
 }
 
+
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem var(--container-px);
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .contentWrapper {
+    gap: 2rem;
+  }
+
+  .column {
+    gap: 2rem;
+  }
+
+  .benefitItem {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 
 @media (max-width: 1023px) {
   .column {

@@ -382,12 +382,14 @@
 .newsletterCard {
   background-color: var(--color-green-dark);
   border-radius: 4rem;
-  padding: 4rem 1rem;
+  padding: 5rem 0;
   text-align: center;
   color: white;
   position: relative;
   overflow: hidden;
   box-shadow: 0 30px 70px rgba(55, 83, 65, 0.2);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .newsletterImageOverlay {
@@ -401,26 +403,26 @@
 .newsletterContent {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
 .newsletterTitle {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 2rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
   line-height: 1.1;
 }
 
 .newsletterText {
-  font-size: 1.25rem;
+  font-size: 1rem;
   opacity: 0.85;
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
 }
 
 .newsletterForm {
-  max-width: 600px;
+  max-width: 550px;
   margin: 0 auto;
 }
 
@@ -428,16 +430,16 @@
   display: flex;
   background-color: white;
   border-radius: 100px;
-  padding: 0.5rem;
+  padding: 0.4rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .newsletterInput {
   flex: 1;
-  padding: 1.25rem 2rem;
+  padding: 1rem 1.5rem;
   border: none;
   background: transparent;
-  font-size: 1.1rem;
+  font-size: 1rem;
   outline: none;
   color: var(--color-green-dark);
 }
@@ -454,18 +456,19 @@
   background-color: var(--color-green-dark);
   color: white;
   border: none;
-  padding: 1.25rem 3rem;
+  padding: 1rem 2.5rem;
   border-radius: 999px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   cursor: pointer;
-  /* transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .newsletterSubmit:hover {
-  /* background-color: var(--color-green-primary); */
-  transform: translateX(5px);
+  background-color: var(--color-green-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes softFadeUp {
@@ -585,6 +588,7 @@
     transform: translateY(-40px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;

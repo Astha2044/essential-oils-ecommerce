@@ -55,7 +55,8 @@
 }
 
 .card {
-  background: white;
+  /* background-color: var(--color-green-soft); */
+  background-color: #eaf2ed;
   padding: 2.5rem;
   border-radius: 2.5rem;
   border: 1px solid rgba(55, 83, 65, 0.05);
@@ -81,7 +82,7 @@
 
 .quote {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--color-green-dark);
   font-style: italic;
@@ -92,8 +93,8 @@
 .authorBlock {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding-top: 1.5rem;
+  gap: 1rem;
+  padding-top: 1rem;
   border-top: 1px solid rgba(55, 83, 65, 0.05);
 }
 

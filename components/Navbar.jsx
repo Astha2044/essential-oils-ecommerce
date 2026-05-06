@@ -36,6 +36,10 @@ export default function Navbar() {
 
       <Link href="/" className={styles.logoContainer} onClick={() => setIsMobileMenuOpen(false)}>
         <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.logoIcon} />
+        <div className={styles.logoTextWrapper}>
+          <span className={styles.logoTitle}>VS Naturals</span>
+          <span className={styles.logoSubtitle}>Pure Botanic Essence</span>
+        </div>
       </Link>
 
       <div className={styles.mobileHeaderRight}>

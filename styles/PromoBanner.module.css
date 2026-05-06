@@ -2,8 +2,6 @@
   width: 100%;
   background-color: var(--color-beige);
   padding: 5rem 0;
-  /* Reduced from section-padding-y */
-
   margin: 0;
   position: relative;
   overflow: hidden;

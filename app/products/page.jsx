@@ -4,7 +4,7 @@ import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ProductCard from "../../components/ProductCard";
-import CTASection from "../../components/CTASection";
+// import CTASection from "../../components/CTASection";
 import { ALL_PRODUCTS } from "../../data/products";
 import styles from "../../styles/Products.module.css";
 import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaFlask } from "react-icons/fa6";
@@ -192,7 +192,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <CTASection />
+      {/* <CTASection /> */}
       <Footer />
 
       {/* Success Popup */}

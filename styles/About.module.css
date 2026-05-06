@@ -307,7 +307,7 @@
 .processStep {
   font-family: var(--font-serif);
   font-size: 4rem;
-  color: var(--color-green-soft);
+  color: var(--color-green-primary);
   opacity: 0.5;
   margin-bottom: 1.5rem;
   line-height: 1;

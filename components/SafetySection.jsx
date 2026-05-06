@@ -22,14 +22,14 @@ export default function SafetySection() {
               <div className={styles.itemIcon}><FaCircleInfo /></div>
               <div className={styles.itemText}>
                 <h4>Dilution is Key</h4>
-                <p>Always dilute with a carrier oil (like Jojoba or Coconut) before applying to the skin to prevent sensitivity.</p>
+                <p>Always dilute with a carrier oil before skin application.</p>
               </div>
             </div>
             <div className={styles.item}>
               <div className={styles.itemIcon}><FaUserDoctor /></div>
               <div className={styles.itemText}>
                 <h4>Professional Advice</h4>
-                <p>Consult a healthcare professional if you are pregnant, nursing, or have a pre-existing medical condition.</p>
+                <p>Consult a specialist for medical or pregnancy concerns.</p>
               </div>
             </div>
           </div>

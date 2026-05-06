@@ -7,13 +7,13 @@ export default function Testimonial() {
       text: "I've tried many body oils, but this one is my absolute favorite. It quickly absorbs into the skin, leaving no greasy residue behind. The natural scent is so relaxing.",
       name: "Elenor Smith",
       role: "Businesswoman",
-      avatar: "/images/avatar_emily.png"
+      avatar: "/images/m5.png"
     },
     {
       text: "This body oil is a game-changer! My skin has a stunning glow, and it stays moisturized all day without feeling greasy. I love that it's made with natural ingredients.",
       name: "Nicole Holmes",
       role: "Medical Assistant",
-      avatar: "/images/avatar_emily.png"
+      avatar: "/images/m6.jpg"
     },
     {
       text: "I feel like I'm treating myself to a spa experience every time I use this oil. It's lightweight, nourishing, and smells divine. Perfect for self-care and daily hydration.",
@@ -25,16 +25,16 @@ export default function Testimonial() {
 
   return (
     <section className={styles.section}>
-      
+
       <div className={styles.header}>
         <div className={styles.headerText}>
           <h2 className={styles.title}>What our customers say</h2>
           <p className={styles.subtitle}>
-            Hear from our satisfied customers about their experiences with our services.<br/>
+            Hear from our satisfied customers about their experiences with our services.<br />
             Real feedback speaks for itself.
           </p>
         </div>
-        
+
         <div className={styles.arrows}>
           <button className={styles.arrowBtn} suppressHydrationWarning><FaChevronLeft size={14} /></button>
           <button className={styles.arrowBtn} suppressHydrationWarning><FaChevronRight size={14} /></button>
@@ -49,9 +49,9 @@ export default function Testimonial() {
                 <FaStar key={i} />
               ))}
             </div>
-            
+
             <p className={styles.quote}>"{t.text}"</p>
-            
+
             <div className={styles.authorBlock}>
               <img src={t.avatar} alt={t.name} className={styles.avatar} />
               <div className={styles.authorInfo}>

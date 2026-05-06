@@ -450,3 +450,50 @@
     top: 2rem;
   }
 }
+
+/* Suggested Products */
+.suggestionsSection {
+  padding: 6rem 0;
+  background-color: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.suggestionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.suggestionTitle {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--color-green-dark);
+  margin-bottom: 1.5rem;
+}
+
+.suggestionDivider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-green-primary);
+  margin: 0 auto;
+}
+
+.suggestionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .suggestionsSection {
+    padding: 4rem 0;
+  }
+
+  .suggestionTitle {
+    font-size: 2rem;
+  }
+
+  .suggestionGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
