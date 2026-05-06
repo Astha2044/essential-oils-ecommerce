@@ -19,7 +19,7 @@ const PRODUCT_DATA = {
     { icon: <FaFlask />, label: "No Additives or Fillers" },
   ],
   sizes: ["5ml", "10ml", "15ml"],
-  images: ["/images/product_1.png", "/images/product_2.png", "/images/product_3.png", "/images/product_4.png"]
+  images: ["/images/product_1.png", "/images/img10.png", "/images/product_3.png", "/images/product_4.png"]
 };
 
 export default function ProductDetailPage() {

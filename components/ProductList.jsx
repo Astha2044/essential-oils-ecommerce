@@ -10,8 +10,6 @@ export default function ProductList() {
   const [activeCategory, setActiveCategory] = useState("Shop All");
   const categories = ["Shop All", "Essential Oils", "Blends", "Roll-Ons"];
 
-
-  // Filter products based on activeCategory
   const filteredProducts = activeCategory === "Shop All"
     ? ALL_PRODUCTS
     : ALL_PRODUCTS.filter(product => product.category === activeCategory);
@@ -30,6 +28,7 @@ export default function ProductList() {
             className={`${styles.categoryBtn} ${activeCategory === cat ? styles.activeCategory : ''}`}
             onClick={() => setActiveCategory(cat)}
             type="button"
+            suppressHydrationWarning
           >
             {cat}
           </button>

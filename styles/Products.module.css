@@ -516,6 +516,41 @@
 }
 
 @media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .catalogSection {
+    margin-top: -5rem;
+  }
+
+  .toolbar {
+    padding: 2rem 1.5rem;
+    border-radius: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .categoryBar {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .categoryBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .resultsCount {
+    font-size: 0.85rem;
+  }
 
   .trustGrid,
   .whyGrid {
@@ -523,6 +558,10 @@
   }
 
   .statementSection {
-    padding: 8rem 0;
+    padding: 6rem 0;
+  }
+
+  .statementTitle {
+    font-size: 2rem;
   }
 }

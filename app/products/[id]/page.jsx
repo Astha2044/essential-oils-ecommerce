@@ -5,7 +5,6 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaMinus, FaPlus, FaCartPlus } from "react-icons/fa6";
 import { ALL_PRODUCTS } from "../../../data/products";
 import styles from "../../../styles/ProductDetail.module.css";
@@ -13,14 +12,12 @@ import styles from "../../../styles/ProductDetail.module.css";
 export default function ProductDetailPage({ params }) {
   const resolvedParams = use(params);
   const productId = resolvedParams.id;
+  const [activeImage, setActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("benefits");
-  const router = useRouter();
 
-  // Find the specific product based on the ID in the URL
   const product = ALL_PRODUCTS.find(p => p.id === productId);
 
-  // If product not found, show a simple error or redirect
   if (!product) {
     return (
       <div className={styles.errorContainer}>
@@ -30,10 +27,7 @@ export default function ProductDetailPage({ params }) {
     );
   }
 
-  const handleBuyNow = (e) => {
-    e.preventDefault();
-    router.push("/checkout");
-  };
+
 
   return (
     <>
@@ -56,10 +50,10 @@ export default function ProductDetailPage({ params }) {
                 <div className={styles.imageDecoration}></div>
                 <div className={styles.archedFrame}>
                   <Image
-                    src={product.image}
+                    src={product.images ? product.images[activeImage] : product.image}
                     alt={product.name}
-                    width={600}
-                    height={700}
+                    width={500}
+                    height={600}
                     className={styles.image}
                     priority
                   />
@@ -68,6 +62,21 @@ export default function ProductDetailPage({ params }) {
                   <FaLeaf /> 100% Organic
                 </div>
               </div>
+
+              {/* Thumbnails */}
+              {product.images && (
+                <div className={styles.thumbnails}>
+                  {product.images.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className={`${styles.thumbnail} ${activeImage === idx ? styles.active : ""}`}
+                      onClick={() => setActiveImage(idx)}
+                    >
+                      <img src={img} alt={`Thumbnail ${idx + 1}`} className={styles.thumbImage} />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Right: Content Section */}
@@ -93,21 +102,11 @@ export default function ProductDetailPage({ params }) {
                 </div>
               </div>
 
-              {/* Purchase Controls */}
-              <div className={styles.purchaseControls}>
-                <div className={styles.quantitySelector}>
-                  <button onClick={() => setQuantity(Math.max(1, quantity - 1))}><FaMinus /></button>
-                  <span>{quantity}</span>
-                  <button onClick={() => setQuantity(quantity + 1)}><FaPlus /></button>
-                </div>
-                <button className={styles.addToCartBtn}>
-                  <FaCartPlus /> Add to Cart
-                </button>
-              </div>
 
-              <button onClick={handleBuyNow} className={styles.buyNowBtn}>
+
+              <Link href="/contact" className={styles.buyNowBtn}>
                 Buy Now
-              </button>
+              </Link>
 
               {/* Tabs Section */}
               <div className={styles.tabsContainer}>
@@ -115,24 +114,62 @@ export default function ProductDetailPage({ params }) {
                   <button
                     className={activeTab === "benefits" ? styles.activeTab : ""}
                     onClick={() => setActiveTab("benefits")}
+                    suppressHydrationWarning
                   >
                     Benefits
                   </button>
                   <button
+                    className={activeTab === "details" ? styles.activeTab : ""}
+                    onClick={() => setActiveTab("details")}
+                    suppressHydrationWarning
+                  >
+                    Information
+                  </button>
+                  <button
                     className={activeTab === "usage" ? styles.activeTab : ""}
                     onClick={() => setActiveTab("usage")}
+                    suppressHydrationWarning
                   >
                     How to Use
                   </button>
                 </div>
                 <div className={styles.tabContent}>
-                  {activeTab === "benefits" ? (
+                  {activeTab === "benefits" && (
                     <ul className={styles.benefitList}>
                       {product.benefits.map((b, i) => (
                         <li key={i}><FaLeaf /> {b}</li>
                       ))}
                     </ul>
-                  ) : (
+                  )}
+                  {activeTab === "details" && (
+                    <div className={styles.specGrid}>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Botanical Name</span>
+                        <span className={styles.specValue}>{product.scientificName}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Extraction</span>
+                        <span className={styles.specValue}>{product.extraction}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Aromatic Note</span>
+                        <span className={styles.specValue}>{product.note}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Plant Part</span>
+                        <span className={styles.specValue}>{product.plantPart}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Purity</span>
+                        <span className={styles.specValue}>{product.purity}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Origin</span>
+                        <span className={styles.specValue}>{product.origin}</span>
+                      </div>
+                    </div>
+                  )}
+                  {activeTab === "usage" && (
                     <p className={styles.usageText}>{product.usage}</p>
                   )}
                 </div>

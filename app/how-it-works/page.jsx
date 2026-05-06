@@ -3,6 +3,11 @@ import Footer from "../../components/Footer";
 import styles from "../../styles/HowItWorks.module.css";
 import { FaMagnifyingGlass, FaDroplet, FaHeartPulse } from "react-icons/fa6";
 
+export const metadata = {
+  title: "How It Works | VS Naturals",
+  description: "Discover the process behind our pure essential oils, from soil to soul.",
+};
+
 export default function HowItWorksPage() {
   return (
     <>

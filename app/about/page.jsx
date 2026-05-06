@@ -4,6 +4,11 @@ import styles from "../../styles/About.module.css";
 import { FaLeaf, FaDroplet, FaSpa, FaHeart } from "react-icons/fa6";
 import { PiPlantLight } from "react-icons/pi";
 
+export const metadata = {
+  title: "About Us | VS Naturals",
+  description: "Learn about our journey, mission, and the philosophy behind VS Naturals & Essentials.",
+};
+
 export default function AboutPage() {
   return (
     <>
