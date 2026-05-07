@@ -455,6 +455,37 @@
   font-size: 1.1rem;
 }
 
+.usageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.usageMethod {
+  border-left: 2px solid var(--color-green-soft);
+  padding-left: 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.usageMethod:hover {
+  border-color: var(--color-green-primary);
+}
+
+.usageMethodTitle {
+  font-family: var(--font-serif);
+  color: var(--color-green-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.usageTextSmall {
+  color: #4B5563;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
 @media (max-width: 1023px) {
   .main {
     padding-top: 9rem;

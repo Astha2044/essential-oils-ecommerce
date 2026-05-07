@@ -15,7 +15,7 @@ export default function Hero() {
           <div className={styles.badge} suppressHydrationWarning>Natural & Pure</div>
 
           <h1 className={styles.title} suppressHydrationWarning>
-            Experience the Essence of<br />
+            Experience the Essence of <br className={styles.desktopOnly} />
             Pure Botanical Oils
           </h1>
 

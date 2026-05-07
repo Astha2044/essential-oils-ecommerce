@@ -551,8 +551,10 @@
     font-size: 0.8rem;
   }
 
-  .resultsCount {
-    font-size: 0.85rem;
+  .resultsInfo {
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
   }
 
   .trustGrid,

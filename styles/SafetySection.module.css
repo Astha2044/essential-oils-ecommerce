@@ -1,47 +1,19 @@
 .section {
-  padding: 2rem 0;
-  background-color: rgb(210, 224, 210);
+  padding: 4rem 0;
+  background-color: #FBF9F4;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 var(--container-px);
-}
-
-.card {
-  padding: 1rem 0;
-  background-color: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
+  padding: 0 2rem;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.iconCircle {
-  width: 60px;
-  height: 60px;
-  background-color: var(--color-green-soft);
-  color: var(--color-green-dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.title {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  color: var(--color-green-dark);
+  margin-bottom: 3rem;
 }
 
 .subtitle {
@@ -50,45 +22,106 @@
   font-weight: 800;
   color: var(--color-green-primary);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--color-green-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.safetyCard {
+  background-color: white;
+  padding: 3.5rem 2.5rem;
+  border-radius: 15rem 15rem 3rem 3rem; /* Signature botanical arch */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(55, 83, 65, 0.05);
+  box-shadow: 0 20px 50px rgba(55, 83, 65, 0.04);
+}
+
+.safetyCard:nth-child(2) {
+  background-color: var(--color-green-soft);
+  border-color: transparent;
+}
+
+.safetyCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 70px rgba(55, 83, 65, 0.1);
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  color: var(--color-green-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.safetyCard:hover .iconWrapper {
+  background-color: var(--color-green-dark);
+  color: white;
+  transform: rotate(10deg);
 }
 
 .description {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #4B5563;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  margin: 0 auto 3rem;
-  max-width: 850px;
+  font-weight: 500;
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
+  text-align: center;
+  padding-top: 3rem;
   border-top: 1px dashed rgba(55, 83, 65, 0.1);
 }
 
 .disclaimer {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 800;
   color: var(--color-green-primary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .card {
-    padding: 2.5rem 1.5rem;
-    border-radius: 2rem;
+  .section {
+    padding: 6rem 0;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .safetyCard {
+    padding: 3rem 2rem;
+    border-radius: 12rem 12rem 2.5rem 2.5rem;
   }
 }

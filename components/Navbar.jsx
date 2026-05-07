@@ -21,19 +21,19 @@ export default function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Transition to floating pill after 20px
+      // Transition to scrolled state after 20px
       const isScrolled = currentScrollY > 20;
       setScrolled(isScrolled);
 
-      // Smart Hide/Show logic (only active once in floating pill state)
-      if (isScrolled) {
+      // Smart Hide/Show logic (prevent hiding if dropdown is open)
+      if (isScrolled && !isProductsDropdownOpen) {
         if (currentScrollY > lastScrollY && currentScrollY > 150) {
           setIsVisible(false); // Scrolling down
         } else {
           setIsVisible(true); // Scrolling up
         }
       } else {
-        setIsVisible(true); // Always visible at the very top
+        setIsVisible(true); // Always visible at the top or when interacting with dropdown
       }
 
       setLastScrollY(currentScrollY);
@@ -41,7 +41,7 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isProductsDropdownOpen]);
 
 
 
@@ -87,25 +87,49 @@ export default function Navbar() {
 
             <div
               className={styles.dropdown}
-              onMouseEnter={() => setIsProductsDropdownOpen(true)}
-              onMouseLeave={() => setIsProductsDropdownOpen(false)}
+              onMouseEnter={() => {
+                if (window.innerWidth >= 1024) setIsProductsDropdownOpen(true);
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth >= 1024) setIsProductsDropdownOpen(false);
+              }}
             >
-              <div
-                className={`${styles.navLink} ${isActive('/products') ? styles.navLinkActive : ''}`}
-                style={{
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  width: '100%'
-                }}
-                onClick={() => {
-                  if (window.innerWidth < 1024) {
-                    setIsProductsDropdownOpen(!isProductsDropdownOpen);
-                  }
-                }}
-              >
-                Products <FiChevronDown className={`${styles.arrow} ${isProductsDropdownOpen ? styles.arrowActive : ''}`} />
+              <div className={styles.navItemWrapper}>
+                {/* Desktop View: Original Structure */}
+                <Link
+                  href="/products"
+                  className={`${styles.navLink} ${styles.desktopOnly} ${isActive('/products') ? styles.navLinkActive : ''}`}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsProductsDropdownOpen(false);
+                  }}
+                >
+                  Products <FiChevronDown className={`${styles.arrow} ${isProductsDropdownOpen ? styles.arrowActive : ''}`} />
+                </Link>
+
+                {/* Mobile View: Dual Interaction Structure */}
+                <div className={`${styles.dropdownLinkWrapper} ${styles.mobileOnly}`}>
+                  <Link
+                    href="/products"
+                    className={`${styles.navLink} ${isActive('/products') ? styles.navLinkActive : ''}`}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setIsProductsDropdownOpen(false);
+                    }}
+                  >
+                    Products
+                  </Link>
+                  <div 
+                    className={`${styles.arrowToggle} ${isProductsDropdownOpen ? styles.arrowActive : ''}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setIsProductsDropdownOpen(!isProductsDropdownOpen);
+                    }}
+                  >
+                    <FiChevronDown className={styles.arrow} />
+                  </div>
+                </div>
               </div>
 
               {isProductsDropdownOpen && (

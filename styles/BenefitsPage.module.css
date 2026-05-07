@@ -263,12 +263,13 @@
 .usageItem h4 {
   font-family: var(--font-serif);
   font-size: 1.25rem;
-  color: var(--color-green-dark);
+  color: var(--color-green-primary);
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(55, 83, 65, 0.1);
   display: inline-block;
+  font-weight: 700;
 }
 
 .usageItem p {
