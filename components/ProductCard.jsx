@@ -10,8 +10,11 @@ export default function ProductCard({ id, name, price, image }) {
 
   const handleBuyNow = (e) => {
     e.preventDefault();
-    router.push("/contact");
+    const whatsappNumber = "1234567890";
+    const message = `Hi, I'm interested in ${name}`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
+
 
   return (
     <div className={styles.card}>
@@ -31,9 +34,7 @@ export default function ProductCard({ id, name, price, image }) {
           )}
         </div>
 
-        <div className={styles.glassBadge}>
-          <span>Best Seller</span>
-        </div>
+
 
         <div className={styles.hoverActions}>
           <Link href={`/products/${id}`} className={styles.actionBtn} suppressHydrationWarning>
