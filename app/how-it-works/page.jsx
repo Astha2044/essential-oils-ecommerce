@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import CTASection from "../../components/CTASection";
 import styles from "../../styles/HowItWorks.module.css";
-import { FaMagnifyingGlass, FaDroplet, FaHeartPulse } from "react-icons/fa6";
+import { FaWind, FaHandSparkles, FaLungs } from "react-icons/fa6";
 
 export const metadata = {
   title: "How It Works | VS Naturals",
@@ -17,10 +17,10 @@ export default function HowItWorksPage() {
         {/* How It Works Hero */}
         <section className={styles.howHero}>
           <div className={styles.heroContent}>
-            <div className={styles.badge}>Our Process</div>
-            <h1 className={styles.heroTitle}>From Soil to Soul</h1>
+            <div className={styles.badge}>Usage Guide</div>
+            <h1 className={styles.heroTitle}>From Nature to You</h1>
             <p className={styles.heroSubtitle}>
-              Experience the meticulous journey each botanical takes to become a pure, therapeutic-grade essential oil in your home.
+              Learn the best ways to incorporate our pure, therapeutic-grade essential oils into your daily wellness ritual.
             </p>
           </div>
         </section>
@@ -29,38 +29,38 @@ export default function HowItWorksPage() {
         <section className={styles.stepsSection}>
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>The Science of Purity</h2>
-              <p className={styles.sectionSubtitle}>A simplified look at our rigorous 3-step quality standard.</p>
+              <h2 className={styles.sectionTitle}>How to Experience</h2>
+              <p className={styles.sectionSubtitle}>Simple ways to experience the power of botanicals.</p>
             </div>
 
             <div className={styles.stepsWrapper}>
               <div className={styles.stepItem} style={{ animationDelay: "0.2s" }}>
                 <div className={styles.iconCircle}>
-                  <FaMagnifyingGlass />
+                  <FaWind />
                 </div>
-                <h3 className={styles.stepTitle}>Ethical Sourcing</h3>
+                <h3 className={styles.stepTitle}>Aromatic Diffusion</h3>
                 <p className={styles.stepDescription}>
-                  We partner with organic farms worldwide to harvest botanicals at their peak potency, ensuring sustainability in every leaf.
+                  Add 3–5 drops to your diffuser to refresh your space and create a calming, aromatic atmosphere.
                 </p>
               </div>
 
               <div className={styles.stepItem} style={{ animationDelay: "0.4s" }}>
                 <div className={styles.iconCircle}>
-                  <FaDroplet />
+                  <FaHandSparkles />
                 </div>
-                <h3 className={styles.stepTitle}>Precision Distillation</h3>
+                <h3 className={styles.stepTitle}>Direct Application</h3>
                 <p className={styles.stepDescription}>
-                  Using slow-steam distillation, we preserve the delicate aromatic compounds that hold the plant's true healing essence.
+                  Apply a small amount directly to temples, wrists, or the back of the neck for a soothing and refreshing effect.
                 </p>
               </div>
 
               <div className={styles.stepItem} style={{ animationDelay: "0.6s" }}>
                 <div className={styles.iconCircle}>
-                  <FaHeartPulse />
+                  <FaLungs />
                 </div>
-                <h3 className={styles.stepTitle}>Purity Testing</h3>
+                <h3 className={styles.stepTitle}>Inhalation</h3>
                 <p className={styles.stepDescription}>
-                  Every batch undergoes GC/MS testing to guarantee zero synthetic additives, pesticides, or fillers. Just 100% pure oil.
+                  Place a drop on your palms, gently rub together, and inhale deeply to uplift your mood and boost energy instantly.
                 </p>
               </div>
             </div>

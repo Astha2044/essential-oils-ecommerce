@@ -8,11 +8,11 @@ import styles from "../styles/Product.module.css";
 
 export default function ProductList() {
   const [activeCategory, setActiveCategory] = useState("Shop All");
-  const categories = ["Shop All", "Essential Oils", "Blends", "Roll-Ons"];
+  const categories = ["Shop All", "Lavender", "Jasmine", "Peppermint", "Sandalwood", "Mogra"];
 
   const filteredProducts = activeCategory === "Shop All"
     ? ALL_PRODUCTS
-    : ALL_PRODUCTS.filter(product => product.category === activeCategory);
+    : ALL_PRODUCTS.filter(product => product.name.toLowerCase().includes(activeCategory.toLowerCase()));
 
 
   return (

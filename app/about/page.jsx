@@ -45,10 +45,10 @@ export default function AboutPage() {
               <div className={styles.storyImageWrapper}>
                 <img src="/images/ref.jpeg" alt="Natural Distillation" className={styles.storyImage} />
                 <div className={styles.imageDecoration}></div>
-                <div className={styles.glassBadge}>
+                {/* <div className={styles.glassBadge}>
                   <span>100%</span>
                   <strong>Organic</strong>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </section>
 
         {/* Distillation Process Section */}
-        <section className={styles.processSection}>
+        {/* <section className={styles.processSection}>
           <div className={styles.container}>
             <h2 className={styles.centeredTitle}>The Art of Distillation</h2>
             <div className={styles.processGrid}>
@@ -107,10 +107,10 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Pure Potency Section */}
-        <section className={styles.philosophySection}>
+        {/* <section className={styles.philosophySection}>
           <div className={styles.container}>
             <div className={styles.philosophyContent}>
               <h2 className={styles.sectionTitle}>The Philosophy of Pure Potency</h2>
@@ -133,7 +133,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
       </main>
       <CTASection />

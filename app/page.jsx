@@ -53,7 +53,7 @@ export default function Home() {
 
       <div className={styles.bottomSection}>
         <CTASection />
-        <PromoBanner />
+        {/* <PromoBanner /> */}
         <Footer />
       </div>
 

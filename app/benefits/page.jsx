@@ -14,7 +14,8 @@ import {
   FaHeadSideVirus,
   FaLeaf,
   FaBolt,
-  FaWind
+  FaWind,
+  FaSpa
 } from "react-icons/fa6";
 
 const BENEFITS_DATA = [
@@ -34,9 +35,9 @@ const BENEFITS_DATA = [
     icon: <FaHeadSideVirus />
   },
   {
-    title: "Supports Digestion",
-    text: "Promotes healthy digestion and soothes discomfort.",
-    icon: <FaLeaf />
+    title: "Hair & Skin Care",
+    text: "Nourishes the scalp, promotes hair growth, and rejuvenates the skin for a healthy, radiant glow.",
+    icon: <FaSpa />
   },
   {
     title: "Boosts Energy",
@@ -98,10 +99,10 @@ export default function BenefitsPage() {
               <div className={styles.usageImageWrapper}>
                 <img src="/images/eucalyptus_bottle.png" alt="Usage" className={styles.usageImage} />
                 <div className={styles.imageDecoration}></div>
-                <div className={styles.glassBadge}>
+                {/* <div className={styles.glassBadge}>
                   <span>100%</span>
                   <strong>Pure</strong>
-                </div>
+                </div> */}
               </div>
               <div className={styles.usageText}>
                 <h2 className={styles.sectionTitle}>How to Experience</h2>

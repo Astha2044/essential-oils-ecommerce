@@ -134,6 +134,13 @@ export default function ProductDetailPage() {
                   >
                     How to Use
                   </button>
+                  <button
+                    className={activeTab === "experience" ? styles.activeTab : ""}
+                    onClick={() => setActiveTab("experience")}
+                    suppressHydrationWarning
+                  >
+                    How to Experience
+                  </button>
                 </div>
                 <div className={styles.tabContent}>
                   {activeTab === "benefits" && (
@@ -173,6 +180,24 @@ export default function ProductDetailPage() {
                   )}
                   {activeTab === "usage" && (
                     <p className={styles.usageText}>{product.usage}</p>
+                  )}
+                  {activeTab === "experience" && (
+                    <div className={styles.usageContainer}>
+                      <div className={styles.usageMethod}>
+                        <h4 className={styles.usageMethodTitle}>Aromatic Diffusion</h4>
+                        <p className={styles.usageTextSmall}>Add 3–5 drops to your diffuser to refresh your space and create a calming, aromatic atmosphere.</p>
+                      </div>
+                      
+                      <div className={styles.usageMethod}>
+                        <h4 className={styles.usageMethodTitle}>Direct Application</h4>
+                        <p className={styles.usageTextSmall}>Apply a small amount directly to temples, wrists, or the back of the neck for a soothing and refreshing effect.</p>
+                      </div>
+                      
+                      <div className={styles.usageMethod}>
+                        <h4 className={styles.usageMethodTitle}>Inhalation</h4>
+                        <p className={styles.usageTextSmall}>Place a drop on your palms, gently rub together, and inhale deeply to uplift your mood and boost energy instantly.</p>
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>

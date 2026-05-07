@@ -9,7 +9,7 @@ import { ALL_PRODUCTS } from "../../data/products";
 import styles from "../../styles/Products.module.css";
 import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaFlask } from "react-icons/fa6";
 
-const CATEGORIES = ["All", "Essential Oils", "Blends", "Roll-Ons"];
+const CATEGORIES = ["All", "Lavender", "Jasmine", "Peppermint", "Sandalwood", "Mogra"];
 
 export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -27,7 +27,7 @@ export default function ProductsPage() {
 
   const filteredProducts = activeCategory === "All"
     ? ALL_PRODUCTS
-    : ALL_PRODUCTS.filter(p => p.category === activeCategory);
+    : ALL_PRODUCTS.filter(p => p.name.toLowerCase().includes(activeCategory.toLowerCase()));
 
   return (
     <div className={styles.productsPage}>
@@ -89,7 +89,7 @@ export default function ProductsPage() {
         </section>
       </main>
 
-      <section className={styles.premiumWhySection}>
+      {/* <section className={styles.premiumWhySection}>
         <div className={styles.whyBackground}></div>
         <div className={styles.mainContainer}>
           <div className={styles.whyHeader}>
@@ -119,7 +119,7 @@ export default function ProductsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Editorial Statement Break */}
       <section className={styles.statementSection}>
@@ -130,7 +130,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Enhanced Trust Section */}
-      <section className={styles.premiumTrustSection}>
+      {/* <section className={styles.premiumTrustSection}>
         <div className={styles.mainContainer}>
           <div className={styles.trustGrid}>
             <div className={styles.trustCard}>
@@ -162,7 +162,7 @@ export default function ProductsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Premium Newsletter Section */}
       <section className={styles.premiumNewsletterSection}>
@@ -183,7 +183,7 @@ export default function ProductsPage() {
                     className={styles.newsletterInput}
                   />
                   <button type="submit" className={styles.newsletterSubmit}>
-                    Join the Circle
+                    Embrace the Essence
                   </button>
                 </div>
               </form>

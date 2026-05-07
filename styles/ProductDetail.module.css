@@ -1,13 +1,14 @@
 .main {
   background-color: var(--color-beige);
   min-height: 100vh;
+  padding-top: 8rem;
   padding-bottom: 8rem;
 }
 
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 var(--container-px);
+  padding: 0 1.5rem;
 }
 
 /* Breadcrumbs */
@@ -390,6 +391,12 @@
   gap: 3rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabsHeader::-webkit-scrollbar {
+  display: none;
 }
 
 .tabsHeader button {
@@ -448,7 +455,43 @@
   font-size: 1.1rem;
 }
 
+@media (max-width: 1023px) {
+  .main {
+    padding-top: 9rem;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .productGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: stretch;
+  }
+
+  .imageWrapper {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .archedFrame {
+    max-width: 300px;
+    margin: 0;
+  }
+
+  .thumbnails {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
+  .main {
+    padding-top: 8.5rem;
+  }
+
   .purchaseControls {
     flex-direction: column;
   }
@@ -458,8 +501,16 @@
   }
 
   .floatingBadge {
-    left: 1rem;
+    left: -0.5rem;
     top: 2rem;
+  }
+
+  .specGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabsHeader {
+    gap: 1.5rem;
   }
 }
 

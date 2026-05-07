@@ -1,6 +1,6 @@
 import styles from "../styles/Hero.module.css";
 import Link from "next/link";
-import { FaLeaf, FaDroplet, FaSpa, FaFlask } from "react-icons/fa6";
+import { FaLeaf, FaDroplet, FaSpa, FaShieldHeart } from "react-icons/fa6";
 import { FiArrowRight } from "react-icons/fi";
 import { PiPlantLight } from "react-icons/pi";
 
@@ -20,13 +20,13 @@ export default function Hero() {
           </h1>
 
           <p className={styles.subtitle} suppressHydrationWarning>
-            Nurture your body and soul with our meticulously crafted, therapeutic-grade essential oils. 100% natural, ethically sourced, and pure.
+            Nurture your body and soul with our meticulously crafted, therapeutic-grade essential oils. Ethically sourced, potent, and pure.
           </p>
 
           <div className={styles.features}>
             <div className={styles.featureItem}>
               <div className={styles.iconCircle}><FaLeaf /></div>
-              <span>100% Pure<br />& Natural</span>
+              <span>Naturally<br />Potent</span>
             </div>
             <div className={styles.featureItem}>
               <div className={styles.iconCircle}><FaDroplet /></div>
@@ -37,8 +37,8 @@ export default function Hero() {
               <span>Therapeutic<br />Grade</span>
             </div>
             <div className={styles.featureItem}>
-              <div className={styles.iconCircle}><FaFlask /></div>
-              <span>No Additives<br />or Fillers</span>
+              <div className={styles.iconCircle}><FaShieldHeart /></div>
+              <span>Safe &<br />Certified</span>
             </div>
           </div>
 

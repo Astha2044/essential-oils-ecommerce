@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { ALL_PRODUCTS } from "../data/products";
 import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
@@ -42,29 +43,34 @@ export default function Footer() {
             {/* Links Grid beside brand */}
             <div className={styles.linksGrid}>
               <div className={styles.linksBlock}>
-                <h4 className={styles.blockTitle}>Quick Links</h4>
+                <h4 className={styles.blockTitle}>Top Picks</h4>
                 <ul className={styles.list}>
-                  <li><Link href="/products">Shop All</Link></li>
-                  <li><Link href="/products">New Arrivals</Link></li>
-                  <li><Link href="/products">Bestsellers</Link></li>
+                  {ALL_PRODUCTS.slice(0, 5).map((product) => (
+                    <li key={product.id}>
+                      <Link href={`/products/${product.id}`}>
+                        {product.name.replace(" Essential Oil", "")}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               <div className={styles.linksBlock}>
-                <h4 className={styles.blockTitle}>Collections</h4>
+                <h4 className={styles.blockTitle}>Specialties</h4>
                 <ul className={styles.list}>
-                  <li><Link href="/products">Lavender Collection</Link></li>
-                  <li><Link href="/products">Peppermint Collection</Link></li>
-                  <li><Link href="/products">Bergamot Collection</Link></li>
+                  <li><Link href="/products?category=Essential Oils">Essential Oils</Link></li>
+                  <li><Link href="/products?category=Fragrance Oil">Fragrance Oil</Link></li>
+                  <li><Link href="/products?category=Hair Oil">Hair Oil</Link></li>
+                  <li><Link href="/products?category=Carrier Oils">Carrier Oils</Link></li>
                 </ul>
               </div>
 
               <div className={styles.linksBlock}>
-                <h4 className={styles.blockTitle}>Company</h4>
+                <h4 className={styles.blockTitle}>Support</h4>
                 <ul className={styles.list}>
-                  <li><Link href="/blog">Wellness Hub</Link></li>
-                  <li><Link href="/about">About</Link></li>
-                  <li><Link href="/contact">Contact</Link></li>
+                  <li><Link href="/about">Our Story</Link></li>
+                  <li><Link href="/contact">Get in Touch</Link></li>
+                  <li><Link href="/blog">Oil Guide</Link></li>
                 </ul>
               </div>
             </div>
@@ -82,7 +88,12 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottomBar}>
-          <p>Copyright © 2026 VS Naturals & Essentials</p>
+          <p>
+            Copyright © All rights reserved | Made with ❤️ by{" "}
+            <a href="https://smoothsync.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', fontWeight: '600' }}>
+              Smoothsync Innovation
+            </a>
+          </p>
           <div className={styles.legalLinks}>
             <Link href="/terms">Terms</Link>
             <Link href="/privacy">Privacy</Link>

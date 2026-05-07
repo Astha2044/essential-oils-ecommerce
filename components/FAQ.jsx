@@ -21,7 +21,7 @@ export default function FAQ() {
     },
     {
       q: "How should I apply essential oils for the best results?",
-      a: "For best results, mix a few drops of essential oil with a carrier oil (like jojoba or sweet almond) and massage it gently into damp skin after a shower."
+      a: "Massage it gently into damp skin after a shower."
     },
     {
       q: "Can I use essential oils on my face?",
@@ -46,7 +46,7 @@ export default function FAQ() {
           <div className={styles.imageWrapper}>
             <div className={styles.imageBg}></div>
             <img src="/images/img1.png" alt="Essential Oil Bottle" className={styles.image} />
-            <div className={styles.floatingTag}>100% Organic</div>
+            {/* <div className={styles.floatingTag}>100% Organic</div> */}
           </div>
         </div>
 

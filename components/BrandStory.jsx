@@ -14,7 +14,7 @@ export default function BrandStory() {
             <h2 className={styles.title}>From Soil to Soul: Our Botanical Journey</h2>
 
             <p className={styles.description}>
-              Every drop of our essential oil tells a story of devotion to purity. We partner with local farmers who respect the earth, ensuring that our plants are harvested at their peak potency.
+              At VS Naturals, every drop is a testament to our obsession with purity. We bridge the gap between ancient botanical wisdom and modern wellness by partnering with dedicated local farmers who treat the earth with reverence, ensuring every essence is captured at its most powerful peak.
             </p>
 
             <div className={styles.featureList}>
@@ -34,9 +34,9 @@ export default function BrandStory() {
               </div>
             </div>
 
-            <Link href="/about" className={styles.discoverBtn} suppressHydrationWarning>
+            {/* <Link href="/about" className={styles.discoverBtn} suppressHydrationWarning>
               Discover Our Story
-            </Link>
+            </Link> */}
           </div>
 
           {/* Image Column */}
@@ -53,10 +53,10 @@ export default function BrandStory() {
                 />
               </div>
             </div>
-            <div className={styles.glassBadge}>
+            {/* <div className={styles.glassBadge}>
               <strong>100% Pure</strong>
               <span>Nature's Essence</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
