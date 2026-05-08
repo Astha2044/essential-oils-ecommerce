@@ -1,36 +1,11 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Blog.module.css";
 import { FiArrowRight } from "react-icons/fi";
-
-const POSTS = [
-  {
-    id: 1,
-    title: "Benefits of Peppermint Oil for Mind and Body",
-    date: "May 10, 2024",
-    category: "Wellness",
-    excerpt: "Peppermint oil is a powerhouse of natural benefits. From soothing digestive issues to boosting mental clarity, learn how to harness its full potential.",
-    image: "/images/img4.png"
-  },
-  {
-    id: 2,
-    title: "How to Use Essential Oils in Daily Life",
-    date: "May 5, 2024",
-    category: "Lifestyle",
-    excerpt: "Integrating essential oils into your routine doesn't have to be complicated. Discover our top tips for morning and evening aromatherapy.",
-    image: "/images/img10.png"
-  },
-  {
-    id: 3,
-    title: "Aromatherapy for Better Sleep",
-    date: "April 28, 2024",
-    category: "Rest & Recovery",
-    excerpt: "Struggling to drift off? These calming essential oil blends are specifically curated to promote deep, restorative sleep and relaxation.",
-    image: "/images/product_3.png"
-  }
-];
+import { BLOG_POSTS } from "../../data/blog";
 
 export default function BlogPage() {
   const [email, setEmail] = useState("");
@@ -45,7 +20,7 @@ export default function BlogPage() {
     }, 3000);
   };
 
-  const featuredPost = POSTS[0];
+  const featuredPost = BLOG_POSTS[0];
 
   return (
     <>
@@ -66,22 +41,22 @@ export default function BlogPage() {
         <section className={styles.featuredSection}>
           <div className={styles.container}>
             <div className={styles.featuredCard}>
-              <div className={styles.featuredImageWrapper}>
+              <Link href={`/blog/${featuredPost.slug}`} className={styles.featuredImageWrapper}>
                 <img src={featuredPost.image} alt={featuredPost.title} className={styles.featuredImage} />
                 <div className={styles.imageDecoration}></div>
                 <div className={styles.glassBadge}>
                   <span>Read Journal</span>
                 </div>
-              </div>
+              </Link>
               <div className={styles.featuredContent}>
                 <span className={styles.categoryBadge}>{featuredPost.category}</span>
                 <h2 className={styles.featuredTitle}>{featuredPost.title}</h2>
                 <p className={styles.featuredExcerpt}>{featuredPost.excerpt}</p>
                 <div className={styles.postMeta}>
                   <span>{featuredPost.date}</span>
-                  <div className={styles.readMore}>
+                  <Link href={`/blog/${featuredPost.slug}`} className={styles.readMore}>
                     Read Article <FiArrowRight />
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -95,27 +70,29 @@ export default function BlogPage() {
               <h2 className={styles.sectionTitle}>Latest Stories</h2>
             </div>
             <div className={styles.blogGrid}>
-              {POSTS.map((post, idx) => (
+              {BLOG_POSTS.map((post, idx) => (
                 <article
                   key={post.id}
                   className={styles.blogCard}
                   style={{ animationDelay: `${idx * 0.15}s` }}
                 >
-                  <div className={styles.cardImageWrapper}>
+                  <Link href={`/blog/${post.slug}`} className={styles.cardImageWrapper}>
                     <span className={styles.categoryTag}>{post.category}</span>
                     <img src={post.image} alt={post.title} className={styles.blogImage} />
                     <div className={styles.cardDecoration}></div>
                     <div className={styles.gridGlassBadge}>
                       <span>Read Story</span>
                     </div>
-                  </div>
+                  </Link>
                   <div className={styles.blogContent}>
                     <span className={styles.blogDate}>{post.date}</span>
-                    <h3 className={styles.blogTitle}>{post.title}</h3>
+                    <h3 className={styles.blogTitle}>
+                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    </h3>
                     <p className={styles.blogExcerpt}>{post.excerpt}</p>
-                    <div className={styles.readMore}>
+                    <Link href={`/blog/${post.slug}`} className={styles.readMore}>
                       Read Full Article <FiArrowRight />
-                    </div>
+                    </Link>
                   </div>
                 </article>
               ))}

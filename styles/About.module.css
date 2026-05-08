@@ -84,7 +84,6 @@
   margin: 0 auto;
 }
 
-/* Our Story Section */
 .storySection {
   padding: var(--section-padding-y) 0;
   background-color: #fcfdfc;
@@ -271,7 +270,6 @@
   line-height: 1.6;
 }
 
-/* Distillation Process */
 .processSection {
   background-color: white;
   padding: var(--section-padding-y) 0;
@@ -440,10 +438,12 @@
   }
 
   .aboutHero {
-    height: 50vh;
+    padding: 160px 1.5rem 60px 1.5rem;
+    min-height: 60vh;
   }
 
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-top: 1rem;
   }
 }

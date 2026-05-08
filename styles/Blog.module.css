@@ -11,7 +11,7 @@
 .blogHero {
   width: 100%;
   min-height: 50vh;
-  background: linear-gradient(rgba(55, 83, 65, 0.7), rgba(55, 83, 65, 0.7)), url('/images/hero_new.jpg');
+  background: linear-gradient(rgba(55, 83, 65, 0.7), rgba(55, 83, 65, 0.7)), url('/images/New_mogra.png');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -371,12 +371,16 @@
   font-weight: 700;
   color: var(--color-green-dark);
   cursor: pointer;
-  transition: gap 0.3s ease;
+  transition: all 0.3s ease;
   margin-top: auto;
+  text-decoration: none;
+  z-index: 5;
+  position: relative;
 }
 
 .readMore:hover {
   gap: 0.8rem;
+  color: var(--color-green-primary);
 }
 
 /* Newsletter Section */
