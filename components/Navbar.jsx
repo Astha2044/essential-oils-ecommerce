@@ -9,41 +9,35 @@ import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const [scrolled, setScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isHidden, setIsHidden] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Transition to scrolled state after 20px
-      const isScrolled = currentScrollY > 20;
-      setScrolled(isScrolled);
-
-      // Smart Hide/Show logic (prevent hiding if dropdown is open)
-      if (isScrolled && !isProductsDropdownOpen) {
-        if (currentScrollY > lastScrollY && currentScrollY > 150) {
-          setIsVisible(false); // Scrolling down
-        } else {
-          setIsVisible(true); // Scrolling up
-        }
+      if (currentScrollY > 20) {
+        setScrolled(true);
       } else {
-        setIsVisible(true); // Always visible at the top or when interacting with dropdown
+        setScrolled(false);
       }
 
-      setLastScrollY(currentScrollY);
+      if (currentScrollY > lastScrollY && currentScrollY > 150 && !isMobileMenuOpen) {
+        setIsHidden(true);
+      } else if (currentScrollY < lastScrollY) {
+        setIsHidden(false);
+      }
+
+      lastScrollY = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isProductsDropdownOpen]);
-
-
+  }, [isMobileMenuOpen]);
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -56,123 +50,19 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} ${isVisible ? '' : styles.hidden}`}>
-      <div className={styles.navContainer}>
-        <Link href="/" className={styles.logoContainer} onClick={() => setIsMobileMenuOpen(false)}>
-          <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.logoIcon} />
-          <div className={styles.logoTextWrapper}>
-            <span className={styles.logoTitle}>VS Naturals</span>
-            <span className={styles.logoSubtitle}>Pure Botanic Essence</span>
-          </div>
-        </Link>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} ${isHidden ? styles.hidden : ''}`}>
 
-        <div className={styles.mobileHeaderRight}>
-          <div className={styles.iconBtn} onClick={() => setIsSearchOpen(true)}><FiSearch /></div>
-          <div className={styles.mobileMenuBtn} onClick={toggleMenu}>
-            {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </div>
+      <div className={styles.mobileHeaderRight}>
+        <div className={styles.iconBtn} onClick={() => setIsSearchOpen(true)}><FiSearch /></div>
+        <div className={styles.mobileMenuBtn} onClick={toggleMenu}>
+          {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </div>
+      </div>
 
-        {isMobileMenuOpen && (
-          <div className={styles.mobileOverlay} onClick={() => setIsMobileMenuOpen(false)} />
-        )}
-
-        <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
-          <div className={styles.mobileMenuClose} onClick={() => setIsMobileMenuOpen(false)}>
-            <FiX size={24} />
-          </div>
-          <div className={styles.navLinksInner}>
-            <Link href="/" className={`${styles.navLink} ${isActive('/') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            <Link href="/about" className={`${styles.navLink} ${isActive('/about') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-
-            <div
-              className={styles.dropdown}
-              onMouseEnter={() => {
-                if (window.innerWidth >= 1024) setIsProductsDropdownOpen(true);
-              }}
-              onMouseLeave={() => {
-                if (window.innerWidth >= 1024) setIsProductsDropdownOpen(false);
-              }}
-            >
-              <div className={styles.navItemWrapper}>
-                {/* Desktop View: Original Structure */}
-                <Link
-                  href="/products"
-                  className={`${styles.navLink} ${styles.desktopOnly} ${isActive('/products') ? styles.navLinkActive : ''}`}
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    setIsProductsDropdownOpen(false);
-                  }}
-                >
-                  Products <FiChevronDown className={`${styles.arrow} ${isProductsDropdownOpen ? styles.arrowActive : ''}`} />
-                </Link>
-
-                {/* Mobile View: Dual Interaction Structure */}
-                <div className={`${styles.dropdownLinkWrapper} ${styles.mobileOnly}`}>
-                  <Link
-                    href="/products"
-                    className={`${styles.navLink} ${isActive('/products') ? styles.navLinkActive : ''}`}
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      setIsProductsDropdownOpen(false);
-                    }}
-                  >
-                    Products
-                  </Link>
-                  <div
-                    className={`${styles.arrowToggle} ${isProductsDropdownOpen ? styles.arrowActive : ''}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      setIsProductsDropdownOpen(!isProductsDropdownOpen);
-                    }}
-                  >
-                    <FiChevronDown className={styles.arrow} />
-                  </div>
-                </div>
-              </div>
-
-              {isProductsDropdownOpen && (
-                <div className={styles.menu}>
-                  <div className={styles.list}>
-                    <Link
-                      href="/products?category=Essential%20Oils"
-                      className={styles.item}
-                      onClick={() => {
-                        setIsProductsDropdownOpen(false);
-                        setIsMobileMenuOpen(false);
-                      }}
-                    >
-                      Essential Oils
-                    </Link>
-                    <Link
-                      href="/products?category=Candles"
-                      className={styles.item}
-                      onClick={() => {
-                        setIsProductsDropdownOpen(false);
-                        setIsMobileMenuOpen(false);
-                      }}
-                    >
-                      Candles
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-            <Link href="/benefits" className={`${styles.navLink} ${isActive('/benefits') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Benefits</Link>
-            {/* <Link href="/how-it-works" className={`${styles.navLink} ${isActive('/how-it-works') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>How it works</Link> */}
-            <Link href="/blog" className={`${styles.navLink} ${isActive('/blog') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
-          </div>
-          <div className={styles.mobileActions}>
-            <Link href="/contact" className={styles.signInBtnMobile} onClick={() => setIsMobileMenuOpen(false)} suppressHydrationWarning>
-              Contact Us
-            </Link>
-          </div>
-        </div>
-
-        <div className={styles.actions}>
-          <div className={styles.iconBtn} onClick={() => setIsSearchOpen(true)}><FiSearch /></div>
-          <Link href="/contact" className={styles.signInBtn} suppressHydrationWarning>Contact Us</Link>
+      <div className={styles.mobileHeaderRight}>
+        <div className={styles.iconBtn}><FiSearch /></div>
+        <div className={styles.mobileMenuBtn} onClick={toggleMenu}>
+          <FiMenu size={24} />
         </div>
       </div>
 
@@ -219,6 +109,34 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
+        <div className={styles.mobileDrawerHeader}>
+          <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.mobileDrawerLogo} />
+          <div className={styles.closeBtn} onClick={() => setIsMobileMenuOpen(false)}>
+            <FiX size={24} />
+          </div>
+        </div>
+        <div className={styles.navLinksInner}>
+          <Link href="/" className={`${styles.navLink} ${isActive('/') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link href="/about" className={`${styles.navLink} ${isActive('/about') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+          <Link href="/products" className={`${styles.navLink} ${isActive('/products') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
+          <Link href="/benefits" className={`${styles.navLink} ${isActive('/benefits') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Benefits</Link>
+          <Link href="/how-it-works" className={`${styles.navLink} ${isActive('/how-it-works') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>How it works</Link>
+          <Link href="/blog" className={`${styles.navLink} ${isActive('/blog') ? styles.navLinkActive : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
+        </div>
+        <div className={styles.mobileActions}>
+          <Link href="/contact" className={styles.signInBtnMobile} onClick={() => setIsMobileMenuOpen(false)} suppressHydrationWarning>
+            Contact Us
+          </Link>
+        </div>
+      </div>
+
+      <div className={styles.actions}>
+        <div className={styles.iconBtn}><FiSearch /></div>
+        <Link href="/contact" className={styles.signInBtn} suppressHydrationWarning>Contact Us</Link>
+      </div>
+
     </nav>
   );
 }
