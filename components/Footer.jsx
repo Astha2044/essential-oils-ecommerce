@@ -90,7 +90,7 @@ export default function Footer() {
         <div className={styles.bottomBar}>
           <p>
             Copyright © All rights reserved | Made with ❤️ by{" "}
-            <a href="https://smoothsync.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', fontWeight: '600' }}>
+            <a href="https://www.smoothsyncinnovations.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', fontWeight: '600' }}>
               Smoothsync Innovation
             </a>
           </p>
