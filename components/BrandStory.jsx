@@ -52,11 +52,11 @@ export default function BrandStory() {
                   className={styles.image}
                 />
               </div>
+              <div className={styles.glassBadge}>
+                <strong>Pure Essence</strong>
+                <span>Nature's Choice</span>
+              </div>
             </div>
-            {/* <div className={styles.glassBadge}>
-              <strong>100% Pure</strong>
-              <span>Nature's Essence</span>
-            </div> */}
           </div>
         </div>
       </div>

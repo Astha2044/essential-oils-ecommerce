@@ -19,7 +19,7 @@ export default function PromoBanner() {
             <div className={styles.featureItem}>
               <span className={styles.featureIcon}><FaLeaf /></span>
               <div className={styles.featureText}>
-                <strong>100% Organic</strong>
+                <strong>Pure Essence</strong>
                 <span>Pure plant extracts</span>
               </div>
             </div>

@@ -181,7 +181,7 @@ export default function ProductDetailPage({ params }) {
                         <span className={styles.specValue}>{product.plantPart}</span>
                       </div>
                       <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Purity</span>
+                        <span className={styles.specLabel}>Grade</span>
                         <span className={styles.specValue}>{product.purity}</span>
                       </div>
                       <div className={styles.specItem}>
@@ -191,24 +191,34 @@ export default function ProductDetailPage({ params }) {
                     </div>
                   )}
                   {activeTab === "usage" && (
-                    <p className={styles.usageText}>{product.usage}</p>
+                    <div className={styles.usageContainer}>
+                      <h4 className={styles.usageMethodTitle}>Recommended Ritual</h4>
+                      <p className={styles.usageText}>{product.usage}</p>
+                      <p className={styles.usageNote}>* For External Use Only. Always dilute before topical application.</p>
+                    </div>
                   )}
                   {activeTab === "experience" && (
                     <div className={styles.usageContainer}>
-                      <div className={styles.usageMethod}>
-                        <h4 className={styles.usageMethodTitle}>Aromatic Diffusion</h4>
-                        <p className={styles.usageTextSmall}>Add 3–5 drops to your diffuser to refresh your space and create a calming, aromatic atmosphere.</p>
-                      </div>
+                      {product.experience ? (
+                        <>
+                          <div className={styles.usageMethod}>
+                            <h4 className={styles.usageMethodTitle}>Aromatic Diffusion</h4>
+                            <p className={styles.usageTextSmall}>{product.experience.diffusion}</p>
+                          </div>
 
-                      <div className={styles.usageMethod}>
-                        <h4 className={styles.usageMethodTitle}>Direct Application</h4>
-                        <p className={styles.usageTextSmall}>Apply a small amount directly to temples, wrists, or the back of the neck for a soothing and refreshing effect.</p>
-                      </div>
+                          <div className={styles.usageMethod}>
+                            <h4 className={styles.usageMethodTitle}>Topical Application</h4>
+                            <p className={styles.usageTextSmall}>{product.experience.topical}</p>
+                          </div>
 
-                      <div className={styles.usageMethod}>
-                        <h4 className={styles.usageMethodTitle}>Inhalation</h4>
-                        <p className={styles.usageTextSmall}>Place a drop on your palms, gently rub together, and inhale deeply to uplift your mood and boost energy instantly.</p>
-                      </div>
+                          <div className={styles.usageMethod}>
+                            <h4 className={styles.usageMethodTitle}>Daily Ritual</h4>
+                            <p className={styles.usageTextSmall}>{product.experience.ritual}</p>
+                          </div>
+                        </>
+                      ) : (
+                        <p className={styles.usageText}>Experience the pure essence of our botanical distillations through daily ritual.</p>
+                      )}
                     </div>
                   )}
                 </div>

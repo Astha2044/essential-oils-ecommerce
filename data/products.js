@@ -9,7 +9,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Lavandula Angustifolia",
     origin: "High-Altitude France",
     extraction: "Steam Distilled",
-    purity: "100% Pure & Organic",
+    purity: "Pure & Authentic",
     note: "Soft, floral, calming, slightly sweet",
     plantPart: "Flowering Tops",
     description: "Our signature Lavender Essential Oil offers a sophisticated floral bouquet that promotes profound relaxation and deep, restorative sleep. Known as the universal oil for its calming effects.",
@@ -19,7 +19,12 @@ export const ALL_PRODUCTS = [
       "Spa & massage",
       "Perfumes (relaxing category)"
     ],
-    usage: "Diffuse in the evening, use in relaxing massages, or apply to pressure points."
+    usage: "Diffuse in the evening, use in relaxing massages, or apply to pressure points.",
+    experience: {
+      diffusion: "Add 5-8 drops to your diffuser before bed to create a tranquil sanctuary for deep sleep.",
+      topical: "Mix 2 drops with 1 tsp of carrier oil and massage into temples or wrists to soothe tension.",
+      ritual: "Place a drop on your pillow or eye mask to enjoy the calming aroma throughout the night."
+    }
   },
   {
     id: "peppermint",
@@ -31,7 +36,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Mentha Piperita",
     origin: "Pacific Northwest, USA",
     extraction: "Steam Distilled",
-    purity: "100% Pure & Organic",
+    purity: "Pure & Authentic",
     note: "Strong, minty, cooling",
     plantPart: "Leaves & Flowers",
     description: "High-menthol Peppermint provides an instant cooling sensation. It's the ultimate natural stimulant for mental focus, physical vitality, and refreshing any space.",
@@ -41,7 +46,12 @@ export const ALL_PRODUCTS = [
       "Room freshener",
       "Focus/energy blends"
     ],
-    usage: "Inhale directly for focus, or use in cooling balms and diffusers."
+    usage: "Inhale directly for focus, or use in cooling balms and diffusers.",
+    experience: {
+      diffusion: "Diffuse 3-5 drops in your workspace to boost mental clarity and maintain high energy levels.",
+      topical: "Dilute with carrier oil and apply to the back of the neck for an instant cooling, refreshing sensation.",
+      ritual: "Add a drop to a wet washcloth and use in a hot shower for a revitalizing steam experience."
+    }
   },
   {
     id: "jasmine",
@@ -53,7 +63,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Jasminum Officinale",
     origin: "India",
     extraction: "Solvent Extracted",
-    purity: "100% Pure Absolute",
+    purity: "Pure & Authentic",
     note: "Rich, sweet, romantic floral",
     plantPart: "Flowers",
     description: "Exquisite and intoxicating, Jasmine is deeply romantic and uplifting. This rich floral absolute is highly prized in luxury perfumery and emotional wellness.",
@@ -63,7 +73,12 @@ export const ALL_PRODUCTS = [
       "Aromatherapy (mood uplifting)",
       "Romance & relaxation"
     ],
-    usage: "Use in luxury perfumes, attar blends, or diffuse for mood elevation."
+    usage: "Use in luxury perfumes, attar blends, or diffuse for mood elevation.",
+    experience: {
+      diffusion: "Diffuse 2-3 drops to create a luxurious and romantic atmosphere in your living space.",
+      topical: "Add a single drop to your facial moisturizer for a touch of luxury and skin-soothing benefits.",
+      ritual: "Mix with a light carrier oil to create a personal natural perfume that lingers throughout the day."
+    }
   },
   {
     id: "rosemary",
@@ -75,7 +90,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Rosmarinus Officinalis",
     origin: "Mediterranean Coast",
     extraction: "Steam Distilled",
-    purity: "100% Pure & Organic",
+    purity: "Pure & Authentic",
     note: "Herbal, fresh, slightly woody",
     plantPart: "Leaves & Flowering Tops",
     description: "Fresh and herbaceous, Rosemary is a staple for hair care and mental acuity. Its stimulating properties have been valued since ancient times.",
@@ -85,7 +100,12 @@ export const ALL_PRODUCTS = [
       "Ayurvedic products",
       "Scalp stimulation"
     ],
-    usage: "Add to hair oils for scalp health, or diffuse while studying."
+    usage: "Add to hair oils for scalp health, or diffuse while studying.",
+    experience: {
+      diffusion: "Diffuse 5 drops while studying or working to enhance concentration and memory retention.",
+      topical: "Mix 3-4 drops with coconut oil and massage into the scalp to stimulate circulation and hair health.",
+      ritual: "Add to a warm foot bath after a long day to refresh tired feet and clear the mind."
+    }
   },
   {
     id: "sandalwood",
@@ -97,7 +117,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Santalum Album",
     origin: "Mysore, India",
     extraction: "Steam Distilled",
-    purity: "100% Pure & Organic",
+    purity: "Pure & Authentic",
     note: "Warm, woody, deep, calming",
     plantPart: "Heartwood",
     description: "Revered in sacred traditions, our Sandalwood oil offers a deeply grounding, warm, and creamy wood aroma perfect for meditation and spiritual rituals.",
@@ -107,7 +127,12 @@ export const ALL_PRODUCTS = [
       "Meditation oils",
       "Deep emotional grounding"
     ],
-    usage: "Use during meditation, religious ceremonies, or as a perfume base."
+    usage: "Use during meditation, religious ceremonies, or as a perfume base.",
+    experience: {
+      diffusion: "Diffuse 3 drops during meditation or yoga to deepen your breath and focus the spirit.",
+      topical: "Apply a small amount (diluted) to the center of the forehead or wrists for spiritual grounding.",
+      ritual: "Add a drop to a small bowl of warm water in your sacred space to release its divine aroma slowly."
+    }
   },
   {
     id: "lemongrass",
@@ -119,7 +144,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Cymbopogon Citratus",
     origin: "Tropical Asia",
     extraction: "Steam Distilled",
-    purity: "100% Pure & Organic",
+    purity: "Pure & Authentic",
     note: "Fresh, lemony, slightly grassy",
     plantPart: "Leaves",
     description: "Vibrant and purifying, Lemongrass cuts through heavy energies. It is highly effective as a natural freshener and outdoor protector.",
@@ -129,7 +154,12 @@ export const ALL_PRODUCTS = [
       "Spa products",
       "Muscular relaxation"
     ],
-    usage: "Diffuse to freshen a room, or use in outdoor patio sprays."
+    usage: "Diffuse to freshen a room, or use in outdoor patio sprays.",
+    experience: {
+      diffusion: "Diffuse 5-8 drops to neutralize odors and bring a bright, clean energy to your home.",
+      topical: "Add to a carrier oil for a refreshing post-workout massage to soothe tired muscles.",
+      ritual: "Mix with water in a spray bottle to refresh gym bags, yoga mats, or outdoor seating areas."
+    }
   },
   {
     id: "citronella",
@@ -141,7 +171,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Cymbopogon Nardus",
     origin: "Sri Lanka",
     extraction: "Steam Distilled",
-    purity: "100% Pure & Organic",
+    purity: "Pure & Authentic",
     note: "Sharp lemony, strong",
     plantPart: "Leaves",
     description: "With its robust, sharp lemon scent, Citronella is the world's premier natural outdoor companion, keeping your spaces clear of unwanted flying visitors.",
@@ -151,7 +181,12 @@ export const ALL_PRODUCTS = [
       "Candles",
       "Patio protection"
     ],
-    usage: "Make natural bug sprays or add to homemade outdoor candles."
+    usage: "Make natural bug sprays or add to homemade outdoor candles.",
+    experience: {
+      diffusion: "Diffuse outdoors on your patio or balcony to create a bug-free zone during summer evenings.",
+      topical: "Mix with a lotion or carrier oil and apply to exposed skin before heading into the garden.",
+      ritual: "Add to floating candles in water bowls for a beautiful and functional outdoor centerpiece."
+    }
   },
   {
     id: "mogra",
@@ -163,7 +198,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Jasminum Sambac",
     origin: "India",
     extraction: "Solvent Extracted",
-    purity: "100% Pure Absolute",
+    purity: "Pure & Authentic",
     note: "Sweet, strong Indian floral",
     plantPart: "Flowers",
     description: "Capturing the essence of Indian temple flowers, Mogra (Jasmine Sambac) provides a lush, sweet, and profoundly traditional floral aroma.",
@@ -173,7 +208,12 @@ export const ALL_PRODUCTS = [
       "Traditional perfumes",
       "Spiritual offerings"
     ],
-    usage: "Use in traditional perfumery, incense making, or spiritual practices."
+    usage: "Use in traditional perfumery, incense making, or spiritual practices.",
+    experience: {
+      diffusion: "Diffuse 2-3 drops to fill your space with the timeless, lush aroma of Indian Mogra flowers.",
+      topical: "Add a drop to your hair oil for a traditional, long-lasting floral fragrance that is deeply comforting.",
+      ritual: "Use a single drop during your daily spiritual ritual (Puja) to elevate the sanctity of the space."
+    }
   },
   {
     id: "orange",
@@ -185,7 +225,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Citrus Sinensis",
     origin: "Brazil",
     extraction: "Cold Pressed",
-    purity: "100% Pure & Organic",
+    purity: "Pure & Authentic",
     note: "Sweet, citrus, fresh",
     plantPart: "Fruit Rind",
     description: "Like liquid sunshine, Orange essential oil instantly brightens any room. It is a joyful, sweet scent that boosts mood and naturally purifies surfaces.",
@@ -195,7 +235,12 @@ export const ALL_PRODUCTS = [
       "Cleaning products",
       "Uplifting atmosphere"
     ],
-    usage: "Diffuse to lift the mood, or add to DIY natural surface cleaners."
+    usage: "Diffuse to lift the mood, or add to DIY natural surface cleaners.",
+    experience: {
+      diffusion: "Diffuse 6-10 drops in the morning to start your day with a burst of joy and optimism.",
+      topical: "Add to your body wash for a refreshing, citrus-infused shower that awakens the senses.",
+      ritual: "Mix with baking soda to create a natural, fragrant carpet freshener for a clean, happy home."
+    }
   },
   {
     id: "ylang-ylang",
@@ -207,7 +252,7 @@ export const ALL_PRODUCTS = [
     scientificName: "Cananga Odorata",
     origin: "Madagascar",
     extraction: "Steam Distilled",
-    purity: "100% Pure & Organic",
+    purity: "Pure & Authentic",
     note: "Exotic, sweet, slightly fruity floral",
     plantPart: "Flowers",
     description: "Distilled from the 'flower of flowers', Ylang Ylang provides an exotic, voluptuous floral scent highly prized in luxury perfumery and romantic settings.",
@@ -217,6 +262,55 @@ export const ALL_PRODUCTS = [
       "Skin care oils",
       "Romantic ambiance"
     ],
-    usage: "Use in romantic diffuser blends, luxury perfumes, or nourishing skin oils."
+    usage: "Use in romantic diffuser blends, luxury perfumes, or nourishing skin oils.",
+    experience: {
+      diffusion: "Diffuse 3 drops with a drop of Orange oil for a sophisticated and uplifting home fragrance.",
+      topical: "Add to a scalp massage oil to promote relaxation and healthy-looking hair with a divine scent.",
+      ritual: "Add a few drops to a warm bath for a truly luxurious and exotic spa experience at home."
+    }
+  },
+  {
+    id: "lavender-candle",
+    name: "Calming Lavender Candle",
+    price: 28.00,
+    image: "/images/img1.png",
+    images: ["/images/img1.png"],
+    category: "Candles",
+    scientificName: "Soy-Based",
+    origin: "Hand-poured",
+    extraction: "Pure Essential Oil Scented",
+    purity: "Clean Burning",
+    note: "Floral, Relaxing",
+    plantPart: "Various",
+    description: "Our hand-poured soy candle infused with high-altitude lavender essential oil. Creates a serene atmosphere for perfect relaxation.",
+    benefits: ["Stress relief", "Better sleep", "Calming ambiance"],
+    usage: "Light during your evening ritual or bath time.",
+    experience: {
+      diffusion: "Burn for 1-2 hours before sleep to fill your bedroom with a soothing lavender mist.",
+      topical: "None (Candle use only).",
+      ritual: "Incorporate into your wind-down routine—light the candle, put away devices, and breathe deeply."
+    }
+  },
+  {
+    id: "sandalwood-candle",
+    name: "Sacred Sandalwood Candle",
+    price: 35.00,
+    image: "/images/img9.png",
+    images: ["/images/img9.png"],
+    category: "Candles",
+    scientificName: "Soy-Based",
+    origin: "Hand-poured",
+    extraction: "Pure Essential Oil Scented",
+    purity: "Clean Burning",
+    note: "Woody, Grounding",
+    plantPart: "Various",
+    description: "Experience the grounding aroma of Sandalwood in a clean-burning soy candle. Perfect for meditation and spiritual focus.",
+    benefits: ["Grounding", "Focus", "Sacred space"],
+    usage: "Use during meditation or for a warm, woody home fragrance.",
+    experience: {
+      diffusion: "Light during meditation or prayer to ground your energy and focus the mind.",
+      topical: "None (Candle use only).",
+      ritual: "Use during your 'Sacred Hour' to create a physical boundary between daily stress and inner peace."
+    }
   }
 ];

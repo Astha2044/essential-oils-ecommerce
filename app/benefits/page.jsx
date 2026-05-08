@@ -99,10 +99,10 @@ export default function BenefitsPage() {
               <div className={styles.usageImageWrapper}>
                 <img src="/images/eucalyptus_bottle.png" alt="Usage" className={styles.usageImage} />
                 <div className={styles.imageDecoration}></div>
-                {/* <div className={styles.glassBadge}>
-                  <span>100%</span>
-                  <strong>Pure</strong>
-                </div> */}
+                <div className={styles.glassBadge}>
+                  <strong>Pure Essence</strong>
+                  <span>Nature's Choice</span>
+                </div>
               </div>
               <div className={styles.usageText}>
                 <h2 className={styles.sectionTitle}>How to Experience</h2>

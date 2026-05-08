@@ -119,7 +119,7 @@ export default function Navbar() {
                   >
                     Products
                   </Link>
-                  <div 
+                  <div
                     className={`${styles.arrowToggle} ${isProductsDropdownOpen ? styles.arrowActive : ''}`}
                     onClick={(e) => {
                       e.preventDefault();
@@ -136,29 +136,25 @@ export default function Navbar() {
                 <div className={styles.menu}>
                   <div className={styles.list}>
                     <Link
-                      href="/products"
+                      href="/products?category=Essential%20Oils"
                       className={styles.item}
-                      style={{ borderBottom: '1px solid rgba(0,0,0,0.05)', fontWeight: '600' }}
                       onClick={() => {
                         setIsProductsDropdownOpen(false);
                         setIsMobileMenuOpen(false);
                       }}
                     >
-                      Shop All Products
+                      Essential Oils
                     </Link>
-                    {ALL_PRODUCTS.slice(0, 10).map((product) => (
-                      <Link
-                        key={product.id}
-                        href={`/products/${product.id}`}
-                        className={styles.item}
-                        onClick={() => {
-                          setIsProductsDropdownOpen(false);
-                          setIsMobileMenuOpen(false);
-                        }}
-                      >
-                        {product.name.replace(" Essential Oil", "")}
-                      </Link>
-                    ))}
+                    <Link
+                      href="/products?category=Candles"
+                      className={styles.item}
+                      onClick={() => {
+                        setIsProductsDropdownOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      Candles
+                    </Link>
                   </div>
                 </div>
               )}

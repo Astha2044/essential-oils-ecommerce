@@ -8,10 +8,10 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroOverlay}></div>
-      
+
       <div className={styles.container}>
         <div className={styles.contentWrapper}>
-          
+
           <div className={styles.badge} suppressHydrationWarning>Natural & Pure</div>
 
           <h1 className={styles.title} suppressHydrationWarning>
@@ -20,7 +20,7 @@ export default function Hero() {
           </h1>
 
           <p className={styles.subtitle} suppressHydrationWarning>
-            Nurture your body and soul with our meticulously crafted, therapeutic-grade essential oils. Ethically sourced, potent, and pure.
+            Nurture your body and soul with our meticulously crafted, therapeutic-grade essential oils. Ethically sourced, and pure.
           </p>
 
           <div className={styles.features}>

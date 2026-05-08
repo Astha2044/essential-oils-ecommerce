@@ -86,8 +86,8 @@ export default function HowItWorksPage() {
                 <img src="/images/img1.png" alt="Distillation" className={styles.mainImage} />
                 <div className={styles.imageDecoration}></div>
                 <div className={styles.glassBadge}>
-                  <span>Tested</span>
-                  <strong>99.9% Pure</strong>
+                  <strong>Pure Essence</strong>
+                  <span>Nature's Choice</span>
                 </div>
               </div>
             </div>

@@ -455,6 +455,15 @@
   font-size: 1.1rem;
 }
 
+.usageNote {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #6B7280;
+  margin-top: 1rem;
+  border-top: 1px dashed rgba(55, 83, 65, 0.15);
+  padding-top: 1rem;
+}
+
 .usageContainer {
   display: flex;
   flex-direction: column;

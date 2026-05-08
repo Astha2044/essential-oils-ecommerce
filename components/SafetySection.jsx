@@ -17,7 +17,7 @@ export default function SafetySection() {
               Our oils are pre-diluted and ready for direct use, making them gentle and easy to enjoy every day. For best experience, we recommend a quick patch test before first use to ensure it suits your skin.
             </p>
           </div>
-          
+
           <div className={styles.safetyCard}>
             <div className={styles.iconWrapper}><FaShieldHeart /></div>
             <p className={styles.description}>
@@ -31,10 +31,10 @@ export default function SafetySection() {
               Store in a cool, dry place and keep out of reach of children. If pregnant or nursing, it’s always a good idea to consult a healthcare professional before use.
             </p>
           </div>
-        </div>
 
-        <div className={styles.footer}>
-          <span className={styles.disclaimer}>* For External Use Only</span>
+          <div className={styles.centerDisclaimer}>
+            <span className={styles.disclaimer}>* For External Use Only</span>
+          </div>
         </div>
       </div>
     </section>

@@ -42,7 +42,7 @@
 .safetyCard {
   background-color: white;
   padding: 3.5rem 2.5rem;
-  border-radius: 15rem 15rem 3rem 3rem; /* Signature botanical arch */
+  border-radius: 15rem 15rem 3rem 3rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -90,10 +90,17 @@
   font-weight: 500;
 }
 
-.footer {
+.centerDisclaimer {
+  grid-column: 2;
   text-align: center;
-  padding-top: 3rem;
-  border-top: 1px dashed rgba(55, 83, 65, 0.1);
+  margin-top: -1rem;
+}
+
+@media (max-width: 1024px) {
+  .centerDisclaimer {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
 }
 
 .disclaimer {
@@ -114,12 +121,12 @@
   .section {
     padding: 6rem 0;
   }
-  
+
   .grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .safetyCard {
     padding: 3rem 2rem;
     border-radius: 12rem 12rem 2.5rem 2.5rem;
