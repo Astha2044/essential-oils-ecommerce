@@ -112,6 +112,7 @@ export default function Navbar() {
                     <button 
                       className={`${styles.mobileArrowToggle} ${isProductsDropdownOpen ? styles.arrowActive : ''} ${isActive('/products') ? styles.activeArrow : ''}`}
                       onClick={() => setIsProductsDropdownOpen(!isProductsDropdownOpen)}
+                      suppressHydrationWarning
                     >
                       <FiChevronDown />
                     </button>
@@ -176,6 +177,7 @@ export default function Navbar() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 autoFocus
+                suppressHydrationWarning
               />
               <FiX className={styles.closeSearch} onClick={() => { setIsSearchOpen(false); setSearchQuery(""); }} />
             </div>

@@ -60,6 +60,7 @@ function ProductsContent() {
                   key={cat}
                   className={`${styles.categoryBtn} ${activeCategory === cat ? styles.active : ""}`}
                   onClick={() => setActiveCategory(cat)}
+                  suppressHydrationWarning
                 >
                   {cat}
                 </button>
@@ -86,7 +87,7 @@ function ProductsContent() {
           ) : (
             <div className={styles.emptyState}>
               <p>No products found in this category.</p>
-              <button className={styles.resetBtn} onClick={() => setActiveCategory("All")}>
+              <button className={styles.resetBtn} onClick={() => setActiveCategory("All")} suppressHydrationWarning>
                 View All Products
               </button>
             </div>
@@ -117,8 +118,9 @@ function ProductsContent() {
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     className={styles.newsletterInput}
+                    suppressHydrationWarning
                   />
-                  <button type="submit" className={styles.newsletterSubmit}>
+                  <button type="submit" className={styles.newsletterSubmit} suppressHydrationWarning>
                     Embrace the Essence
                   </button>
                 </div>
