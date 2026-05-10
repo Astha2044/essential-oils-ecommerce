@@ -4,8 +4,11 @@ import CTASection from "../../components/CTASection";
 import styles from "../../styles/Legal.module.css";
 
 export const metadata = {
-  title: "Terms of Service | VS Naturals",
-  description: "Terms and conditions for using VS Naturals & Essentials",
+  title: "Terms of Service",
+  description: "Read the terms and conditions for using VS Naturals & Essentials products and services. Understand your rights and our guidelines for a safe botanical shopping experience.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {
@@ -14,32 +17,48 @@ export default function TermsPage() {
       <Navbar />
 
       <header className={styles.hero}>
-        <h1 className={styles.heroTitle}>Terms of Service</h1>
+        <div className={styles.heroContent}>
+          <div className={styles.badge}>Legal</div>
+          <h1 className={styles.heroTitle}>Terms of Service</h1>
+          <p className={styles.heroSubtitle}>
+            The guidelines and rules for using VS Naturals products and services.
+          </p>
+        </div>
       </header>
 
       <main className={styles.contentWrapper}>
         <section className={styles.section}>
-          <h2>1. Acceptance of Terms</h2>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.number}>01.</span> Acceptance of Terms
+          </h2>
           <p>By accessing and using VS Naturals & Essentials, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this service.</p>
         </section>
 
         <section className={styles.section}>
-          <h2>2. Use of Our Products</h2>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.number}>02.</span> Use of Our Products
+          </h2>
           <p>Our essential oils are pure and highly concentrated. They are intended for external use and aromatherapy only. Always dilute properly before applying to the skin. VS Naturals is not responsible for adverse reactions caused by improper use of our products.</p>
         </section>
 
         <section className={styles.section}>
-          <h2>3. Purchasing and Payment</h2>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.number}>03.</span> Purchasing and Payment
+          </h2>
           <p>All prices are subject to change without notice. We reserve the right to refuse or cancel any order. If your order is canceled after your payment has been processed, we will issue a full refund.</p>
         </section>
 
         <section className={styles.section}>
-          <h2>4. Returns and Exchanges</h2>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.number}>04.</span> Returns and Exchanges
+          </h2>
           <p>Due to the nature of our products, we accept returns only for unopened and unused bottles within 30 days of purchase. Return shipping costs are the responsibility of the customer.</p>
         </section>
 
         <section className={styles.section}>
-          <h2>5. Intellectual Property</h2>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.number}>05.</span> Intellectual Property
+          </h2>
           <p>All content on this site, including text, graphics, logos, and images, is the property of VS Naturals & Essentials and is protected by intellectual property laws. You may not reproduce or use our content without explicit permission.</p>
         </section>
       </main>

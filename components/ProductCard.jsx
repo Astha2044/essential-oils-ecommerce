@@ -25,9 +25,9 @@ export default function ProductCard({ id, name, price, image }) {
             <Image
               src={image}
               alt={name}
-              width={350}
-              height={400}
+              fill
               className={styles.image}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : (
             <div className={styles.placeholder}></div>

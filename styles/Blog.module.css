@@ -510,8 +510,14 @@
 }
 
 @media (max-width: 768px) {
+  .blogHero {
+    padding: 160px 1.5rem 60px 1.5rem;
+    min-height: 60vh;
+  }
+
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-top: 1rem;
   }
 
   .featuredCard {
