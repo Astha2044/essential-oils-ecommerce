@@ -19,14 +19,20 @@ export default function BrandStory() {
 
             <div className={styles.featureList}>
               <div className={styles.feature}>
-                <div className={styles.featureIcon}><FaLeaf /></div>
+                <div className={styles.iconWrapper}>
+                  <div className={styles.iconDecoration}></div>
+                  <div className={styles.featureIcon}><FaLeaf /></div>
+                </div>
                 <div className={styles.featureInfo}>
                   <h4>Sustainable Sourcing</h4>
                   <p>Respecting the environment through ethical farming.</p>
                 </div>
               </div>
               <div className={styles.feature}>
-                <div className={styles.featureIcon}><FaShieldHeart /></div>
+                <div className={styles.iconWrapper}>
+                  <div className={styles.iconDecoration}></div>
+                  <div className={styles.featureIcon}><FaShieldHeart /></div>
+                </div>
                 <div className={styles.featureInfo}>
                   <h4>Certified Purity</h4>
                   <p>Rigorous testing for therapeutic-grade quality.</p>

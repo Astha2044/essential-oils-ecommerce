@@ -1,3 +1,16 @@
+.section {
+  padding: 2rem 0 0 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem 0 0 0;
+  }
+}
+
 .header {
   max-width: 1300px;
   margin: 0 auto 3rem auto;
@@ -7,17 +20,29 @@
   align-items: flex-end;
 }
 
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   color: var(--color-green-dark);
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .subtitle {
   font-size: 1.1rem;
   color: #6B7280;
   line-height: 1.6;
+  max-width: 600px;
 }
 
 .arrows {
@@ -26,8 +51,8 @@
 }
 
 .arrowBtn {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   border: 1px solid rgba(55, 83, 65, 0.1);
   background: white;
@@ -36,33 +61,83 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .arrowBtn:hover {
   background-color: var(--color-green-dark);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(55, 83, 65, 0.15);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
+.sliderContainer {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 var(--container-px);
+  overflow: hidden;
+  /* This hides the partial cards on the side */
+  position: relative;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 2rem 0 6rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-bottom: -4rem;
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
-  /* background-color: var(--color-green-soft); */
-  background-color: #eaf2ed;
-  padding: 2.5rem;
+  /* Strictly enforce 3-card width on desktop */
+  flex: 0 0 calc((100% - 4rem) / 3);
+  width: calc((100% - 4rem) / 3);
+  max-width: calc((100% - 4rem) / 3);
+
+  scroll-snap-align: start;
+  background-color: #f1f7f4;
+  padding: 2rem 2.5rem;
+  /* Reduced top padding from 3rem */
   border-radius: 2.5rem;
   border: 1px solid rgba(55, 83, 65, 0.05);
   display: flex;
   flex-direction: column;
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+@media (max-width: 1100px) {
+  .card {
+    /* Strictly enforce 2-card width on tablet */
+    flex: 0 0 calc((100% - 2rem) / 2);
+    width: calc((100% - 2rem) / 2);
+    max-width: calc((100% - 2rem) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 2.5rem 2rem;
+  }
+
+  .grid {
+    padding-bottom: 5rem;
+    margin-bottom: -3rem;
+  }
 }
 
 .card:hover {
@@ -82,28 +157,27 @@
 
 .quote {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 1.6;
   color: var(--color-green-dark);
   font-style: italic;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2.5rem; */
   flex: 1;
 }
 
 .authorBlock {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(55, 83, 65, 0.05);
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(55, 83, 65, 0.08);
 }
 
 .avatar {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   object-fit: cover;
   border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
-  /* Signature arched avatar frame */
   border: 2px solid white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
@@ -112,29 +186,13 @@
   font-weight: 700;
   color: var(--color-green-dark);
   margin-bottom: 0.2rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .authorRole {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #6B7280;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-
-  .card {
-    padding: 2rem;
-  }
-
-  .quote {
-    font-size: 1.15rem;
-  }
+  letter-spacing: 0.1em;
 }
