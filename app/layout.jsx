@@ -1,4 +1,5 @@
 import "./globals.css";
+import FloatingActions from "../components/FloatingActions";
 
 export const metadata = {
   icons: {
@@ -9,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <FloatingActions />
+      </body>
     </html>
   );
 }
