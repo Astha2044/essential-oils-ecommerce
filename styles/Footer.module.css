@@ -229,6 +229,15 @@
   width: 100%;
   max-width: 420px;
   padding-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 580px) {
+  .rightCol {
+    align-items: left;
+    text-align: left;
+  }
 }
 
 .rightCol .blockTitle {
@@ -293,9 +302,12 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
+  text-align: center;
+  /* Centered for better mobile alignment */
   color: #375341;
   font-size: 0.9rem;
   font-weight: 500;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {
@@ -305,9 +317,17 @@
   }
 }
 
+@media (min-width: 768px) {
+  .legalLinks {
+    margin-right: 6rem;
+    /* Pushes links left to avoid overlap with floating buttons */
+  }
+}
+
 .legalLinks {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.25rem;
+  /* Reduced gap for a more compact look */
 }
 
 .legalLinks a {
