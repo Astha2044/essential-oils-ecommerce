@@ -112,14 +112,12 @@ export default function ProductDetailPage({ params }) {
                 >
                   Buy Now
                 </a>
-                <a
-                  href={`https://wa.me/1234567890?text=Hi, I have an inquiry about ${product.name}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className={styles.inquiryBtn}
                 >
                   Message Us
-                </a>
+                </Link>
               </div>
 
               {/* Tabs Section */}

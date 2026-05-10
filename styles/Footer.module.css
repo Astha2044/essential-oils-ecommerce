@@ -11,7 +11,8 @@
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1400px;
+  /* Increased from 1300px to match Navbar and avoid crowding */
   margin: 0 auto;
   animation: footerReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
@@ -36,16 +37,20 @@
   position: relative;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
+
+  /* Increased from 1024px to ensure enough width for all columns */
   .mainContent {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 4rem;
   }
 }
 
 .leftCol {
-  flex: 2;
+  flex: 3;
+  /* Increased from 2 to give links more room */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -55,7 +60,9 @@
 @media (min-width: 768px) {
   .leftCol {
     flex-direction: row;
-    gap: clamp(2rem, 5vw, 4rem);
+    gap: clamp(1.5rem, 3vw, 3rem);
+    /* Reduced gap to prevent wrapping */
+    width: 100%;
   }
 }
 
@@ -104,8 +111,18 @@
 
 @media (min-width: 768px) {
   .linksGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on tablet/small desktop */
+    gap: 2rem;
+    flex: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .linksGrid {
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns only on large desktop */
+    gap: 1.5rem;
   }
 }
 
@@ -153,7 +170,8 @@
   font-weight: 500;
   position: relative;
   padding-bottom: 2px;
-  transition: color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
 }
 
 .list a::after {
@@ -169,6 +187,8 @@
 
 .list a:hover {
   color: var(--color-green-primary);
+  transform: translateX(6px);
+  /* Moves 'inside' on hover */
 }
 
 .list a:hover::after {
@@ -176,29 +196,32 @@
 }
 
 .socialIcons {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
+  /* Reduced from 3rem */
   display: flex;
-  gap: 0.85rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .socialIcon {
-  width: 2.75rem;
-  height: 2.75rem;
-  background-color: #2D4636;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-green-dark);
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 1.2rem;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .socialIcon:hover {
-  transform: translateY(-5px) rotate(8deg);
+  transform: translateY(-8px) scale(1.1) rotate(10deg);
   background-color: var(--color-green-primary);
-  box-shadow: 0 10px 20px rgba(55, 83, 65, 0.2);
+  box-shadow: 0 15px 30px rgba(55, 83, 65, 0.25);
+  color: white;
 }
 
 .rightCol {

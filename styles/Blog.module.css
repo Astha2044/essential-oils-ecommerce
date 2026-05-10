@@ -81,19 +81,25 @@
 
 .featuredImageWrapper {
   position: relative;
-  padding: 1rem;
+  padding: 0.5rem;
+  /* Tightened from 1rem to remove excess space */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Aligned to start for a cleaner text flow */
   align-items: center;
   cursor: pointer;
+  width: fit-content;
 }
 
 .featuredImage {
   width: 100%;
-  max-width: 520px;
-  height: 480px;
+  max-width: 350px;
+  /* Exact same as product detail iconic frame */
+  aspect-ratio: 1 / 1;
+  /* Exact same square frame */
   object-fit: cover;
-  border-radius: 18rem 18rem 3rem 3rem;
+  border-radius: 20rem 20rem 4rem 4rem;
+  /* Exact same extreme arched top */
   box-shadow: 0 40px 80px rgba(55, 83, 65, 0.15);
   position: relative;
   z-index: 2;
@@ -108,10 +114,11 @@
 
 .imageDecoration {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 15rem 15rem 3rem 3rem;
+  inset: -0.5rem;
+  /* Reduced from -1rem to pull border closer to image */
+  width: auto;
+  height: auto;
+  border-radius: 20rem 20rem 4rem 4rem;
   z-index: 1;
   pointer-events: none;
 }
@@ -122,25 +129,28 @@
   position: absolute;
   inset: 0;
   border: 1px dashed var(--color-green-primary);
-  border-radius: 15rem 15rem 3rem 3rem;
+  border-radius: 20rem 20rem 4rem 4rem;
   opacity: 0.2;
   transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, opacity;
 }
 
 .imageDecoration::after {
-  transform: scale(1.05) rotate(2deg);
+  transform: scale(1.02) rotate(2deg);
+  /* Lowered scale to keep it tight */
   border-style: solid;
   opacity: 0.1;
 }
 
 .featuredImageWrapper:hover .imageDecoration::before {
-  transform: scale(1.08) rotate(-2deg);
+  transform: scale(1.04) rotate(-2deg);
+  /* Reduced scale */
   opacity: 0.4;
 }
 
 .featuredImageWrapper:hover .imageDecoration::after {
-  transform: scale(1.12) rotate(4deg);
+  transform: scale(1.06) rotate(4deg);
+  /* Reduced scale */
   opacity: 0.2;
 }
 
@@ -506,6 +516,12 @@
 
   .featuredCard {
     padding: 2.5rem;
+  }
+
+  .featuredImage {
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    border-radius: 15rem 15rem 3rem 3rem;
   }
 
   .newsletterCard {
