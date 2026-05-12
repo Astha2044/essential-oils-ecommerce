@@ -16,18 +16,31 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(to right, rgba(23, 36, 28, 0.8) 0%, rgba(23, 36, 28, 0.4) 40%, rgba(23, 36, 28, 0.1) 100%);
   z-index: 2;
+}
+
+@media (max-width: 1023px) {
+  .heroOverlay {
+    background: radial-gradient(circle at center, rgba(23, 36, 28, 0.6) 0%, rgba(23, 36, 28, 0.8) 100%);
+  }
 }
 
 .slideBackground {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .slideBackground {
+    background-position: 50% 50%; /* Precise centering for mobile */
+  }
 }
 
 .activeSlide {
@@ -36,7 +49,7 @@
 
 @media (max-width: 1023px) {
   .hero {
-    padding: 8rem 1.5rem 8rem 1.5rem; /* Balanced padding to center content better */
+    padding: 6rem 1.25rem 4rem 1.25rem; /* Reduced padding for mobile to show more image */
     text-align: center;
     align-items: center;
     min-height: 100vh; /* Full viewport height to avoid cutting */

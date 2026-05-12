@@ -16,7 +16,8 @@ const slides = [
     title: "Illuminate Your Space with Handcrafted Candles",
     subtitle: "Elevate your home with natural soy wax and pure essential oils, designed to create a serene and calming atmosphere for relaxation.",
     image: "/images/candle.png",
-    badge: "Handcrafted"
+    badge: "Handcrafted",
+    position: "bottom"
   },
   {
     title: "Indulge in the Luxury of Pure Rose Essence",
@@ -28,7 +29,8 @@ const slides = [
     title: "Revitalize Your Senses with Energizing Lemon Oil",
     subtitle: "Cold-pressed lemon essence to revitalize your senses, boost your mood, and naturally refresh your daily living space with vibrant energy.",
     image: "/images/lemon.png",
-    badge: "Energizing"
+    badge: "Energizing",
+    position: "bottom"
   },
   {
     title: "Inner Peace with Calming Sandalwood Rituals",
@@ -65,7 +67,10 @@ export default function Hero() {
         <div
           key={index}
           className={`${styles.slideBackground} ${index === activeSlideIndex ? styles.activeSlide : ''}`}
-          style={{ backgroundImage: `linear-gradient(rgba(55, 83, 65, 0.6), rgba(55, 83, 65, 0.6)), url(${slide.image})` }}
+          style={{ 
+            backgroundImage: `url(${slide.image})`,
+            backgroundPosition: slide.position === "bottom" ? "center bottom" : "center center"
+          }}
         ></div>
       ))}
 
