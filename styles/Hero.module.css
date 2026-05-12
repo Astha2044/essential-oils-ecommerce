@@ -30,7 +30,7 @@
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center center;
+  background-position: var(--bg-pos-desktop, center center);
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
@@ -39,7 +39,10 @@
 
 @media (max-width: 768px) {
   .slideBackground {
-    background-position: 50% 50%; /* Precise centering for mobile */
+    background-position: var(--bg-pos-mobile, 50% 50%);
+    filter: blur(12px);
+    transform: scale(1.1);
+    /* Precise centering for mobile */
   }
 }
 
@@ -49,10 +52,12 @@
 
 @media (max-width: 1023px) {
   .hero {
-    padding: 6rem 1.25rem 4rem 1.25rem; /* Reduced padding for mobile to show more image */
+    padding: 6rem 1.25rem 4rem 1.25rem;
+    /* Reduced padding for mobile to show more image */
     text-align: center;
     align-items: center;
-    min-height: 100vh; /* Full viewport height to avoid cutting */
+    min-height: 100vh;
+    /* Full viewport height to avoid cutting */
   }
 
   .heroOverlay {
@@ -255,7 +260,8 @@
 @media (max-width: 1023px) {
   .indicators {
     justify-content: center;
-    margin-top: 2rem; /* Reduced margin for mobile */
+    margin-top: 2rem;
+    /* Reduced margin for mobile */
   }
 }
 

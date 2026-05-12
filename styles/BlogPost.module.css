@@ -14,13 +14,13 @@
   min-height: 55vh;
   background: linear-gradient(rgba(45, 70, 54, 0.75), rgba(45, 70, 54, 0.75)), url('/images/hero_new.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 160px 0 100px 0;
+  padding: 140px 0 60px 0;
 }
 
 .heroContent {
@@ -67,7 +67,7 @@
 
 /* Article Body */
 .articleSection {
-  padding: 6rem 0;
+  padding: 4rem 0;
   background-color: #fcfdfc;
 }
 
@@ -275,6 +275,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -282,23 +283,35 @@
 }
 
 @keyframes softFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 @media (max-width: 768px) {
   .postHero {
-    padding: 160px 1.5rem 80px 1.5rem;
+    padding: 110px 1.5rem 40px 1.5rem;
+    min-height: 45vh;
   }
-  
+
+  .articleSection {
+    padding: 2.5rem 0;
+  }
+
   .heroTitle {
     font-size: 2.2rem;
   }
-  
+
   .ctaCard {
     padding: 3rem 1.5rem;
   }
-  
+
   .ctaCard h2 {
     font-size: 2rem;
   }

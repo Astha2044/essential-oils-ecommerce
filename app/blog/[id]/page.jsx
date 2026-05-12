@@ -49,9 +49,9 @@ export default async function BlogPost({ params }) {
 
             <div className={styles.articleGrid}>
               <div className={styles.articleContent}>
-                <div 
+                <div
                   className={styles.richText}
-                  dangerouslySetInnerHTML={{ __html: post.content }} 
+                  dangerouslySetInnerHTML={{ __html: post.content }}
                 />
               </div>
 

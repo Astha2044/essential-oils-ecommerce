@@ -10,39 +10,49 @@ const slides = [
     title: "Experience the Essence of Pure Botanical Oils",
     subtitle: "Nurture your mind, body, and soul with our meticulously crafted, therapeutic-grade oils sourced directly from the heart of nature.",
     image: "/images/hero_background.png",
-    badge: "Natural & Pure"
+    badge: "Natural & Pure",
+    desktopPosition: "center 25%",
+    mobilePosition: "80% center"
   },
   {
     title: "Illuminate Your Space with Handcrafted Candles",
     subtitle: "Elevate your home with natural soy wax and pure essential oils, designed to create a serene and calming atmosphere for relaxation.",
     image: "/images/candle.png",
     badge: "Handcrafted",
-    position: "bottom"
+    desktopPosition: "center bottom",
+    mobilePosition: "80% bottom"
   },
   {
     title: "Indulge in the Luxury of Pure Rose Essence",
     subtitle: "Experience the delicate, floral luxury of our ethically sourced rose blends, perfect for emotional balance and enhancing natural skin radiance.",
     image: "/images/rose.png",
-    badge: "Floral Luxury"
+    badge: "Floral Luxury",
+    desktopPosition: "center center",
+    mobilePosition: "80% center"
   },
   {
     title: "Revitalize Your Senses with Energizing Lemon Oil",
     subtitle: "Cold-pressed lemon essence to revitalize your senses, boost your mood, and naturally refresh your daily living space with vibrant energy.",
     image: "/images/lemon.png",
     badge: "Energizing",
-    position: "bottom"
+    desktopPosition: "center bottom",
+    mobilePosition: "80% bottom"
   },
   {
     title: "Inner Peace with Calming Sandalwood Rituals",
     subtitle: "Rich, woody aromas meticulously distilled for deep meditation, mindfulness, and achieving a profound sense of lasting inner peace.",
     image: "/images/sandlewood.png",
-    badge: "Meditation"
+    badge: "Meditation",
+    desktopPosition: "center center",
+    mobilePosition: "80% center"
   },
   {
     title: "Elevate Your Wellness with Exquisite Mogra",
     subtitle: "The divine, intoxicating fragrance of Jasmine (Mogra) designed to enhance your holistic wellness and elevate your daily self-care rituals.",
     image: "/images/New_mogra.png",
-    badge: "Holistic Care"
+    badge: "Holistic Care",
+    desktopPosition: "center center",
+    mobilePosition: "80% center"
   }
 ];
 
@@ -67,9 +77,10 @@ export default function Hero() {
         <div
           key={index}
           className={`${styles.slideBackground} ${index === activeSlideIndex ? styles.activeSlide : ''}`}
-          style={{ 
+          style={{
             backgroundImage: `url(${slide.image})`,
-            backgroundPosition: slide.position === "bottom" ? "center bottom" : "center center"
+            '--bg-pos-desktop': slide.desktopPosition || (slide.position === "bottom" ? "center bottom" : "center center"),
+            '--bg-pos-mobile': slide.mobilePosition || "center center"
           }}
         ></div>
       ))}

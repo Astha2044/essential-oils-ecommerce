@@ -41,7 +41,7 @@
   min-height: 50vh;
   background: linear-gradient(rgba(55, 83, 65, 0.7), rgba(55, 83, 65, 0.7)), url('/images/hero_background.png');
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -438,8 +438,8 @@
   }
 
   .aboutHero {
-    padding: 160px 1.5rem 60px 1.5rem;
-    min-height: 60vh;
+    padding: 110px 1.5rem 40px 1.5rem;
+    min-height: 45vh;
   }
 
   .heroTitle {

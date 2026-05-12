@@ -12,9 +12,9 @@
 .howHero {
   width: 100%;
   min-height: 50vh;
-  background: linear-gradient(rgba(55, 83, 65, 0.7), rgba(55, 83, 65, 0.7)), url('/images/about_brand.png');
+  background: linear-gradient(rgba(55, 83, 65, 0.7), rgba(55, 83, 65, 0.7)), url('/images/New_mogra.png');
   background-size: cover;
-  background-position: center;
+  background-position: center 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -313,8 +313,8 @@
 
 @media (max-width: 768px) {
   .howHero {
-    padding: 160px 1.5rem 60px 1.5rem;
-    min-height: 60vh;
+    padding: 110px 1.5rem 40px 1.5rem;
+    min-height: 45vh;
   }
 
   .heroTitle {
