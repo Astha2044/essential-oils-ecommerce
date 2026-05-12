@@ -71,12 +71,13 @@
   }
 
   .navbar.scrolled {
-    top: 1rem;
-    width: 94%;
+    top: 0.75rem;
+    width: 96%;
+    padding: 0.8rem 0;
   }
 
   .navbar.scrolled .logoIcon {
-    height: 3.5rem;
+    height: 3rem;
   }
 }
 
@@ -123,17 +124,40 @@
 
 @media (max-width: 1023px) {
   .logoIcon {
-    height: 4.5rem;
+    height: 3.8rem;
   }
 
   .logoTitle {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .logoSubtitle {
     display: block;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     margin-top: 1px;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoIcon {
+    height: 3.2rem;
+  }
+  
+  .logoTitle {
+    font-size: 1.05rem;
+  }
+
+  .logoSubtitle {
+    font-size: 0.55rem;
+  }
+  
+  .navContainer {
+    padding: 0 1.25rem;
+  }
+  
+  .mobileHeaderRight {
+    gap: 0.75rem;
   }
 }
 

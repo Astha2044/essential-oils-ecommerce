@@ -6,7 +6,8 @@
   align-items: center;
   position: relative;
   padding: 10rem 0 2.5rem 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .heroOverlay {

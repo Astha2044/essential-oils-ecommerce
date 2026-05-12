@@ -1,6 +1,11 @@
 import "./globals.css";
 import FloatingActions from "../components/FloatingActions";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata = {
   metadataBase: new URL('https://www.vsnaturalsandessentials.com'),
   title: {
