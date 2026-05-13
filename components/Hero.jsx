@@ -102,11 +102,11 @@ export default function Hero() {
           <div className={styles.features}>
             <div className={styles.featureItem}>
               <div className={styles.iconCircle}><FaLeaf /></div>
-              <span>Naturally<br />Potent</span>
+              <span>Rich Lasting<br />Fragrance</span>
             </div>
             <div className={styles.featureItem}>
               <div className={styles.iconCircle}><FaDroplet /></div>
-              <span>Steam<br />Distilled</span>
+              <span>Crafted for<br />Wellness</span>
             </div>
             <div className={styles.featureItem}>
               <div className={styles.iconCircle}><FaSpa /></div>
