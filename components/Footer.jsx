@@ -35,7 +35,7 @@ export default function Footer() {
                 <a href="https://www.facebook.com/vsnaturals" className={styles.socialIcon} aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
                 <a href="https://www.instagram.com/vsnaturalsandessentials/" className={styles.socialIcon} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                 <a href="https://twitter.com/vsnaturals" className={styles.socialIcon} aria-label="Twitter" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
-                <a href="https://wa.me/1234567890" className={styles.socialIcon} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+                <a href="https://wa.me/919213638440" className={styles.socialIcon} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
                 <a href="https://www.youtube.com/vsnaturals" className={styles.socialIcon} aria-label="YouTube" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <h4 className={styles.blockTitle}>Contact</h4>
                 <ul className={styles.list}>
                   <li><a href="mailto:info@vsnaturals.com" className={styles.contactLink}>info@vsnaturals.com</a></li>
-                  <li><a href="tel:+911234567890" className={styles.contactLink}>+91 12345 67890</a></li>
+                  <li><a href="tel:+919213638440" className={styles.contactLink}>+91 92136 38440</a></li>
                 </ul>
               </div>
             </div>

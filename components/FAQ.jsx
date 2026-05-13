@@ -21,7 +21,7 @@ export default function FAQ() {
     },
     {
       q: "How should I apply essential oils for the best results?",
-      a: "Massage it gently into damp skin after a shower."
+      a: "Add 3–4 ml to your diffuser, bath, skincare routine, or massage blend to enjoy its natural aroma and refreshing feel."
     },
     {
       q: "Can I use essential oils on my face?",

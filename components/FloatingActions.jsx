@@ -43,7 +43,7 @@ export default function FloatingActions() {
 
       {/* WhatsApp Button (Sits above Scroll-to-Top, or at bottom if Scroll-to-Top is hidden) */}
       {/* <a
-        href="https://wa.me/1234567890"
+        href="https://wa.me/919213638440"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.whatsappBtn}

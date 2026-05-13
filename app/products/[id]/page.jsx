@@ -105,7 +105,7 @@ export default function ProductDetailPage({ params }) {
 
               <div className={styles.buttonGroup}>
                 <a
-                  href={`https://wa.me/1234567890?text=Hi, I'm interested in ${product.name}`}
+                  href={`https://wa.me/919213638440?text=Hi, I'm interested in ${product.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.buyNowBtn}

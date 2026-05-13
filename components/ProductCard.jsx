@@ -10,7 +10,7 @@ export default function ProductCard({ id, name, price, image }) {
 
   const handleBuyNow = (e) => {
     e.preventDefault();
-    const whatsappNumber = "1234567890";
+    const whatsappNumber = "919213638440";
     const message = `Hi, I'm interested in ${name}`;
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };

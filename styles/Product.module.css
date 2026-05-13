@@ -235,17 +235,14 @@
   font-family: var(--font-serif);
   font-size: 1.2rem;
   color: var(--color-green-dark);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   line-height: 1.3;
-  min-height: 3.2rem;
-  /* Re-added balanced min-height to prevent jumping */
   text-align: center;
 
   /* Standard Line Clamp Implementation */
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  /* Increased from 2 to prevent names being cut */
   line-clamp: 3;
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
@@ -256,8 +253,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
+  margin-top: 0.25rem;
   width: 100%;
 }
 

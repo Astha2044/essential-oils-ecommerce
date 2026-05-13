@@ -8,7 +8,7 @@ import { FaLeaf, FaDroplet, FaSpa, FaShieldHeart } from "react-icons/fa6";
 const slides = [
   {
     title: "Experience the Essence of Pure Botanical Oils",
-    subtitle: "Nurture your mind, body, and soul with our meticulously crafted, therapeutic-grade oils sourced directly from the heart of nature.",
+    subtitle: "Experience the essence of nature with our carefully selected essential oils, crafted to bring freshness and aroma to your everyday lifestyle.",
     image: "/images/hero_background.png",
     badge: "Natural & Pure",
     desktopPosition: "center 25%",
@@ -110,11 +110,11 @@ export default function Hero() {
             </div>
             <div className={styles.featureItem}>
               <div className={styles.iconCircle}><FaSpa /></div>
-              <span>Therapeutic<br />Grade</span>
+              <span>Aroma You<br />Can Trust</span>
             </div>
             <div className={styles.featureItem}>
               <div className={styles.iconCircle}><FaShieldHeart /></div>
-              <span>Safe &<br />Certified</span>
+              <span>Premium<br />Quality</span>
             </div>
           </div>
 

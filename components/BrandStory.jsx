@@ -11,10 +11,10 @@ export default function BrandStory() {
           {/* Text Column */}
           <div className={styles.textColumn}>
             <span className={styles.preTitle}>Our Heritage</span>
-            <h2 className={styles.title}>From Soil to Soul: Our Botanical Journey</h2>
+            <h2 className={styles.title}>Bringing Nature Into Everyday Living</h2>
 
             <p className={styles.description}>
-              At VS Naturals, every drop is a testament to our obsession with purity. We bridge the gap between ancient botanical wisdom and modern wellness by partnering with dedicated local farmers who treat the earth with reverence, ensuring every essence is captured at its most powerful peak.
+              At VS Naturals & Essentials, we bring you high-quality essential oils and botanical aromas chosen for their rich fragrance, freshness, and everyday usability. Our focus is on quality products, refreshing aromas, and a great experience you can enjoy daily.
             </p>
 
             <div className={styles.featureList}>
@@ -24,8 +24,8 @@ export default function BrandStory() {
                   <div className={styles.featureIcon}><FaLeaf /></div>
                 </div>
                 <div className={styles.featureInfo}>
-                  <h4>Sustainable Sourcing</h4>
-                  <p>Respecting the environment through ethical farming.</p>
+                  <h4>Naturally Inspired</h4>
+                  <p>Botanical aromas crafted for modern living.</p>
                 </div>
               </div>
               <div className={styles.feature}>
@@ -34,8 +34,8 @@ export default function BrandStory() {
                   <div className={styles.featureIcon}><FaShieldHeart /></div>
                 </div>
                 <div className={styles.featureInfo}>
-                  <h4>Certified Purity</h4>
-                  <p>Rigorous testing for therapeutic-grade quality.</p>
+                  <h4>Quality You Can Enjoy</h4>
+                  <p>Fresh, rich, and long-lasting fragrance blends.</p>
                 </div>
               </div>
             </div>

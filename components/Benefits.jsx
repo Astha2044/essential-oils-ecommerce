@@ -46,7 +46,7 @@ export default function Benefits() {
           <span className={styles.preTitle}>Our Philosophy</span>
           <h2 className={styles.mainTitle}>Botanical Wisdom for Soil & Soul</h2>
           <p className={styles.mainSubtitle}>
-            Our therapeutic-grade oils are meticulously extracted to preserve nature's most potent healing properties, offering transformative benefits for your daily wellness ritual.
+            Our Essentials oils are meticulously extracted to preserve nature's most potent healing properties, offering transformative benefits for your daily wellness ritual.
           </p>
         </div>
 

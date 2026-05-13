@@ -14,8 +14,7 @@ export default function SafetySection() {
           <div className={styles.safetyCard}>
             <div className={styles.iconWrapper}><FaCircleInfo /></div>
             <p className={styles.description}>
-              Our oils are pre-diluted and ready for direct use, making them gentle and easy to enjoy every day. For best experience, we recommend a quick patch test before first use to ensure it suits your skin.
-            </p>
+              Our essential oils are concentrated botanical extracts and should be diluted with a carrier oil before skin application. Before first use, apply a small amount on a hidden area of skin to check for sensitivity.            </p>
           </div>
 
           <div className={styles.safetyCard}>
