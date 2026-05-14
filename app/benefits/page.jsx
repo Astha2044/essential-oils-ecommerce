@@ -109,7 +109,7 @@ export default function BenefitsPage() {
                 <div className={styles.usageList}>
                   <div className={styles.usageItem}>
                     <h4>Aromatic Diffusion</h4>
-                    <p>Add 3-5 drops to your favorite diffuser to clear the mind and refresh your living space.</p>
+                    <p>Add 3-5 ml to your favorite diffuser to clear the mind and refresh your living space.</p>
                   </div>
                   <div className={styles.usageItem}>
                     <h4>Topical Application</h4>

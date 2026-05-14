@@ -33,13 +33,11 @@ export default function AboutPage() {
               <div className={styles.storyText}>
                 <h2 className={styles.sectionTitle}>Our Story</h2>
                 <p>
-                  VS Naturals & Essentials began with a simple belief: that nature holds the key to modern wellness. What started as a small personal passion for steam-distilled botanicals has grown into a premium source for high-grade essential oils.
-                </p>
+                  VS Naturals & Essentials was started by a young generation with a passion for natural wellness and pure essential oils. What began as our very first venture turned into a journey of creating products that bring nature, self-care, and positivity into everyday life.                </p>
                 <p>
-                  We spent years traveling to the world's most pristine farms, from the lavender fields of Provence to the tea tree groves of Australia, building relationships with farmers who share our commitment to ethical harvesting and organic purity.
-                </p>
+                  Our goal is to inspire a healthier and more refreshing lifestyle through carefully crafted natural essentials made with passion and purpose.                </p>
                 <div className={styles.signature}>
-                  <span>- The Founders of VS Naturals</span>
+                  <span>— The Young Founders of VS Naturals & Essentials</span>
                 </div>
               </div>
               <div className={styles.storyImageWrapper}>
@@ -62,16 +60,14 @@ export default function AboutPage() {
                 <div className={styles.iconCircle}><FaLeaf /></div>
                 <h3 className={styles.featureTitle}>Our Mission</h3>
                 <p className={styles.featureText}>
-                  To empower your wellness journey by providing 100% pure, unadulterated essential oils that bring the healing power of plants into every home.
-                </p>
+                  To create high-quality essential oils that help people relax, recharge, and enjoy a more balanced daily routine through the natural essence of botanicals.                </p>
               </div>
 
               <div className={styles.featureItem}>
                 <div className={styles.iconCircle}><FaDroplet /></div>
                 <h3 className={styles.featureTitle}>Our Promise</h3>
                 <p className={styles.featureText}>
-                  We promise zero synthetic fillers, zero pesticides, and zero compromises. Every drop is rigorously tested for potency and therapeutic grade quality.
-                </p>
+                  We believe in creating essential oils with care, consistency, and a genuine passion for natural wellness. Every bottle is thoughtfully made to bring a refreshing and comforting experience into your daily routine.                </p>
               </div>
 
               <div className={styles.featureItem}>

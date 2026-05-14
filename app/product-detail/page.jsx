@@ -19,8 +19,6 @@ export default function ProductDetailPage() {
     description: "Pure, therapeutic-grade peppermint oil distilled from the finest Mentha piperita leaves. Experience the cooling, invigorating aroma that clears the mind and refreshes the soul.",
     images: ["/images/img4.png", "/images/product_1.png", "/images/img10.png"],
     scientificName: "Mentha Piperita",
-    origin: "Italy",
-    extraction: "Steam Distilled",
     purity: "100% Pure & Organic",
     note: "Strong, Fresh, Menthol",
     plantPart: "Leaves & Flowers",
@@ -30,7 +28,7 @@ export default function ProductDetailPage() {
       "Traditional support for digestive comfort",
       "Ideal for aromatherapy and natural cleaning"
     ],
-    usage: "Add 3-5 drops to a diffuser or mix with a carrier oil for topical application. Avoid contact with eyes."
+    usage: "Add 3-5 drops to your favorite diffuser to clear the mind and refresh your living space. Avoid contact with eyes."
   };
 
   return (
@@ -83,7 +81,7 @@ export default function ProductDetailPage() {
 
             {/* Right: Content Section */}
             <div className={styles.contentColumn}>
-              <span className={styles.category}>{product.scientificName} • {product.origin}</span>
+              <span className={styles.category}>{product.scientificName}</span>
               <h1 className={styles.title}>{product.name}</h1>
 
               <div className={styles.priceSection}>
@@ -156,10 +154,7 @@ export default function ProductDetailPage() {
                         <span className={styles.specLabel}>Botanical Name</span>
                         <span className={styles.specValue}>{product.scientificName}</span>
                       </div>
-                      <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Extraction</span>
-                        <span className={styles.specValue}>{product.extraction}</span>
-                      </div>
+
                       <div className={styles.specItem}>
                         <span className={styles.specLabel}>Aromatic Note</span>
                         <span className={styles.specValue}>{product.note}</span>
@@ -172,10 +167,7 @@ export default function ProductDetailPage() {
                         <span className={styles.specLabel}>Purity</span>
                         <span className={styles.specValue}>{product.purity}</span>
                       </div>
-                      <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Origin</span>
-                        <span className={styles.specValue}>{product.origin}</span>
-                      </div>
+
                     </div>
                   )}
                   {activeTab === "usage" && (
@@ -185,14 +177,14 @@ export default function ProductDetailPage() {
                     <div className={styles.usageContainer}>
                       <div className={styles.usageMethod}>
                         <h4 className={styles.usageMethodTitle}>Aromatic Diffusion</h4>
-                        <p className={styles.usageTextSmall}>Add 3–5 drops to your diffuser to refresh your space and create a calming, aromatic atmosphere.</p>
+                        <p className={styles.usageTextSmall}>Add 3-5 drops to your favorite diffuser to clear the mind and refresh your living space.</p>
                       </div>
-                      
+
                       <div className={styles.usageMethod}>
                         <h4 className={styles.usageMethodTitle}>Direct Application</h4>
                         <p className={styles.usageTextSmall}>Apply a small amount directly to temples, wrists, or the back of the neck for a soothing and refreshing effect.</p>
                       </div>
-                      
+
                       <div className={styles.usageMethod}>
                         <h4 className={styles.usageMethodTitle}>Inhalation</h4>
                         <p className={styles.usageTextSmall}>Place a drop on your palms, gently rub together, and inhale deeply to uplift your mood and boost energy instantly.</p>

@@ -174,7 +174,6 @@
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-
 .featureItem:hover .iconCircle {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
@@ -182,7 +181,6 @@
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
 }
-
 
 .featureItem span {
   font-size: 0.75rem;
@@ -220,6 +218,7 @@
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
+
 }
 
 .primaryBtn:hover {

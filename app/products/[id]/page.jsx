@@ -82,7 +82,7 @@ export default function ProductDetailPage({ params }) {
 
             {/* Right: Content Section */}
             <div className={styles.contentColumn}>
-              <span className={styles.category}>{product.scientificName} • {product.origin}</span>
+              <span className={styles.category}>{product.scientificName}</span>
               <h1 className={styles.title}>{product.name}</h1>
 
               <div className={styles.priceSection}>
@@ -166,10 +166,7 @@ export default function ProductDetailPage({ params }) {
                         <span className={styles.specLabel}>Botanical Name</span>
                         <span className={styles.specValue}>{product.scientificName}</span>
                       </div>
-                      <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Extraction</span>
-                        <span className={styles.specValue}>{product.extraction}</span>
-                      </div>
+
                       <div className={styles.specItem}>
                         <span className={styles.specLabel}>Aromatic Note</span>
                         <span className={styles.specValue}>{product.note}</span>
@@ -182,10 +179,7 @@ export default function ProductDetailPage({ params }) {
                         <span className={styles.specLabel}>Grade</span>
                         <span className={styles.specValue}>{product.purity}</span>
                       </div>
-                      <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Origin</span>
-                        <span className={styles.specValue}>{product.origin}</span>
-                      </div>
+
                     </div>
                   )}
                   {activeTab === "usage" && (
