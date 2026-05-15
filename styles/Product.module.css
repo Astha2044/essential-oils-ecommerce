@@ -287,6 +287,15 @@
   box-shadow: 0 10px 20px rgba(55, 83, 65, 0.1);
 }
 
+.buyNowBtn:disabled {
+  background-color: #e8ece9;
+  border-color: #e8ece9;
+  color: #8fa196;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 .contactBtn {
   width: 100%;
   background-color: transparent;

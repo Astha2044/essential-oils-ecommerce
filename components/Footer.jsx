@@ -104,7 +104,7 @@ export default function Footer() {
                 <li>
                   <a href="mailto:info@vsnaturals.com" className={styles.contactItem}>
                     <span className={styles.iconWrapper}><FaEnvelope /></span>
-                    <span>info@vsnaturals.com</span>
+                    <span>contact@vsnaturalsandessentials.com</span>
                   </a>
                 </li>
                 <li>

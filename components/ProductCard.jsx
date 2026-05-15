@@ -50,11 +50,11 @@ export default function ProductCard({ id, name, price, image }) {
         <div className={styles.footer}>
           <p className={styles.price}>${price ? price.toFixed(2) : "0.00"}</p>
           <button
-            onClick={handleBuyNow}
             className={styles.buyNowBtn}
+            disabled
             suppressHydrationWarning
           >
-            Buy Now
+            Coming Soon
           </button>
           <button
             onClick={(e) => {
