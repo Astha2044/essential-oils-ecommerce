@@ -46,9 +46,7 @@ export default function Footer() {
             <div className={styles.socialIcons}>
               <a href="https://www.facebook.com/vsnaturals" className={styles.socialIcon} aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
               <a href="https://www.instagram.com/vsnaturalsandessentials/" className={styles.socialIcon} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a href="https://twitter.com/vsnaturals" className={styles.socialIcon} aria-label="Twitter" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
               <a href="https://wa.me/919213638440" className={styles.socialIcon} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
-              <a href="https://www.youtube.com/vsnaturals" className={styles.socialIcon} aria-label="YouTube" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
             </div>
           </div>
 
