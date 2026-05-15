@@ -361,6 +361,10 @@
   white-space: nowrap;
 }
 
+.errorPopup {
+  background-color: #9b2c2c;
+}
+
 @keyframes slideInRight {
   from {
     opacity: 0;

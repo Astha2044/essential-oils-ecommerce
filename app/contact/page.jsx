@@ -4,15 +4,30 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Contact.module.css";
 import { FaLocationDot, FaEnvelope, FaPhone, FaClock } from "react-icons/fa6";
+import { sendToGoogleSheet } from "../../services/newsletter";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [showPopup, setShowPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.email) return;
+
+    setIsSubmitting(true);
+    const success = await sendToGoogleSheet({ 
+      ...formData, 
+      source: "Contact Page Form" 
+    });
+
+    setIsSubmitting(false);
     setShowPopup(true);
-    setFormData({ name: "", email: "", message: "" });
+    
+    if (success) {
+      setFormData({ name: "", email: "", message: "" });
+    }
+
     setTimeout(() => {
       setShowPopup(false);
     }, 3000);
@@ -116,8 +131,8 @@ export default function ContactPage() {
                         className={styles.textarea}
                       ></textarea>
                     </div>
-                    <button type="submit" className={styles.submitBtn}>
-                      Send Message
+                    <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 </div>
