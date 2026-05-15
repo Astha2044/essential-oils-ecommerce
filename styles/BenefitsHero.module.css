@@ -1,0 +1,271 @@
+.benefitsContainer {
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  overflow: visible;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  background-color: #ffffff;
+  position: relative;
+  z-index: 5;
+}
+
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 6rem auto;
+}
+
+.preTitle {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-green-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.mainTitle {
+  font-family: var(--font-serif);
+  /* font-size: var(--h2-size); */
+  font-size: clamp(2.5rem, 5vw, 3.2rem);
+  color: var(--color-green-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.mainSubtitle {
+  font-size: 1.15rem;
+  color: #6B7280;
+  line-height: 1.7;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+
+@media (min-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: 1fr 1.2fr 1fr;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.benefitItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+@media (min-width: 1024px) {
+  .columnLeft .benefitItem {
+    flex-direction: row;
+    /* Icon on Left, Text on Right */
+    text-align: left;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .columnRight .benefitItem {
+    flex-direction: row;
+    /* Icon on Left, Text on Right */
+    text-align: left;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .benefitTextContent {
+    flex: 1;
+  }
+}
+
+
+
+
+.iconWrapper {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+}
+
+
+.iconArchedFrame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-green-soft);
+  color: var(--color-green-dark);
+  border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
+  /* Brand arched shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1px solid rgba(55, 83, 65, 0.1);
+}
+
+
+.benefitItem:hover .iconArchedFrame {
+  background-color: var(--color-green-dark);
+  color: white;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.iconDecoration {
+  position: absolute;
+  inset: -5px;
+  border: 1px dashed var(--color-green-primary);
+  border-radius: 2.2rem 2.2rem 0.7rem 0.7rem;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1;
+}
+
+.benefitItem:hover .iconDecoration {
+  opacity: 0.3;
+  transform: scale(1.2) rotate(10deg);
+}
+
+.benefitTitle {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-green-dark);
+  margin-bottom: 0.5rem;
+}
+
+.benefitText {
+  color: #6B7280;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Center Column */
+.centerColumn {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.imageBox {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.archedImageFrame {
+  position: relative;
+  z-index: 2;
+  border-radius: 18rem 18rem 4rem 4rem;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(55, 83, 65, 0.15);
+  width: 100%;
+  background-color: white;
+}
+
+.centerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageBox:hover .centerImage {
+  transform: scale(1.05);
+}
+
+.imageBloomingDecoration {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.imageBloomingDecoration::before,
+.imageBloomingDecoration::after {
+  content: "";
+  position: absolute;
+  inset: -1.25rem;
+  border: 1px dashed var(--color-green-primary);
+  border-radius: 18rem 18rem 4rem 4rem;
+  opacity: 0.2;
+  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageBloomingDecoration::after {
+  transform: scale(1.05) rotate(2deg);
+  border-style: solid;
+  opacity: 0.1;
+}
+
+.imageBox:hover .imageBloomingDecoration::before {
+  transform: scale(1.08) rotate(-2deg);
+  opacity: 0.4;
+}
+
+.imageBox:hover .imageBloomingDecoration::after {
+  transform: scale(1.12) rotate(4deg);
+  opacity: 0.2;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem var(--container-px);
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .contentWrapper {
+    gap: 2rem;
+  }
+
+  .column {
+    gap: 2rem;
+  }
+
+  .benefitItem {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .column {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .benefitItem {
+    width: 280px;
+  }
+}

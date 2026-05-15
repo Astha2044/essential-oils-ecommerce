@@ -1,0 +1,276 @@
+.section {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.imageColumn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageFrame {
+  position: relative;
+  z-index: 2;
+  border-radius: 18rem 18rem 4rem 4rem;
+
+  overflow: hidden;
+  box-shadow: 0 50px 100px rgba(55, 83, 65, 0.1);
+  width: 100%;
+  background-color: white;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.imageDecoration {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.imageDecoration::before,
+.imageDecoration::after {
+  content: "";
+  position: absolute;
+  inset: -1.25rem;
+  /* Slightly more spacing for premium look */
+  border: 1px dashed var(--color-green-primary);
+  border-radius: 18rem 18rem 4rem 4rem;
+
+  opacity: 0.2;
+  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageDecoration::after {
+  transform: scale(1.05) rotate(2deg);
+  border-style: solid;
+  opacity: 0.1;
+}
+
+.imageWrapper:hover .imageDecoration::before {
+  transform: scale(1.08) rotate(-2deg);
+  opacity: 0.4;
+}
+
+.imageWrapper:hover .imageDecoration::after {
+  transform: scale(1.12) rotate(4deg);
+  opacity: 0.2;
+}
+
+.glassBadge {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.imageWrapper:hover .glassBadge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes softFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+
+.glassBadge strong {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-green-dark);
+}
+
+.glassBadge span {
+  font-size: 0.8rem;
+  color: #6B7280;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.preTitle {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-green-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 3.3rem);
+  color: var(--color-green-dark);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4B5563;
+  margin-bottom: 3.5rem;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.feature {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+}
+
+.featureIcon {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-green-soft);
+  color: var(--color-green-dark);
+  border-radius: 1.2rem 1.2rem 0.4rem 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1px solid rgba(55, 83, 65, 0.1);
+  flex-shrink: 0;
+}
+
+.iconDecoration {
+  position: absolute;
+  inset: -4px;
+  border: 1px dashed var(--color-green-primary);
+  border-radius: 1.6rem 1.6rem 0.6rem 0.6rem;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1;
+}
+
+.feature:hover .featureIcon {
+  background-color: var(--color-green-dark);
+  color: white;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.feature:hover .iconDecoration {
+  opacity: 0.3;
+  transform: scale(1.2) rotate(10deg);
+}
+
+.featureInfo h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-green-dark);
+  margin-bottom: 0.5rem;
+}
+
+.featureInfo p {
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+.discoverBtn {
+  background-color: transparent;
+  border: none;
+  color: var(--color-green-dark);
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-green-primary);
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.discoverBtn:hover {
+  color: var(--color-green-primary);
+  transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+  .glassBadge {
+    right: 0;
+    bottom: 5%;
+    padding: 1.25rem 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}

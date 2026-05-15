@@ -1,0 +1,63 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topSection {
+  background-color: var(--color-beige);
+  /* Start with beige for hero */
+  position: relative;
+}
+
+
+.whiteSection {
+  background-color: #ffffff;
+  padding: var(--section-padding-y) 0;
+  animation: silkyFadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.beigeSection {
+  background-color: var(--color-beige);
+  padding: var(--section-padding-y) 0;
+  animation: silkyFadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@media (max-width: 768px) {
+  .whiteSection, .beigeSection {
+    padding: 1.5rem 0;
+  }
+}
+
+@keyframes silkyFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.middleSection {
+  background-color: #ffffff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.whiteSection:nth-of-type(1) { animation-delay: 0.2s; }
+.whiteSection:nth-of-type(2) { animation-delay: 0.4s; }
+.beigeSection:nth-of-type(1) { animation-delay: 0.6s; }
+.whiteSection:nth-of-type(3) { animation-delay: 0.8s; }
+.beigeSection:nth-of-type(2) { animation-delay: 1.0s; }
+
+
+.bottomSection {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}

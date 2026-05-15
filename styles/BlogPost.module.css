@@ -1,0 +1,321 @@
+.main {
+  width: 100%;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+/* Post Hero Section (Matching About Us Hero) */
+.postHero {
+  width: 100%;
+  min-height: 55vh;
+  background: linear-gradient(rgba(45, 70, 54, 0.75), rgba(45, 70, 54, 0.75)), url('/images/hero_new.jpg');
+  background-size: cover;
+  background-position: center 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 140px 0 60px 0;
+}
+
+.heroContent {
+  max-width: 1000px;
+  padding: 0 var(--container-px);
+  animation: softFadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.heroMeta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.heroMeta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Article Body */
+.articleSection {
+  padding: 4rem 0;
+  background-color: #fcfdfc;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-green-dark);
+  text-decoration: none;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.backLink:hover {
+  transform: translateX(-5px);
+  color: var(--color-green-primary);
+}
+
+.articleGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .articleGrid {
+    grid-template-columns: 1fr 400px;
+  }
+}
+
+.articleContent {
+  animation: softFadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s backwards;
+}
+
+.richText {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.richText h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-green-dark);
+  margin: 3rem 0 1.5rem 0;
+}
+
+.richText p {
+  margin-bottom: 2rem;
+}
+
+/* Sidebar Elements */
+.articleSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  animation: softFadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s backwards;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.sidebarImage {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12rem 12rem 2rem 2rem;
+  box-shadow: 0 40px 100px rgba(55, 83, 65, 0.15);
+  position: relative;
+  z-index: 2;
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.imageWrapper:hover .sidebarImage {
+  transform: scale(1.02) translateY(-10px);
+}
+
+.imageDecoration {
+  position: absolute;
+  inset: -1rem;
+  border: 1px dashed var(--color-green-primary);
+  border-radius: 12rem 12rem 2.5rem 2.5rem;
+  opacity: 0.2;
+  z-index: 1;
+  transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.imageWrapper:hover .imageDecoration {
+  transform: scale(1.08) rotate(-2deg);
+  opacity: 0.4;
+}
+
+.glassBadge {
+  position: absolute;
+  bottom: 10%;
+  right: -1rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  animation: softFloat 5s ease-in-out infinite;
+}
+
+.glassBadge span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.glassBadge strong {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--color-green-dark);
+}
+
+.authorCard {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(55, 83, 65, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.authorCard h4 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-green-dark);
+  margin-bottom: 1rem;
+}
+
+.authorCard p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+}
+
+.signature {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-green-primary);
+  font-weight: 600;
+}
+
+/* Related Section / CTA */
+.relatedSection {
+  padding: 1rem 0 5rem 0;
+  background-color: #fcfdfc;
+}
+
+.ctaCard {
+  background-color: var(--color-green-dark);
+  color: white;
+  padding: 3.5rem 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: softFadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s backwards;
+}
+
+.ctaCard h2 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.ctaCard p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.ctaBtn {
+  display: inline-block;
+  background-color: white;
+  color: var(--color-green-dark);
+  padding: 0.9rem 2.2rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes softFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .postHero {
+    padding: 110px 1.5rem 40px 1.5rem;
+    min-height: 45vh;
+  }
+
+  .articleSection {
+    padding: 2.5rem 0;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .ctaCard {
+    padding: 3rem 1.5rem;
+  }
+
+  .ctaCard h2 {
+    font-size: 2rem;
+  }
+}
