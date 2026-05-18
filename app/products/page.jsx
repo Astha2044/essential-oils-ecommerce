@@ -31,18 +31,18 @@ function ProductsContent() {
     if (!newsletterEmail) return;
 
     setIsSubmitting(true);
-    const success = await sendToGoogleSheet({ 
-      email: newsletterEmail, 
-      source: "Products Page Newsletter" 
+    const success = await sendToGoogleSheet({
+      email: newsletterEmail,
+      source: "Products Page Newsletter"
     });
 
     setIsSubmitting(false);
     setShowNewsletterPopup(true);
-    
+
     if (success) {
       setNewsletterEmail("");
     }
-    
+
     setTimeout(() => {
       setShowNewsletterPopup(false);
     }, 4000);
@@ -135,9 +135,9 @@ function ProductsContent() {
                     className={styles.newsletterInput}
                     suppressHydrationWarning
                   />
-                  <button 
-                    type="submit" 
-                    className={styles.newsletterSubmit} 
+                  <button
+                    type="submit"
+                    className={styles.newsletterSubmit}
                     disabled={isSubmitting}
                     suppressHydrationWarning
                   >
