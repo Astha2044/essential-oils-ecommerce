@@ -18,9 +18,9 @@ export default function BlogPage() {
     if (!email) return;
 
     setIsSubmitting(true);
-    const success = await sendToGoogleSheet({ 
-      email, 
-      source: "Blog Page Newsletter" 
+    const success = await sendToGoogleSheet({
+      email,
+      source: "Blog Page Newsletter"
     });
 
     setIsSubmitting(false);
