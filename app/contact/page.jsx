@@ -107,6 +107,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className={styles.input}
+                        suppressHydrationWarning
                       />
                     </div>
                     <div className={styles.inputGroup}>
@@ -118,6 +119,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className={styles.input}
+                        suppressHydrationWarning
                       />
                     </div>
                     <div className={styles.inputGroup}>
@@ -129,9 +131,15 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className={styles.textarea}
+                        suppressHydrationWarning
                       ></textarea>
                     </div>
-                    <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                    <button
+                      type="submit"
+                      className={styles.submitBtn}
+                      disabled={isSubmitting}
+                      suppressHydrationWarning
+                    >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
                   </form>
