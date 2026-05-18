@@ -13,10 +13,13 @@ import {
 } from "react-icons/fa6";
 import { ALL_PRODUCTS } from "../data/products";
 import styles from "../styles/Footer.module.css";
+import { sendToGoogleSheet } from "../services/newsletter";
 
 export default function Footer() {
   const [showPopup, setShowPopup] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState(null);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
 
   const toggleAccordion = (index) => {
     if (window.innerWidth < 768) {
@@ -24,11 +27,31 @@ export default function Footer() {
     }
   };
 
-  const handleSubscribe = () => {
+  const handleSubscribe = async () => {
+    if (!email || !email.includes("@")) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    setStatus("loading");
     setShowPopup(true);
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 3000);
+
+    const success = await sendToGoogleSheet({ 
+      email, 
+      source: "Footer Newsletter" 
+    });
+
+    if (success) {
+      setStatus("success");
+      setEmail("");
+      setTimeout(() => {
+        setShowPopup(false);
+        setStatus("idle");
+      }, 3000);
+    } else {
+      setStatus("error");
+      setTimeout(() => setShowPopup(false), 5000);
+    }
   };
 
   return (
@@ -122,8 +145,22 @@ export default function Footer() {
             <h4 className={styles.blockTitle}>Join our Community</h4>
             <p className={styles.newsletterText}>Subscribe for exclusive offers and natural wellness tips.</p>
             <div className={styles.newsletter}>
-              <input type="email" placeholder="Enter your email" className={styles.emailInput} suppressHydrationWarning />
-              <button className={styles.subscribeBtn} onClick={handleSubscribe} suppressHydrationWarning>Subscribe</button>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className={styles.emailInput}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                suppressHydrationWarning
+              />
+              <button
+                className={styles.subscribeBtn}
+                onClick={handleSubscribe}
+                disabled={status === "loading"}
+                suppressHydrationWarning
+              >
+                {status === "loading" ? "Joining..." : "Subscribe"}
+              </button>
             </div>
           </div>
 
@@ -148,8 +185,10 @@ export default function Footer() {
       </div>
 
       {showPopup && (
-        <div className={styles.popup}>
-          Successfully Subscribed!
+        <div className={`${styles.popup} ${status === "error" ? styles.errorPopup : ""}`}>
+          {status === "loading" && "Processing..."}
+          {status === "success" && "Successfully Subscribed!"}
+          {status === "error" && "Oops! Something went wrong. Try again later."}
         </div>
       )}
     </footer>

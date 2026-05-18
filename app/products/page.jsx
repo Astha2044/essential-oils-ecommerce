@@ -7,6 +7,7 @@ import Footer from "../../components/Footer";
 import ProductCard from "../../components/ProductCard";
 import { ALL_PRODUCTS } from "../../data/products";
 import styles from "../../styles/Products.module.css";
+import { sendToGoogleSheet } from "../../services/newsletter";
 
 const CATEGORIES = ["All", "Essential Oils", "Candles"];
 
@@ -16,6 +17,7 @@ function ProductsContent() {
   const [activeCategory, setActiveCategory] = useState(categoryParam || "All");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [showNewsletterPopup, setShowNewsletterPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Sync activeCategory when URL param changes
   useEffect(() => {
@@ -24,10 +26,23 @@ function ProductsContent() {
     }
   }, [categoryParam]);
 
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setIsSubmitting(true);
+    const success = await sendToGoogleSheet({
+      email: newsletterEmail,
+      source: "Products Page Newsletter"
+    });
+
+    setIsSubmitting(false);
     setShowNewsletterPopup(true);
-    setNewsletterEmail("");
+
+    if (success) {
+      setNewsletterEmail("");
+    }
+
     setTimeout(() => {
       setShowNewsletterPopup(false);
     }, 4000);
@@ -120,8 +135,13 @@ function ProductsContent() {
                     className={styles.newsletterInput}
                     suppressHydrationWarning
                   />
-                  <button type="submit" className={styles.newsletterSubmit} suppressHydrationWarning>
-                    Embrace the Essence
+                  <button
+                    type="submit"
+                    className={styles.newsletterSubmit}
+                    disabled={isSubmitting}
+                    suppressHydrationWarning
+                  >
+                    {isSubmitting ? "Embracing..." : "Embrace the Essence"}
                   </button>
                 </div>
               </form>

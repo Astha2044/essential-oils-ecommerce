@@ -6,15 +6,30 @@ import Footer from "../../components/Footer";
 import styles from "../../styles/Blog.module.css";
 import { FiArrowRight } from "react-icons/fi";
 import { BLOG_POSTS } from "../../data/blog";
+import { sendToGoogleSheet } from "../../services/newsletter";
 
 export default function BlogPage() {
   const [email, setEmail] = useState("");
   const [showPopup, setShowPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+    const success = await sendToGoogleSheet({
+      email,
+      source: "Blog Page Newsletter"
+    });
+
+    setIsSubmitting(false);
     setShowPopup(true);
-    setEmail("");
+
+    if (success) {
+      setEmail("");
+    }
+
     setTimeout(() => {
       setShowPopup(false);
     }, 3000);
@@ -121,9 +136,10 @@ export default function BlogPage() {
                 <button
                   type="submit"
                   className={styles.submitBtn}
+                  disabled={isSubmitting}
                   suppressHydrationWarning
                 >
-                  Subscribe
+                  {isSubmitting ? "Joining..." : "Subscribe"}
                 </button>
               </form>
             </div>

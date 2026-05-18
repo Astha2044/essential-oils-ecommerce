@@ -1,15 +1,30 @@
 "use client";
 import { useState } from "react";
 import styles from "../styles/Contact.module.css";
+import { sendToGoogleSheet } from "../services/newsletter";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [showPopup, setShowPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.email) return;
+
+    setIsSubmitting(true);
+    const success = await sendToGoogleSheet({
+      ...formData,
+      source: "Contact Form"
+    });
+
+    setIsSubmitting(false);
     setShowPopup(true);
-    setFormData({ name: "", email: "", message: "" });
+
+    if (success) {
+      setFormData({ name: "", email: "", message: "" });
+    }
+
     setTimeout(() => {
       setShowPopup(false);
     }, 3000);
@@ -27,6 +42,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className={styles.input}
+            suppressHydrationWarning
           />
         </div>
         <div className={styles.inputGroup}>
@@ -38,6 +54,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className={styles.input}
+            suppressHydrationWarning
           />
         </div>
         <div className={styles.inputGroup}>
@@ -49,10 +66,16 @@ export default function ContactForm() {
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             className={styles.textarea}
+            suppressHydrationWarning
           ></textarea>
         </div>
-        <button type="submit" className={styles.submitBtn}>
-          Send Message
+        <button
+          type="submit"
+          className={styles.submitBtn}
+          disabled={isSubmitting}
+          suppressHydrationWarning
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </form>
 

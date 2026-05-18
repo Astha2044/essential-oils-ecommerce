@@ -3,10 +3,8 @@
 import styles from "../styles/Product.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export default function ProductCard({ id, name, price, image }) {
-  const router = useRouter();
 
   const handleBuyNow = (e) => {
     e.preventDefault();
@@ -35,7 +33,6 @@ export default function ProductCard({ id, name, price, image }) {
         </div>
 
 
-
         <div className={styles.hoverActions}>
           <Link href={`/products/${id}`} className={styles.actionBtn} suppressHydrationWarning>
             View Details
@@ -56,16 +53,13 @@ export default function ProductCard({ id, name, price, image }) {
           >
             Coming Soon
           </button>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              router.push('/contact');
-            }}
+          <Link
+            href="/contact"
             className={styles.contactBtn}
             suppressHydrationWarning
           >
             Contact Us
-          </button>
+          </Link>
         </div>
       </div>
     </div>
