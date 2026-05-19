@@ -46,6 +46,17 @@ export default function ProductCard({ id, name, price, image }) {
 
         <div className={styles.footer}>
           <p className={styles.price}>${price ? price.toFixed(2) : "0.00"}</p>
+          {/* 
+            When the product is ready, uncomment this button and remove the "Coming Soon" button below it:
+            
+            <button
+              className={styles.buyNowBtn}
+              onClick={handleBuyNow}
+              suppressHydrationWarning
+            >
+              Buy Now
+            </button>
+          */}
           <button
             className={styles.buyNowBtn}
             disabled
