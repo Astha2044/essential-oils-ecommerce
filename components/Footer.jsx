@@ -125,7 +125,7 @@ export default function Footer() {
             <div className={styles.accordionContent}>
               <ul className={styles.list}>
                 <li>
-                  <a href="mailto:info@vsnaturals.com" className={styles.contactItem}>
+                  <a href="mailto:contact@vsnaturalsandessentials.com" className={styles.contactItem}>
                     <span className={styles.iconWrapper}><FaEnvelope /></span>
                     <span>contact@vsnaturalsandessentials.com</span>
                   </a>

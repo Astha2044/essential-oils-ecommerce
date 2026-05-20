@@ -64,7 +64,7 @@ export default function ContactPage() {
                     <div className={styles.iconCircle}><FaLocationDot /></div>
                     <div className={styles.itemText}>
                       <h4>Our Sanctuary</h4>
-                      <p>123 Natural Way, Wellness City, 10001</p>
+                      <p>3rd floor, B/14 Navrang society, opp. Savliya pumping station, Mai Mandir Road, Nadiad</p>
                     </div>
                   </div>
 
@@ -72,7 +72,7 @@ export default function ContactPage() {
                     <div className={styles.iconCircle}><FaEnvelope /></div>
                     <div className={styles.itemText}>
                       <h4>Email Us</h4>
-                      <p>hello@vsnaturals.com</p>
+                      <p>contact@vsnaturalsandessentials.com</p>
                     </div>
                   </div>
 
@@ -80,7 +80,7 @@ export default function ContactPage() {
                     <div className={styles.iconCircle}><FaPhone /></div>
                     <div className={styles.itemText}>
                       <h4>Call Us</h4>
-                      <p>+1 (555) 123-4567</p>
+                      <p>+91 92136 38440</p>
                     </div>
                   </div>
 
