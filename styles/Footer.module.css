@@ -229,13 +229,15 @@
 .contactItem {
   display: flex !important;
   flex-direction: row !important;
-  align-items: center !important;
+  align-items: flex-start !important; /* Changed from center to align icon with first line */
   gap: 0.6rem !important;
   color: #4a5d51;
   text-decoration: none;
   font-size: 0.95rem;
   line-height: 1.4;
-  white-space: nowrap;
+  white-space: normal !important; /* Changed from nowrap to normal to allow wrapping */
+  word-break: break-word; /* Safe wrapping helper */
+  overflow-wrap: break-word;
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -248,7 +250,7 @@
   display: inline-flex !important;
   color: var(--color-green-primary);
   font-size: 1rem;
-  transform: translateY(1px);
+  transform: translateY(3px); /* Adjusted from 1px to align with the first line of text */
   flex-shrink: 0;
 }
 

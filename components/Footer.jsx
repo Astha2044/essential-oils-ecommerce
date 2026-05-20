@@ -5,11 +5,10 @@ import Link from "next/link";
 import {
   FaFacebookF,
   FaInstagram,
-  FaXTwitter,
   FaWhatsapp,
-  FaYoutube,
   FaEnvelope,
-  FaPhone
+  FaPhone,
+  FaLocationDot
 } from "react-icons/fa6";
 import { ALL_PRODUCTS } from "../data/products";
 import styles from "../styles/Footer.module.css";
@@ -118,6 +117,7 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Contact Us (with complete dynamic address) */}
           <div className={`${styles.linksBlock} ${activeAccordion === 3 ? styles.active : ""}`}>
             <h4 className={styles.blockTitle} onClick={() => toggleAccordion(3)}>
               <Link href="/contact">Contact Us</Link>
@@ -134,6 +134,21 @@ export default function Footer() {
                   <a href="tel:+919213638440" className={styles.contactItem}>
                     <span className={styles.iconWrapper}><FaPhone /></span>
                     <span>+91 92136 38440</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=3rd%20floor%2C%20B%2F14%20Navrang%20society%2C%20opp.%20Savliya%20pumping%20station%2C%20Mai%20Mandir%20Road%2C%20Nadiad" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.contactItem}
+                  >
+                    <span className={styles.iconWrapper}><FaLocationDot /></span>
+                    <span>
+                      3rd floor, B/14 Navrang society,<br />
+                      opp. Savliya pumping station,<br />
+                      Mai Mandir Road, Nadiad
+                    </span>
                   </a>
                 </li>
               </ul>
@@ -166,12 +181,16 @@ export default function Footer() {
 
         </div>
 
+        {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
-            Copyright © All rights reserved | Made with ❤️ by{" "}
-            <a href="https://www.smoothsyncinnovations.com/" target="_blank" rel="noopener noreferrer" className={styles.developerLink}>
-              Smoothsync Innovation
-            </a>
+            {/* <span className={styles.copyrightBrandMark}>VS</span> */}
+            <span>
+              Copyright © All rights reserved | Made with ❤️ by{" "}
+              <a href="https://www.smoothsyncinnovations.com/" target="_blank" rel="noopener noreferrer" className={styles.developerLink}>
+                Smoothsync Innovation
+              </a>
+            </span>
           </div>
           <div className={styles.legalLinks}>
             <Link href="/terms">Terms</Link>

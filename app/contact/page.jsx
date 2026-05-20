@@ -1,162 +1,225 @@
-"use client";
+'use client';
+
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import styles from "../../styles/Contact.module.css";
-import { FaLocationDot, FaEnvelope, FaPhone, FaClock } from "react-icons/fa6";
-import { sendToGoogleSheet } from "../../services/newsletter";
+import Link from "next/link";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaEnvelope,
+  FaPhone,
+  FaLocationDot,
+  FaArrowUp
+} from "react-icons/fa6";
+import { ALL_PRODUCTS } from "../data/products";
+import styles from "../styles/Footer.module.css";
+import { sendToGoogleSheet } from "../services/newsletter";
 
-export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+export default function Footer() {
   const [showPopup, setShowPopup] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [activeAccordion, setActiveAccordion] = useState(null);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.email) return;
+  const toggleAccordion = (index) => {
+    if (window.innerWidth < 768) {
+      setActiveAccordion(activeAccordion === index ? null : index);
+    }
+  };
 
-    setIsSubmitting(true);
-    const success = await sendToGoogleSheet({ 
-      ...formData, 
-      source: "Contact Page Form" 
-    });
-
-    setIsSubmitting(false);
-    setShowPopup(true);
-    
-    if (success) {
-      setFormData({ name: "", email: "", message: "" });
+  const handleSubscribe = async () => {
+    if (!email || !email.includes("@")) {
+      alert("Please enter a valid email address.");
+      return;
     }
 
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 3000);
+    setStatus("loading");
+    setShowPopup(true);
+
+    const success = await sendToGoogleSheet({ 
+      email, 
+      source: "Footer Newsletter" 
+    });
+
+    if (success) {
+      setStatus("success");
+      setEmail("");
+      setTimeout(() => {
+        setShowPopup(false);
+        setStatus("idle");
+      }, 3000);
+    } else {
+      setStatus("error");
+      setTimeout(() => setShowPopup(false), 5000);
+    }
   };
 
   return (
-    <>
-      <Navbar />
-      <main className={styles.main}>
-        {/* Contact Hero Section */}
-        <section className={styles.contactHero}>
-          <div className={styles.heroContent}>
-            <div className={styles.badge}>Contact Us</div>
-            <h1 className={styles.heroTitle}>Let's Connect</h1>
-            <p className={styles.heroSubtitle}>
-              Whether you have a question about our oils or just want to share your wellness journey, we're here to listen.
-            </p>
-          </div>
-        </section>
+    <footer className={styles.footer}>
+      <div className={styles.container}>
 
-        {/* Contact Content Section */}
-        <section className={styles.contactSection}>
-          <div className={styles.container}>
-            <div className={styles.contactWrapper}>
-              {/* Info Column */}
-              <div className={styles.infoColumn} style={{ animationDelay: "0.2s" }}>
-                <div className={styles.sectionHeader}>
-                  <h2 className={styles.sectionTitle}>Get In Touch</h2>
-                  <p className={styles.sectionSubtitle}>We typically respond within 24 hours.</p>
-                </div>
-
-                <div className={styles.contactList}>
-                  <div className={styles.contactItem}>
-                    <div className={styles.iconCircle}><FaLocationDot /></div>
-                    <div className={styles.itemText}>
-                      <h4>Our Sanctuary</h4>
-                      <p>3rd floor, B/14 Navrang society, opp. Savliya pumping station, Mai Mandir Road, Nadiad</p>
-                    </div>
-                  </div>
-
-                  <div className={styles.contactItem}>
-                    <div className={styles.iconCircle}><FaEnvelope /></div>
-                    <div className={styles.itemText}>
-                      <h4>Email Us</h4>
-                      <p>contact@vsnaturalsandessentials.com</p>
-                    </div>
-                  </div>
-
-                  <div className={styles.contactItem}>
-                    <div className={styles.iconCircle}><FaPhone /></div>
-                    <div className={styles.itemText}>
-                      <h4>Call Us</h4>
-                      <p>+91 92136 38440</p>
-                    </div>
-                  </div>
-
-                  <div className={styles.contactItem}>
-                    <div className={styles.iconCircle}><FaClock /></div>
-                    <div className={styles.itemText}>
-                      <h4>Visiting Hours</h4>
-                      <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Form Column */}
-              <div className={styles.formColumn} style={{ animationDelay: "0.4s" }}>
-                <div className={styles.formCard}>
-                  <form className={styles.form} onSubmit={handleSubmit}>
-                    <div className={styles.inputGroup}>
-                      <label>Your Name</label>
-                      <input
-                        type="text"
-                        placeholder="John Doe"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className={styles.input}
-                        suppressHydrationWarning
-                      />
-                    </div>
-                    <div className={styles.inputGroup}>
-                      <label>Email Address</label>
-                      <input
-                        type="email"
-                        placeholder="john@example.com"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={styles.input}
-                        suppressHydrationWarning
-                      />
-                    </div>
-                    <div className={styles.inputGroup}>
-                      <label>Your Message</label>
-                      <textarea
-                        rows="5"
-                        placeholder="How can we help you today?"
-                        required
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className={styles.textarea}
-                        suppressHydrationWarning
-                      ></textarea>
-                    </div>
-                    <button
-                      type="submit"
-                      className={styles.submitBtn}
-                      disabled={isSubmitting}
-                      suppressHydrationWarning
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
-                  </form>
-                </div>
-              </div>
+        <div className={styles.mainContent}>
+          {/* Brand + Social */}
+          <div className={styles.brandCol}>
+            <div className={styles.footerBrand}>
+              <Link href="/">
+                <img src="/images/logo.png" alt="VS Naturals Logo" className={styles.footerLogo} />
+              </Link>
+            </div>
+            <div className={styles.socialIcons}>
+              <a href="https://www.facebook.com/vsnaturals" className={styles.socialIcon} aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+              <a href="https://www.instagram.com/vsnaturalsandessentials/" className={styles.socialIcon} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              <a href="https://wa.me/919213638440" className={styles.socialIcon} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
             </div>
           </div>
-        </section>
-      </main>
-      <Footer />
 
-      {/* Popup Message */}
+          {/* Link Blocks */}
+          <div className={`${styles.linksBlock} ${activeAccordion === 0 ? styles.active : ""}`}>
+            <h4 className={styles.blockTitle} onClick={() => toggleAccordion(0)}>
+              <Link href="/products">Top Picks</Link>
+            </h4>
+            <div className={styles.accordionContent}>
+              <ul className={styles.list}>
+                {ALL_PRODUCTS.slice(0, 5).map((product) => (
+                  <li key={product.id}>
+                    <Link href={`/products/${product.id}`}>
+                      {product.name.replace(" Essential Oil", "")}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className={`${styles.linksBlock} ${activeAccordion === 1 ? styles.active : ""}`}>
+            <h4 className={styles.blockTitle} onClick={() => toggleAccordion(1)}>
+              <Link href="/products">Specialties</Link>
+            </h4>
+            <div className={styles.accordionContent}>
+              <ul className={styles.list}>
+                <li><Link href="/products?category=Essential Oils">Essential Oils</Link></li>
+                <li><Link href="/products?category=Fragrance Oil">Fragrance Oil</Link></li>
+                <li><Link href="/products?category=Hair Oil">Hair Oil</Link></li>
+                <li><Link href="/products?category=Carrier Oils">Carrier Oils</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={`${styles.linksBlock} ${activeAccordion === 2 ? styles.active : ""}`}>
+            <h4 className={styles.blockTitle} onClick={() => toggleAccordion(2)}>
+              <Link href="/about">Support</Link>
+            </h4>
+            <div className={styles.accordionContent}>
+              <ul className={styles.list}>
+                <li><Link href="/about">Our Story</Link></li>
+                <li><Link href="/contact">Get in Touch</Link></li>
+                <li><Link href="/blog">Oil Guide</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Contact Us (with complete dynamic address) */}
+          <div className={`${styles.linksBlock} ${activeAccordion === 3 ? styles.active : ""}`}>
+            <h4 className={styles.blockTitle} onClick={() => toggleAccordion(3)}>
+              <Link href="/contact">Contact Us</Link>
+            </h4>
+            <div className={styles.accordionContent}>
+              <ul className={styles.list}>
+                <li>
+                  <a href="mailto:contact@vsnaturalsandessentials.com" className={styles.contactItem}>
+                    <span className={styles.iconWrapper}><FaEnvelope /></span>
+                    <span>contact@vsnaturalsandessentials.com</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+919213638440" className={styles.contactItem}>
+                    <span className={styles.iconWrapper}><FaPhone /></span>
+                    <span>+91 92136 38440</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://maps.google.com/?q=3rd+floor,+B/14+Navrang+society,+opp.+Savliya+pumping+station,+Mai+Mandir+Road,+Nadiad" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.contactItem}
+                  >
+                    <span className={styles.iconWrapper}><FaLocationDot /></span>
+                    <span>
+                      3rd floor, B/14 Navrang society,<br />
+                      opp. Savliya pumping station,<br />
+                      Mai Mandir Road, Nadiad
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Newsletter */}
+          <div className={styles.newsletterCol}>
+            <h4 className={styles.blockTitle}>Join our Community</h4>
+            <p className={styles.newsletterText}>Subscribe for exclusive offers and natural wellness tips.</p>
+            <div className={styles.newsletter}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className={styles.emailInput}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                suppressHydrationWarning
+              />
+              <button
+                className={styles.subscribeBtn}
+                onClick={handleSubscribe}
+                disabled={status === "loading"}
+                suppressHydrationWarning
+              >
+                {status === "loading" ? "Joining..." : "Subscribe"}
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className={styles.bottomBar}>
+          <div className={styles.copyright}>
+            <span className={styles.copyrightBrandMark}>VS</span>
+            <span>
+              Copyright © All rights reserved | Made with ❤️ by{" "}
+              <a href="https://www.smoothsyncinnovations.com/" target="_blank" rel="noopener noreferrer" className={styles.developerLink}>
+                Smoothsync Innovation
+              </a>
+            </span>
+          </div>
+          <div className={styles.rightBar}>
+            <div className={styles.legalLinks}>
+              <Link href="/terms">Terms</Link>
+              <span className={styles.separator}>|</span>
+              <Link href="/privacy">Privacy</Link>
+              <span className={styles.separator}>|</span>
+              <Link href="/how-it-works">Guide</Link>
+            </div>
+            <button 
+              className={styles.scrollTopBtn} 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              aria-label="Scroll to top"
+            >
+              <FaArrowUp />
+            </button>
+          </div>
+        </div>
+
+      </div>
+
       {showPopup && (
-        <div className={styles.popup}>
-          Message Sent Successfully!
+        <div className={`${styles.popup} ${status === "error" ? styles.errorPopup : ""}`}>
+          {status === "loading" && "Processing..."}
+          {status === "success" && "Successfully Subscribed!"}
+          {status === "error" && "Oops! Something went wrong. Try again later."}
         </div>
       )}
-    </>
+    </footer>
   );
 }
