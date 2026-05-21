@@ -13,7 +13,7 @@ export const BLOG_POSTS = [
       <h3>Topical Application</h3>
       <p>When diluted with a carrier oil, peppermint provides a cooling sensation that is incredibly soothing for sore muscles or tension headaches. Always remember to perform a patch test first!</p>
     `,
-    image: "/images/img4.png"
+    image: "/images/ref.jpeg"
   },
   {
     id: 2,

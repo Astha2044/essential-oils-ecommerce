@@ -35,9 +35,9 @@ export default function Footer() {
     setStatus("loading");
     setShowPopup(true);
 
-    const success = await sendToGoogleSheet({ 
-      email, 
-      source: "Footer Newsletter" 
+    const success = await sendToGoogleSheet({
+      email,
+      source: "Footer Newsletter"
     });
 
     if (success) {
@@ -66,7 +66,7 @@ export default function Footer() {
               </Link>
             </div>
             <div className={styles.socialIcons}>
-              <a href="https://www.facebook.com/vsnaturals" className={styles.socialIcon} aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+              <a href="https://www.facebook.com/vsnaturalsandessentials/" className={styles.socialIcon} aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
               <a href="https://www.instagram.com/vsnaturalsandessentials/" className={styles.socialIcon} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
               <a href="https://wa.me/919213638440" className={styles.socialIcon} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
             </div>
@@ -137,10 +137,10 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://www.google.com/maps/search/?api=1&query=3rd%20floor%2C%20B%2F14%20Navrang%20society%2C%20opp.%20Savliya%20pumping%20station%2C%20Mai%20Mandir%20Road%2C%20Nadiad" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=3rd%20floor%2C%20B%2F14%20Navrang%20society%2C%20opp.%20Savliya%20pumping%20station%2C%20Mai%20Mandir%20Road%2C%20Nadiad"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={styles.contactItem}
                   >
                     <span className={styles.iconWrapper}><FaLocationDot /></span>
