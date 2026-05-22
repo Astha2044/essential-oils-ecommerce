@@ -96,6 +96,7 @@ function ProductsContent() {
                   name={product.name}
                   price={product.price}
                   image={product.image}
+                  currency={product.currency}
                 />
               ))}
             </div>

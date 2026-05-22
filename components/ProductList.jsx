@@ -8,11 +8,14 @@ import styles from "../styles/Product.module.css";
 
 export default function ProductList() {
   const [activeCategory, setActiveCategory] = useState("Shop All");
-  const categories = ["Shop All", "Lavender", "Jasmine", "Peppermint", "Sandalwood", "Mogra"];
+  const categories = ["Shop All", "Lavender", "Jasmine", "Peppermint", "Sandalwood", "Mogra", "Candles"];
 
   const filteredProducts = activeCategory === "Shop All"
     ? ALL_PRODUCTS
-    : ALL_PRODUCTS.filter(product => product.name.toLowerCase().includes(activeCategory.toLowerCase()));
+    : ALL_PRODUCTS.filter(product => 
+        product.category.toLowerCase() === activeCategory.toLowerCase() ||
+        product.name.toLowerCase().includes(activeCategory.toLowerCase())
+      );
 
 
   return (
@@ -38,7 +41,7 @@ export default function ProductList() {
 
       <div className={styles.grid}>
         {filteredProducts.slice(0, 4).map((p, i) => (
-          <ProductCard key={i} id={p.id} name={p.name} price={p.price} image={p.image} />
+          <ProductCard key={i} id={p.id} name={p.name} price={p.price} image={p.image} currency={p.currency} />
         ))}
       </div>
 

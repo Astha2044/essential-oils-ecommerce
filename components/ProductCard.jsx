@@ -4,7 +4,7 @@ import styles from "../styles/Product.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProductCard({ id, name, price, image }) {
+export default function ProductCard({ id, name, price, image, currency = "$" }) {
 
   const handleBuyNow = (e) => {
     e.preventDefault();
@@ -45,7 +45,7 @@ export default function ProductCard({ id, name, price, image }) {
         <h3 className={styles.name}>{name}</h3>
 
         <div className={styles.footer}>
-          <p className={styles.price}>${price ? price.toFixed(2) : "0.00"}</p>
+          <p className={styles.price}>{currency}{price ? price.toFixed(2) : "0.00"}</p>
           {/* 
             When the product is ready, uncomment this button and remove the "Coming Soon" button below it:
             

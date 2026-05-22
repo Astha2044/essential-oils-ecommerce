@@ -5,7 +5,7 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaMinus, FaPlus, FaCartPlus, FaEnvelope } from "react-icons/fa6";
+import { FaLeaf, FaShieldHeart, FaHandsHoldingCircle, FaCartPlus, FaEnvelope } from "react-icons/fa6";
 import { ALL_PRODUCTS } from "../../../data/products";
 import ProductCard from "../../../components/ProductCard";
 import styles from "../../../styles/ProductDetail.module.css";
@@ -14,10 +14,10 @@ export default function ProductDetailPage({ params }) {
   const resolvedParams = use(params);
   const productId = resolvedParams.id;
   const [activeImage, setActiveImage] = useState(0);
-  const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("benefits");
 
   const product = ALL_PRODUCTS.find(p => p.id === productId);
+  const [selectedOption, setSelectedOption] = useState(product?.options ? product.options[0] : "");
 
   if (!product) {
     return (
@@ -86,9 +86,21 @@ export default function ProductDetailPage({ params }) {
               <h1 className={styles.title}>{product.name}</h1>
 
               <div className={styles.priceSection}>
-                <span className={styles.price}>${product.price.toFixed(2)}</span>
+                <span className={styles.price}>{product.currency || "$"}{product.price.toFixed(2)}</span>
                 <span className={styles.stockBadge}>In Stock</span>
               </div>
+
+              {(product.weight || product.packSize) && (
+                <div style={{ display: "flex", gap: "1rem", color: "#6B7280", fontSize: "0.95rem", marginBottom: "1.5rem", fontWeight: 500 }}>
+                  {product.packSize && <span>{product.packSize}</span>}
+                  {product.weight && (
+                    <>
+                      <span style={{ opacity: 0.3 }}>|</span>
+                      <span>{product.weight}</span>
+                    </>
+                  )}
+                </div>
+              )}
 
               <p className={styles.description}>{product.description}</p>
 
@@ -103,12 +115,38 @@ export default function ProductDetailPage({ params }) {
                 </div>
               </div>
 
+              {/* Custom Option / Fragrance Selector */}
+              {product.options && (
+                <div className={styles.selectors} style={{ marginTop: "2rem" }}>
+                  <div>
+                    <span className={styles.selectorLabel}>{product.optionsLabel || "Options"}</span>
+                    <div className={styles.optionGrid}>
+                      {product.options.map(opt => (
+                        <button
+                          key={opt}
+                          className={`${styles.optionBtn} ${selectedOption === opt ? styles.active : ""}`}
+                          onClick={() => setSelectedOption(opt)}
+                          type="button"
+                          suppressHydrationWarning
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className={styles.buttonGroup}>
                 {/* 
                   When the product is ready, uncomment this button and remove the "Coming Soon" button below it:
                   
                   <a
-                    href={`https://wa.me/919213638440?text=Hi, I'm interested in ${product.name}`}
+                    href={`https://wa.me/919213638440?text=${encodeURIComponent(
+                      `Hi, I'm interested in buying ${product.name}${
+                        selectedOption ? ` (${selectedOption} Fragrance)` : ""
+                      }${product.packSize ? ` - ${product.packSize}` : ""}.`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.buyNowBtn}
@@ -191,6 +229,19 @@ export default function ProductDetailPage({ params }) {
                         <span className={styles.specValue}>{product.purity}</span>
                       </div>
 
+                      {product.weight && (
+                        <div className={styles.specItem}>
+                          <span className={styles.specLabel}>Weight</span>
+                          <span className={styles.specValue}>{product.weight}</span>
+                        </div>
+                      )}
+
+                      {product.packSize && (
+                        <div className={styles.specItem}>
+                          <span className={styles.specLabel}>Pack Size</span>
+                          <span className={styles.specValue}>{product.packSize}</span>
+                        </div>
+                      )}
                     </div>
                   )}
                   {activeTab === "usage" && (
@@ -241,6 +292,11 @@ export default function ProductDetailPage({ params }) {
             <div className={styles.suggestionGrid}>
               {ALL_PRODUCTS
                 .filter(p => p.id !== productId)
+                .sort((a, b) => {
+                  if (a.category === product.category && b.category !== product.category) return -1;
+                  if (a.category !== product.category && b.category === product.category) return 1;
+                  return 0;
+                })
                 .slice(0, 4)
                 .map(p => (
                   <ProductCard
@@ -249,6 +305,7 @@ export default function ProductDetailPage({ params }) {
                     name={p.name}
                     price={p.price}
                     image={p.image}
+                    currency={p.currency}
                   />
                 ))
               }
