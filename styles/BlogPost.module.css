@@ -11,7 +11,7 @@
 /* Post Hero Section (Matching About Us Hero) */
 .postHero {
   width: 100%;
-  min-height: 55vh;
+  min-height: 50vh;
   background: linear-gradient(rgba(45, 70, 54, 0.75), rgba(45, 70, 54, 0.75)), url('/images/hero_new.jpg');
   background-size: cover;
   background-position: center 25%;
@@ -20,7 +20,7 @@
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 140px 0 60px 0;
+  padding: 140px 0 80px 0;
 }
 
 .heroContent {

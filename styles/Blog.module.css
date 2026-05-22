@@ -11,9 +11,10 @@
 .blogHero {
   width: 100%;
   min-height: 50vh;
-  background: linear-gradient(rgba(55, 83, 65, 0.7), rgba(55, 83, 65, 0.7)), url('/images/bgimage.jpg');
+  background-image: linear-gradient(rgba(55, 83, 65, 0.7), rgba(55, 83, 65, 0.7)), url('/images/hero_background.png');
   background-size: cover;
   background-position: center 25%;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

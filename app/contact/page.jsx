@@ -13,9 +13,9 @@ export default function ContactPage() {
       <section className={styles.contactHero}>
         <div className={styles.heroContent}>
           <div className={styles.badge}>Get in Touch</div>
-          <h1 className={styles.heroTitle}>We'd Love to Hear From You</h1>
+          <h1 className={styles.heroTitle}>Connect with Nature's Essence</h1>
           <p className={styles.heroSubtitle}>
-            Have questions about our pure essential oils or need assistance with your order? Reach out to us.
+            Whether you need help selecting the perfect blend, have questions about our organic extraction process, or require order assistance, our wellness experts are here to help.
           </p>
         </div>
       </section>
@@ -24,7 +24,7 @@ export default function ContactPage() {
       <section className={styles.contactSection}>
         <div className={styles.container}>
           <div className={styles.contactWrapper}>
-            
+
             {/* Info Column */}
             <div className={styles.infoColumn}>
               <div className={styles.sectionHeader}>
@@ -58,10 +58,10 @@ export default function ContactPage() {
                 </a>
 
                 {/* Location */}
-                <a 
-                  href="https://www.google.com/maps/search/?api=1&query=3rd%20floor%2C%20B%2F14%20Navrang%20society%2C%20opp.%20Savliya%20pumping%20station%2C%20Mai%20Mandir%20Road%2C%20Nadiad" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=3rd%20floor%2C%20B%2F14%20Navrang%20society%2C%20opp.%20Savliya%20pumping%20station%2C%20Mai%20Mandir%20Road%2C%20Nadiad"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={styles.contactItem}
                 >
                   <div className={styles.iconCircle}>
