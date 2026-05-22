@@ -17,7 +17,7 @@ const slides = [
   {
     title: "Illuminate Your Space with Handcrafted Candles",
     subtitle: "Elevate your home with natural soy wax and pure essential oils, designed to create a serene and calming atmosphere for relaxation.",
-    image: "/images/candle.png",
+    image: "/images/red_lotus.png",
     badge: "Handcrafted",
     desktopPosition: "center bottom",
     mobilePosition: "80% bottom"
@@ -25,7 +25,7 @@ const slides = [
   {
     title: "Indulge in the Luxury of Pure Rose Essence",
     subtitle: "Experience the delicate, floral luxury of our ethically sourced rose blends, perfect for emotional balance and enhancing natural skin radiance.",
-    image: "/images/rose.png",
+    image: "/images/New_rose.png",
     badge: "Floral Luxury",
     desktopPosition: "center center",
     mobilePosition: "80% center"
@@ -33,7 +33,7 @@ const slides = [
   {
     title: "Revitalize Your Senses with Energizing Lemon Oil",
     subtitle: "Cold-pressed lemon essence to revitalize your senses, boost your mood, and naturally refresh your daily living space with vibrant energy.",
-    image: "/images/lemon.png",
+    image: "/images/jasmin.png",
     badge: "Energizing",
     desktopPosition: "center bottom",
     mobilePosition: "80% bottom"
@@ -41,7 +41,7 @@ const slides = [
   {
     title: "Inner Peace with Calming Sandalwood Rituals",
     subtitle: "Rich, woody aromas meticulously distilled for deep meditation, mindfulness, and achieving a profound sense of lasting inner peace.",
-    image: "/images/sandlewood.png",
+    image: "/images/green.png",
     badge: "Meditation",
     desktopPosition: "center center",
     mobilePosition: "80% center"
