@@ -43,9 +43,9 @@ export default function ProductCard({ id, name, price, image, currency = "$" }) 
 
       <div className={styles.info}>
         <h3 className={styles.name}>{name}</h3>
+        <p className={styles.price}>{currency}{price ? price.toFixed(2) : "0.00"}</p>
 
         <div className={styles.footer}>
-          <p className={styles.price}>{currency}{price ? price.toFixed(2) : "0.00"}</p>
           {/* 
             When the product is ready, uncomment this button and remove the "Coming Soon" button below it:
             

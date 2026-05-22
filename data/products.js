@@ -284,7 +284,7 @@ export const ALL_PRODUCTS = [
     name: "Calming Lotus Candle",
     price: 179.00,
     currency: "₹",
-    image: "/images/Lotus_candle.png",
+    image: "/images/red_lotus1.png",
     images: ["/images/Lotus_candle.png", "/images/lotus1.png", "/images/lotus2.png"],
     category: "Candles",
     scientificName: "Soy-Based",
@@ -306,10 +306,10 @@ export const ALL_PRODUCTS = [
   },
   {
     id: "sandalwood-candle",
-    name: "Custom Scented Soy Candles (Set of 2)",
+    name: "Custom Scented Soy Candles",
     price: 149.00,
     currency: "₹",
-    image: "/images/rose4.png",
+    image: "/images/rose_hero1.png",
     images: ["/images/hd_rose.png", "/images/rose2.png", "/images/rose3.png"],
     category: "Candles",
     scientificName: "Soy-Based",
@@ -329,6 +329,81 @@ export const ALL_PRODUCTS = [
       diffusion: "Burn for 1-2 hours to disperse the selected essential oil scent across your space.",
       topical: "None (Candle use only).",
       ritual: "Light in your workspace or living room to customize the mood of your environment."
+    }
+  },
+  {
+    id: "lavender-candle",
+    name: "Relaxing Lavender Soy Candle",
+    price: 179.00,
+    currency: "₹",
+    image: "/images/lavender.png",
+    images: ["/images/lavender.png", "/images/candle1.jpg", "/images/candle2.jpg"],
+    category: "Candles",
+    scientificName: "Soy-Based",
+    origin: "Hand-poured",
+    extraction: "Pure Essential Oil Scented",
+    purity: "Clean Burning",
+    note: "Calming, herbal lavender",
+    plantPart: "Various",
+    weight: "100 gm",
+    packSize: "Single piece",
+    description: "Bring the relaxing scent of lavender fields into your home with our Lavender Soy Candle. Hand-poured using pure lavender oil for ultimate stress relief and restorative sleep.",
+    benefits: ["Promotes better sleep", "Soothes anxiety", "Clean burning soy wax"],
+    usage: "Light in your bedroom or bath space for 1-2 hours in the evening.",
+    experience: {
+      diffusion: "Burn in the evening to create a tranquil sanctuary before sleep.",
+      topical: "None (Candle use only).",
+      ritual: "Perfect for winding down with a book or during a relaxing bath."
+    }
+  },
+  {
+    id: "rose-candle",
+    name: "Luxury Rose Soy Candle",
+    price: 189.00,
+    currency: "₹",
+    image: "/images/rose_product.jpg",
+    images: ["/images/rose_product.jpg", "/images/rose2.png", "/images/rose3.png"],
+    category: "Candles",
+    scientificName: "Soy-Based",
+    origin: "Hand-poured",
+    extraction: "Pure Essential Oil Scented",
+    purity: "Clean Burning",
+    note: "Rich floral rose essence",
+    plantPart: "Various",
+    weight: "120 gm",
+    packSize: "Single piece",
+    description: "Infused with pure rose absolute, this clean-burning soy candle fills your room with the delicate, luxurious aroma of fresh roses. Perfect for creating a romantic and peaceful atmosphere.",
+    benefits: ["Luxury rose aroma", "Uplifts the mood", "Elegant table styling"],
+    usage: "Light during dinner, evening gatherings, or self-care hours.",
+    experience: {
+      diffusion: "Disperses a gentle, sweet rose fragrance across any living space.",
+      topical: "None (Candle use only).",
+      ritual: "Great for romantic settings or when you want to pamper yourself."
+    }
+  },
+  {
+    id: "white-lotus-candle",
+    name: "Sacred White Lotus Soy Candle",
+    price: 179.00,
+    currency: "₹",
+    image: "/images/new.png",
+    images: ["/images/new.png", "/images/lotus1.png", "/images/lotus2.png"],
+    category: "Candles",
+    scientificName: "Soy-Based",
+    origin: "Hand-poured",
+    extraction: "Pure Essential Oil Scented",
+    purity: "Clean Burning",
+    note: "Serene, sweet floral",
+    plantPart: "Various",
+    weight: "100 gm",
+    packSize: "Single piece",
+    description: "Experience the pure, sweet aroma of sacred White Lotus. Scented with pure essential oils and hand-poured in small batches for clean burning, mindfulness, and ultimate peace.",
+    benefits: ["Deep meditation support", "Air purifying properties", "Calming floral notes"],
+    usage: "Light during yoga, meditation, or quiet morning hours.",
+    experience: {
+      diffusion: "Fills the room with a clean, airy floral fragrance that clears the mind.",
+      topical: "None (Candle use only).",
+      ritual: "Light during mindfulness practices to set a serene, grounding intention."
     }
   }
 ];

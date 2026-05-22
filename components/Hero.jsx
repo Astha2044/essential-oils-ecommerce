@@ -15,10 +15,10 @@ const slides = [
     mobilePosition: "80% center"
   },
   {
-    title: "Illuminate Your Space with Handcrafted Candles",
-    subtitle: "Elevate your home with natural soy wax and pure essential oils, designed to create a serene and calming atmosphere for relaxation.",
+    title: "Illuminate Your Space with Red Lotus Candles",
+    subtitle: "Elevate your home with natural soy wax and the calming aroma of sacred lotus, designed to create a serene and relaxing atmosphere.",
     image: "/images/red_lotus.png",
-    badge: "Handcrafted",
+    badge: "Handcrafted Lotus",
     desktopPosition: "center bottom",
     mobilePosition: "80% bottom"
   },
@@ -31,18 +31,18 @@ const slides = [
     mobilePosition: "80% center"
   },
   {
-    title: "Revitalize Your Senses with Energizing Lemon Oil",
-    subtitle: "Cold-pressed lemon essence to revitalize your senses, boost your mood, and naturally refresh your daily living space with vibrant energy.",
+    title: "Experience the Exotic Sweetness of Jasmine",
+    subtitle: "Indulge in the rich, romantic fragrance of hand-picked jasmine blossoms, distilled to uplift your mood and bring comfort to your soul.",
     image: "/images/jasmin.png",
-    badge: "Energizing",
+    badge: "Exotic Jasmine",
     desktopPosition: "center bottom",
     mobilePosition: "80% bottom"
   },
   {
-    title: "Inner Peace with Calming Sandalwood Rituals",
-    subtitle: "Rich, woody aromas meticulously distilled for deep meditation, mindfulness, and achieving a profound sense of lasting inner peace.",
+    title: "Refresh Your Senses with Crisp Lemongrass",
+    subtitle: "Bright, zesty, and purifying aromas distilled to clear your mind, boost focus, and naturally revitalize your living space.",
     image: "/images/green.png",
-    badge: "Meditation",
+    badge: "Herbal Freshness",
     desktopPosition: "center center",
     mobilePosition: "80% center"
   },
