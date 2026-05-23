@@ -17,7 +17,7 @@ const slides = [
   {
     title: "Illuminate Your Space with Red Lotus Candles",
     subtitle: "Elevate your home with natural soy wax and the calming aroma of sacred lotus, designed to create a serene and relaxing atmosphere.",
-    image: "/images/red_lotus.png",
+    image: "/images/redbg.png",
     badge: "Handcrafted Lotus",
     desktopPosition: "center bottom",
     mobilePosition: "80% bottom"
@@ -33,7 +33,7 @@ const slides = [
   {
     title: "Experience the Exotic Sweetness of Jasmine",
     subtitle: "Indulge in the rich, romantic fragrance of hand-picked jasmine blossoms, distilled to uplift your mood and bring comfort to your soul.",
-    image: "/images/jasmin.png",
+    image: "/images/white_background.png",
     badge: "Exotic Jasmine",
     desktopPosition: "center bottom",
     mobilePosition: "80% bottom"
