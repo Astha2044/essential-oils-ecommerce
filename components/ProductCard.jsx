@@ -3,16 +3,24 @@
 import styles from "../styles/Product.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { ALL_PRODUCTS } from "../data/products";
 
-export default function ProductCard({ id, name, price, image, currency = "$" }) {
+export default function ProductCard({ id, name, price, image, category, currency = "$" }) {
 
   const handleBuyNow = (e) => {
     e.preventDefault();
     const whatsappNumber = "919213638440";
     const message = `Hi, I'm interested in ${name}`;
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    const newWindow = window.open(url, "_blank");
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+      window.location.href = url;
+    }
   };
 
+  const productCategory = category || ALL_PRODUCTS.find(p => p.id === id)?.category;
+  const isCandle = productCategory === "Candles";
 
   return (
     <div className={styles.card}>
@@ -46,9 +54,7 @@ export default function ProductCard({ id, name, price, image, currency = "$" }) 
         <p className={styles.price}>{currency}{price ? price.toFixed(2) : "0.00"}</p>
 
         <div className={styles.footer}>
-          {/* 
-            When the product is ready, uncomment this button and remove the "Coming Soon" button below it:
-            
+          {isCandle ? (
             <button
               className={styles.buyNowBtn}
               onClick={handleBuyNow}
@@ -56,14 +62,15 @@ export default function ProductCard({ id, name, price, image, currency = "$" }) 
             >
               Buy Now
             </button>
-          */}
-          <button
-            className={styles.buyNowBtn}
-            disabled
-            suppressHydrationWarning
-          >
-            Coming Soon
-          </button>
+          ) : (
+            <button
+              className={styles.buyNowBtn}
+              disabled
+              suppressHydrationWarning
+            >
+              Coming Soon
+            </button>
+          )}
           <Link
             href="/contact"
             className={styles.contactBtn}

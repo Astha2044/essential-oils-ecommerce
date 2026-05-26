@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, use } from "react";
+import { useState, use, useEffect } from "react";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
@@ -19,6 +19,14 @@ export default function ProductDetailPage({ params }) {
   const product = ALL_PRODUCTS.find(p => p.id === productId);
   const [selectedOption, setSelectedOption] = useState(product?.options ? product.options[0] : "");
 
+  // Reset state when product changes (handles page transitions and hydration resolution)
+  useEffect(() => {
+    if (product) {
+      setSelectedOption(product.options ? product.options[0] : "");
+      setActiveImage(0);
+    }
+  }, [productId, product]);
+
   if (!product) {
     return (
       <div className={styles.errorContainer}>
@@ -28,7 +36,40 @@ export default function ProductDetailPage({ params }) {
     );
   }
 
+  const handleBuyNow = (e) => {
+    e.preventDefault();
+    const whatsappNumber = "919213638440";
+    const message = `Hi, I'm interested in buying ${product.name}${selectedOption ? ` (${selectedOption} Fragrance)` : ""
+      }${product.packSize ? ` - ${product.packSize}` : ""}.`;
 
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    const newWindow = window.open(url, "_blank");
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+      window.location.href = url;
+    }
+  };
+
+  const selectedOil = selectedOption ? ALL_PRODUCTS.find(p =>
+    p.category === "Essential Oils" &&
+    p.name.toLowerCase().includes(selectedOption.toLowerCase())
+  ) : null;
+
+  const getFragranceThumbnail = (name) => {
+    const mapping = {
+      "Lavender": "/images/lavender.png",
+      "Peppermint": "/images/peppermint_hero.png",
+      "Jasmine": "/images/white3.png",
+      "Rosemary": "/images/r3.png",
+      "Sandalwood": "/images/sandlewood1.png",
+      "Lemongrass": "/images/lemongrass.png",
+      "Citronella": "/images/img8.jpg",
+      "Mogra": "/images/mogra1.png",
+      "Orange": "/images/orange1.png",
+      "Ylang Ylang": "/images/img1.png"
+    };
+    return mapping[name] || "/images/img1.png";
+  };
 
   return (
     <>
@@ -137,30 +178,50 @@ export default function ProductDetailPage({ params }) {
                 </div>
               )}
 
+              {/* Fragrance Profile Card */}
+              {product.customisable && selectedOption && selectedOil && (
+                <div className={styles.fragranceProfileCard}>
+                  <div className={styles.fragranceProfileHeader}>
+                    <div className={styles.fragranceProfileThumbnail}>
+                      <img
+                        src={getFragranceThumbnail(selectedOption)}
+                        alt={selectedOption}
+                      />
+                    </div>
+                    <div>
+                      <h4 className={styles.fragranceProfileTitle}>
+                        Infused with Pure {selectedOption} Oil
+                      </h4>
+                      <p className={styles.fragranceProfileNote}>
+                        <strong>Aroma Note:</strong> {selectedOil.note}
+                      </p>
+                    </div>
+                  </div>
+                  <p className={styles.fragranceProfileDesc}>
+                    {selectedOil.description}
+                  </p>
+                </div>
+              )}
+
               <div className={styles.buttonGroup}>
-                {/* 
-                  When the product is ready, uncomment this button and remove the "Coming Soon" button below it:
-                  
-                  <a
-                    href={`https://wa.me/919213638440?text=${encodeURIComponent(
-                      `Hi, I'm interested in buying ${product.name}${
-                        selectedOption ? ` (${selectedOption} Fragrance)` : ""
-                      }${product.packSize ? ` - ${product.packSize}` : ""}.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                {product.category === "Candles" ? (
+                  <button
+                    onClick={handleBuyNow}
                     className={styles.buyNowBtn}
+                    type="button"
+                    suppressHydrationWarning
                   >
                     Buy Now
-                  </a>
-                */}
-                <button
-                  disabled
-                  className={styles.buyNowBtn}
-                  style={{ cursor: "not-allowed", opacity: 0.6 }}
-                >
-                  Coming Soon
-                </button>
+                  </button>
+                ) : (
+                  <button
+                    disabled
+                    className={styles.buyNowBtn}
+                    style={{ cursor: "not-allowed", opacity: 0.6 }}
+                  >
+                    Coming Soon
+                  </button>
+                )}
                 <Link
                   href="/contact"
                   className={styles.inquiryBtn}
@@ -305,6 +366,7 @@ export default function ProductDetailPage({ params }) {
                     name={p.name}
                     price={p.price}
                     image={p.image}
+                    category={p.category}
                     currency={p.currency}
                   />
                 ))

@@ -96,6 +96,7 @@ function ProductsContent() {
                   name={product.name}
                   price={product.price}
                   image={product.image}
+                  category={product.category}
                   currency={product.currency}
                 />
               ))}

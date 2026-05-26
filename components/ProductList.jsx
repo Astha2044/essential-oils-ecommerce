@@ -41,7 +41,7 @@ export default function ProductList() {
 
       <div className={styles.grid}>
         {filteredProducts.slice(0, 4).map((p, i) => (
-          <ProductCard key={i} id={p.id} name={p.name} price={p.price} image={p.image} currency={p.currency} />
+          <ProductCard key={i} id={p.id} name={p.name} price={p.price} image={p.image} category={p.category} currency={p.currency} />
         ))}
       </div>
 
