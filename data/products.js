@@ -405,6 +405,36 @@ export const ALL_PRODUCTS = [
       topical: "None (Candle use only).",
       ritual: "Light during mindfulness practices to set a serene, grounding intention."
     }
+  },
+  {
+    id: "blue-teddy-candle",
+    name: "Cute Blue Teddy Bear Candles",
+    price: 199.00,
+    currency: "₹",
+    image: "/images/candle.jpeg",
+    images: ["/images/candle.jpeg", "/images/candle1.png", "/images/candle2.png"],
+    category: "Candles",
+    scientificName: "Soy-Based",
+    origin: "Hand-poured",
+    extraction: "Pure Essential Oil Scented",
+    purity: "Clean Burning",
+    note: "Sweet, comforting aroma",
+    plantPart: "Various",
+    // weight: "4 x 35 gm",
+    packSize: "Pack of 4",
+    description: "Adorable hand-poured teddy bear-shaped soy candles in a charming baby blue hue. Infused with pure, calming essential oils for a warm, comforting vibe. Comes as a pack of 4, perfect for home styling, events, or gifting.",
+    benefits: [
+      "Cute decorative design",
+      "Clean-burning natural soy wax",
+      "Sweet and soothing aroma",
+      "Perfect for baby showers and gifting"
+    ],
+    usage: "Place on a heat-resistant tray or coaster, light the wick, and enjoy the cozy, comforting glow and subtle scent.",
+    experience: {
+      diffusion: "Burn for 1-2 hours to disperse a gentle, sweet scent throughout your room.",
+      topical: "None (Candle use only).",
+      ritual: "Light during celebration setups, birthday decor, or as a cute aesthetic accent on your vanity."
+    }
   }
 ];
 
