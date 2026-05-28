@@ -323,4 +323,18 @@
   .safetyCard {
     padding: 2.5rem;
   }
+
+  .usageText {
+    text-align: center;
+  }
+
+  .usageList {
+    align-items: center;
+  }
+
+  .usageItem {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+  }
 }

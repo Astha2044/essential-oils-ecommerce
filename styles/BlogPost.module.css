@@ -121,6 +121,12 @@
 
 .richText p {
   margin-bottom: 2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 /* Sidebar Elements */
@@ -303,12 +309,54 @@
     min-height: 45vh;
   }
 
+  .heroMeta {
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+  }
+
   .articleSection {
     padding: 2.5rem 0;
   }
 
+  .backLink {
+    max-width: 680px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+  }
+
+  .articleContent {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .articleSidebar {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 2.5rem;
+  }
+
   .heroTitle {
     font-size: 2.2rem;
+  }
+
+  .sidebarImage {
+    height: 300px;
+  }
+
+  .glassBadge {
+    right: 0.5rem;
+    bottom: 5%;
+  }
+
+  .richText {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .richText h3 {
+    font-size: 1.6rem;
+    margin: 2rem 0 1rem 0;
   }
 
   .ctaCard {

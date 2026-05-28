@@ -72,9 +72,15 @@
   margin: 0 auto;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .contactWrapper {
     grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contactWrapper {
     gap: 3.5rem;
   }
 }
@@ -147,6 +153,9 @@
 .itemText p {
   color: #6B7280;
   line-height: 1.5;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .formColumn {
@@ -270,8 +279,39 @@
 }
 
 @media (max-width: 768px) {
+  .contactHero {
+    padding: 100px 1.25rem 50px 1.25rem;
+    min-height: auto;
+  }
+
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2.15rem;
+  }
+
+  .infoColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .contactList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contactItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .contactItem:hover {
+    transform: translateY(-4px);
   }
 
   .formCard {

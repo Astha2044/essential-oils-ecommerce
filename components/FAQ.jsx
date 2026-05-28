@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { FaPlus, FaMinus } from 'react-icons/fa6';
 import styles from '../styles/FAQ.module.css';
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const faqs = [
     {
@@ -65,7 +66,9 @@ export default function FAQ() {
                   onClick={() => setActiveIndex(activeIndex === index ? -1 : index)}
                 >
                   <h4 className={styles.question}>{faq.q}</h4>
-                  <span className={styles.icon}>{activeIndex === index ? '−' : '+'}</span>
+                  <span className={styles.icon}>
+                    {activeIndex === index ? <FaMinus size={14} /> : <FaPlus size={14} />}
+                  </span>
                 </div>
                 <div className={`${styles.accordionBody} ${activeIndex === index ? styles.show : ''}`}>
                   <p className={styles.answer}>{faq.a}</p>

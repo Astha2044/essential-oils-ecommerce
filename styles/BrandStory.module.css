@@ -273,4 +273,19 @@
   .title {
     font-size: 2.5rem;
   }
+
+  .textColumn {
+    text-align: center;
+  }
+
+  .featureList {
+    align-items: center;
+  }
+
+  .feature {
+    width: 100%;
+    max-width: 380px;
+    justify-content: center;
+    text-align: left;
+  }
 }

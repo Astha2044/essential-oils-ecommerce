@@ -5,8 +5,8 @@
 }
 
 .topSection {
-  background-color: var(--color-beige);
-  /* Start with beige for hero */
+  background-color: #17241c;
+  /* Dark forest green matching the Hero overlay to blend seamlessly on mobile */
   position: relative;
 }
 
