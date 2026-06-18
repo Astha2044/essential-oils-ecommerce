@@ -51,7 +51,7 @@ export default function BrandStory() {
               <div className={styles.imageDecoration}></div>
               <div className={styles.imageFrame}>
                 <Image
-                  src="/images/lavender_bottle.png"
+                  src="/images/Levender.png"
                   alt="Brand Story"
                   width={600}
                   height={700}

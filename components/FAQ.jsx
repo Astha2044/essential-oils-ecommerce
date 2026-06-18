@@ -46,7 +46,7 @@ export default function FAQ() {
 
           <div className={styles.imageWrapper}>
             <div className={styles.imageBg}></div>
-            <img src="/images/img1.png" alt="Essential Oil Bottle" className={styles.image} />
+            <img src="/images/sandalwood.png" alt="Essential Oil Bottle" className={styles.image} />
             <div className={styles.floatingTag}>
               <strong>Pure Essence</strong>
               <span>Nature's Choice</span>
