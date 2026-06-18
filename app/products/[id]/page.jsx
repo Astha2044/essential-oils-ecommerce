@@ -40,7 +40,7 @@ export default function ProductDetailPage({ params }) {
     e.preventDefault();
     const whatsappNumber = "919213638440";
     const message = `Hi, I'm interested in buying ${product.name}${selectedOption ? ` (${selectedOption} Fragrance)` : ""
-      }${product.packSize ? ` - ${product.packSize}` : ""}.`;
+      }${product.packSize ? ` - ${product.packSize}` : ""}${product.size ? ` - ${product.size}` : ""}${product.weight ? ` - ${product.weight}` : ""}.`;
 
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
@@ -131,15 +131,11 @@ export default function ProductDetailPage({ params }) {
                 <span className={styles.stockBadge}>In Stock</span>
               </div>
 
-              {(product.weight || product.packSize) && (
-                <div style={{ display: "flex", gap: "1rem", color: "#6B7280", fontSize: "0.95rem", marginBottom: "1.5rem", fontWeight: 500 }}>
-                  {product.packSize && <span>{product.packSize}</span>}
-                  {product.weight && (
-                    <>
-                      <span style={{ opacity: 0.3 }}>|</span>
-                      <span>{product.weight}</span>
-                    </>
-                  )}
+              {(product.weight || product.packSize || product.size) && (
+                <div className={styles.sizeBadgeWrapper}>
+                  {product.packSize && <span className={styles.sizeBadge}>{product.packSize}</span>}
+                  {product.weight && <span className={styles.sizeBadge}>{product.weight}</span>}
+                  {product.size && <span className={styles.sizeBadge}>{product.size}</span>}
                 </div>
               )}
 
@@ -204,24 +200,14 @@ export default function ProductDetailPage({ params }) {
               )}
 
               <div className={styles.buttonGroup}>
-                {product.category === "Candles" ? (
-                  <button
-                    onClick={handleBuyNow}
-                    className={styles.buyNowBtn}
-                    type="button"
-                    suppressHydrationWarning
-                  >
-                    Buy Now
-                  </button>
-                ) : (
-                  <button
-                    disabled
-                    className={styles.buyNowBtn}
-                    style={{ cursor: "not-allowed", opacity: 0.6 }}
-                  >
-                    Coming Soon
-                  </button>
-                )}
+                <button
+                  onClick={handleBuyNow}
+                  className={styles.buyNowBtn}
+                  type="button"
+                  suppressHydrationWarning
+                >
+                  Buy Now
+                </button>
                 <Link
                   href="/contact"
                   className={styles.inquiryBtn}
@@ -294,6 +280,13 @@ export default function ProductDetailPage({ params }) {
                         <div className={styles.specItem}>
                           <span className={styles.specLabel}>Weight</span>
                           <span className={styles.specValue}>{product.weight}</span>
+                        </div>
+                      )}
+
+                      {product.size && (
+                        <div className={styles.specItem}>
+                          <span className={styles.specLabel}>Size</span>
+                          <span className={styles.specValue}>{product.size}</span>
                         </div>
                       )}
 

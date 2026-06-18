@@ -102,20 +102,14 @@ export default function ProductDetailPage() {
 
             <div className={styles.actions}>
               <button className={styles.addBtn}>Add to Cart</button>
-              {/* 
-                When the product is ready, uncomment this button and remove the "Coming Soon" button below it:
-                <a
-                  href={`https://wa.me/919213638440?text=Hi, I'm interested in ${PRODUCT_DATA.name}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.buyBtn}
-                >
-                  Buy Now
-                </a>
-              */}
-              <button disabled className={styles.buyBtn} style={{ cursor: "not-allowed", opacity: 0.6 }}>
-                Coming Soon
-              </button>
+              <a
+                href={`https://wa.me/919213638440?text=Hi, I'm interested in ${PRODUCT_DATA.name}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.buyBtn}
+              >
+                Buy Now
+              </a>
             </div>
           </div>
         </div>

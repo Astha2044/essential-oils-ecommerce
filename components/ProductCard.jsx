@@ -54,23 +54,13 @@ export default function ProductCard({ id, name, price, image, category, currency
         <p className={styles.price}>{currency}{price ? price.toFixed(2) : "0.00"}</p>
 
         <div className={styles.footer}>
-          {isCandle ? (
-            <button
-              className={styles.buyNowBtn}
-              onClick={handleBuyNow}
-              suppressHydrationWarning
-            >
-              Buy Now
-            </button>
-          ) : (
-            <button
-              className={styles.buyNowBtn}
-              disabled
-              suppressHydrationWarning
-            >
-              Coming Soon
-            </button>
-          )}
+          <button
+            className={styles.buyNowBtn}
+            onClick={handleBuyNow}
+            suppressHydrationWarning
+          >
+            Buy Now
+          </button>
           <Link
             href="/contact"
             className={styles.contactBtn}
