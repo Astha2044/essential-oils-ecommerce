@@ -127,18 +127,16 @@
 
 .storyImageWrapper {
   position: relative;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: calc(100% - 3rem);
+  max-width: 400px;
+  margin: 1.5rem auto;
 }
 
 .storyImage {
   width: 100%;
-  max-width: 480px;
   height: auto;
-  border-radius: 12rem 12rem 2rem 2rem;
-  /* Sophisticated arched top */
+  display: block;
+  border-radius: 20rem 20rem 4rem 4rem;
   box-shadow: 0 40px 100px rgba(55, 83, 65, 0.15);
   position: relative;
   z-index: 2;
@@ -152,10 +150,8 @@
 
 .imageDecoration {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 12rem 12rem 2rem 2rem;
+  inset: -1.5rem;
+  border-radius: 20rem 20rem 4rem 4rem;
   z-index: 1;
   pointer-events: none;
 }
@@ -166,7 +162,7 @@
   position: absolute;
   inset: 0;
   border: 1px dashed var(--color-green-primary);
-  border-radius: 12rem 12rem 2rem 2rem;
+  border-radius: 20rem 20rem 4rem 4rem;
   opacity: 0.2;
   transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }

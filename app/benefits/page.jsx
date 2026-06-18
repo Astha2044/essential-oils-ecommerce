@@ -97,7 +97,7 @@ export default function BenefitsPage() {
           <div className={styles.container}>
             <div className={styles.usageGrid}>
               <div className={styles.usageImageWrapper}>
-                <img src="/images/eucalyptus_bottle.png" alt="Usage" className={styles.usageImage} />
+                <img src="/images/lemon_2.jpeg" alt="Usage" className={styles.usageImage} />
                 <div className={styles.imageDecoration}></div>
                 <div className={styles.glassBadge}>
                   <strong>Pure Essence</strong>

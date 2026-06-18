@@ -29,7 +29,7 @@ export const BLOG_POSTS = [
       <h3>Evening Wind-down</h3>
       <p>Lavender is the gold standard for evening relaxation. A few drops on your pillow or in a warm bath can signal to your nervous system that it's time to rest.</p>
     `,
-    image: "/images/eucalyptus_bottle.png"
+    image: "/images/lemon_2.jpeg"
   },
   {
     id: 3,
