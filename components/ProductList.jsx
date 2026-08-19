@@ -8,14 +8,19 @@ import styles from "../styles/Product.module.css";
 
 export default function ProductList() {
   const [activeCategory, setActiveCategory] = useState("Shop All");
-  const categories = ["Shop All", "Lavender", "Jasmine", "Peppermint", "Sandalwood", "Mogra", "Candles"];
+  const categories = ["Shop All", "Essential Oils", "Candles"];
 
-  const filteredProducts = activeCategory === "Shop All"
-    ? ALL_PRODUCTS
-    : ALL_PRODUCTS.filter(product => 
-        product.category.toLowerCase() === activeCategory.toLowerCase() ||
-        product.name.toLowerCase().includes(activeCategory.toLowerCase())
-      );
+  const oils = ALL_PRODUCTS.filter(p => p.category === "Essential Oils");
+  const candles = ALL_PRODUCTS.filter(p => p.category === "Candles");
+
+  let displayProducts = [];
+  if (activeCategory === "Shop All") {
+    displayProducts = [...oils.slice(0, 2), ...candles.slice(0, 2)];
+  } else if (activeCategory === "Essential Oils") {
+    displayProducts = oils.slice(0, 4);
+  } else if (activeCategory === "Candles") {
+    displayProducts = candles.slice(0, 4);
+  }
 
 
   return (
@@ -40,7 +45,7 @@ export default function ProductList() {
 
 
       <div className={styles.grid}>
-        {filteredProducts.slice(0, 4).map((p, i) => (
+        {displayProducts.map((p, i) => (
           <ProductCard key={i} id={p.id} name={p.name} price={p.price} image={p.image} category={p.category} currency={p.currency} />
         ))}
       </div>

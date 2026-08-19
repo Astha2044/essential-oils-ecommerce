@@ -342,56 +342,6 @@ export const ALL_PRODUCTS = [
     }
   },
   {
-    id: "lavender-candle",
-    name: "Lavender Soy Candle",
-    price: 179.00,
-    currency: "₹",
-    image: "/images/l1.png",
-    images: ["/images/l1.png", "/images/l2.png", "/images/l3.png"],
-    category: "Candles",
-    scientificName: "Soy-Based",
-    origin: "Hand-poured",
-    extraction: "Pure Essential Oil Scented",
-    purity: "Clean Burning",
-    note: "Calming, herbal lavender",
-    plantPart: "Various",
-    weight: "100 gm",
-    packSize: "Single piece",
-    description: "Bring the relaxing scent of lavender fields into your home with our Lavender Soy Candle. Hand-poured using pure lavender oil for ultimate stress relief and restorative sleep.",
-    benefits: ["Promotes better sleep", "Soothes anxiety", "Clean burning soy wax"],
-    usage: "Light in your bedroom or bath space for 1-2 hours in the evening.",
-    experience: {
-      diffusion: "Burn in the evening to create a tranquil sanctuary before sleep.",
-      topical: "None (Candle use only).",
-      ritual: "Perfect for winding down with a book or during a relaxing bath."
-    }
-  },
-  {
-    id: "rose-candle",
-    name: "Luxury Rose Soy Candle",
-    price: 189.00,
-    currency: "₹",
-    image: "/images/r1.png",
-    images: ["/images/r1.png", "/images/r2.png", "/images/r3.png"],
-    category: "Candles",
-    scientificName: "Soy-Based",
-    origin: "Hand-poured",
-    extraction: "Pure Essential Oil Scented",
-    purity: "Clean Burning",
-    note: "Rich floral rose essence",
-    plantPart: "Various",
-    weight: "120 gm",
-    packSize: "Single piece",
-    description: "Infused with pure rose absolute, this clean-burning soy candle fills your room with the delicate, luxurious aroma of fresh roses. Perfect for creating a romantic and peaceful atmosphere.",
-    benefits: ["Luxury rose aroma", "Uplifts the mood", "Elegant table styling"],
-    usage: "Light during dinner, evening gatherings, or self-care hours.",
-    experience: {
-      diffusion: "Disperses a gentle, sweet rose fragrance across any living space.",
-      topical: "None (Candle use only).",
-      ritual: "Great for romantic settings or when you want to pamper yourself."
-    }
-  },
-  {
     id: "white-lotus-candle",
     name: "Sacred White Lotus Soy Candle",
     price: 179.00,
@@ -445,6 +395,56 @@ export const ALL_PRODUCTS = [
       topical: "None (Candle use only).",
       ritual: "Light during celebration setups, birthday decor, or as a cute aesthetic accent on your vanity."
     }
-  }
+  },
+  {
+    id: "lavender-candle",
+    name: "Lavender Soy Candle",
+    price: 179.00,
+    currency: "₹",
+    image: "/images/l1.png",
+    images: ["/images/l1.png", "/images/l2.png", "/images/l3.png"],
+    category: "Candles",
+    scientificName: "Soy-Based",
+    origin: "Hand-poured",
+    extraction: "Pure Essential Oil Scented",
+    purity: "Clean Burning",
+    note: "Calming, herbal lavender",
+    plantPart: "Various",
+    weight: "100 gm",
+    packSize: "Single piece",
+    description: "Bring the relaxing scent of lavender fields into your home with our Lavender Soy Candle. Hand-poured using pure lavender oil for ultimate stress relief and restorative sleep.",
+    benefits: ["Promotes better sleep", "Soothes anxiety", "Clean burning soy wax"],
+    usage: "Light in your bedroom or bath space for 1-2 hours in the evening.",
+    experience: {
+      diffusion: "Burn in the evening to create a tranquil sanctuary before sleep.",
+      topical: "None (Candle use only).",
+      ritual: "Perfect for winding down with a book or during a relaxing bath."
+    }
+  },
+  {
+    id: "rose-candle",
+    name: "Luxury Rose Soy Candle",
+    price: 189.00,
+    currency: "₹",
+    image: "/images/r1.png",
+    images: ["/images/r1.png", "/images/r2.png", "/images/r3.png"],
+    category: "Candles",
+    scientificName: "Soy-Based",
+    origin: "Hand-poured",
+    extraction: "Pure Essential Oil Scented",
+    purity: "Clean Burning",
+    note: "Rich floral rose essence",
+    plantPart: "Various",
+    weight: "120 gm",
+    packSize: "Single piece",
+    description: "Infused with pure rose absolute, this clean-burning soy candle fills your room with the delicate, luxurious aroma of fresh roses. Perfect for creating a romantic and peaceful atmosphere.",
+    benefits: ["Luxury rose aroma", "Uplifts the mood", "Elegant table styling"],
+    usage: "Light during dinner, evening gatherings, or self-care hours.",
+    experience: {
+      diffusion: "Disperses a gentle, sweet rose fragrance across any living space.",
+      topical: "None (Candle use only).",
+      ritual: "Great for romantic settings or when you want to pamper yourself."
+    }
+  },
 ];
 

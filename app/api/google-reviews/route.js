@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   let placeId = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || process.env.GOOGLE_PLACE_ID;
@@ -52,7 +54,8 @@ export async function GET() {
     }
   ];
 
-  const defaultMapsUrl = "https://maps.app.goo.gl/ceWrzfvLGFi1KXNq7";
+  const defaultMapsUrl = process.env.NEXT_PUBLIC_GOOGLE_LOCATION_LINK || "https://share.google/S9AoDFRkzoOCADefs";
+  const reviewLink = placeId ? `https://search.google.com/local/writereview?placeid=${placeId}` : defaultMapsUrl;
 
   if (!apiKey) {
     return NextResponse.json({
@@ -61,7 +64,7 @@ export async function GET() {
       rating: 4.9,
       totalReviews: 48,
       reviews: fallbackReviews,
-      writeReviewUrl: defaultMapsUrl,
+      writeReviewUrl: reviewLink,
       message: "Please add GOOGLE_PLACES_API_KEY to .env.local for live Google sync."
     });
   }
@@ -91,6 +94,8 @@ export async function GET() {
       }
     }
 
+    const activeReviewUrl = placeId ? `https://search.google.com/local/writereview?placeid=${placeId}` : defaultMapsUrl;
+
     if (!placeId) {
       console.warn("[Google API] Could not resolve a Place ID from Google Maps search.");
       return NextResponse.json({
@@ -118,7 +123,7 @@ export async function GET() {
         rating: 4.9,
         totalReviews: 48,
         reviews: fallbackReviews,
-        writeReviewUrl: `https://search.google.com/local/writereview?placeid=${placeId}` || defaultMapsUrl,
+        writeReviewUrl: activeReviewUrl,
         apiStatus: data.status,
         apiErrorMessage: data.error_message
       });
@@ -142,7 +147,7 @@ export async function GET() {
       rating: rating,
       totalReviews: user_ratings_total,
       reviews: formattedReviews.length > 0 ? formattedReviews : fallbackReviews,
-      writeReviewUrl: `https://search.google.com/local/writereview?placeid=${placeId}` || defaultMapsUrl
+      writeReviewUrl: activeReviewUrl
     });
 
   } catch (error) {
@@ -153,7 +158,7 @@ export async function GET() {
       rating: 4.9,
       totalReviews: 48,
       reviews: fallbackReviews,
-      writeReviewUrl: defaultMapsUrl
+      writeReviewUrl: placeId ? `https://search.google.com/local/writereview?placeid=${placeId}` : defaultMapsUrl
     });
   }
 }

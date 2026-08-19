@@ -59,7 +59,7 @@ export default function ContactPage() {
 
                 {/* Location */}
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=3rd%20floor%2C%20B%2F14%20Navrang%20society%2C%20opp.%20Savliya%20pumping%20station%2C%20Mai%20Mandir%20Road%2C%20Nadiad"
+                  href={process.env.NEXT_PUBLIC_GOOGLE_LOCATION_LINK || "https://share.google/S9AoDFRkzoOCADefs"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.contactItem}
