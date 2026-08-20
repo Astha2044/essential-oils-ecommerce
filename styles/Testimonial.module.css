@@ -1,5 +1,5 @@
 .section {
-  padding: 3rem 0;
+  padding: 1.5rem 0;
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -7,7 +7,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 1.5rem 0;
+    padding: 1rem 0;
   }
 }
 
@@ -17,36 +17,36 @@
   padding: 0 var(--container-px, 1.5rem);
 }
 
-/* Outer Dark Forest Green Banner Box */
+/* Outer Dark Forest Green Banner Box (Compact Header) */
 .darkBanner {
   background-color: #233d31;
   background-image: radial-gradient(circle at 50% 0%, rgba(55, 83, 65, 0.4), transparent 70%);
-  border-radius: 2rem;
-  padding: 2.75rem 2.25rem 3rem 2.25rem;
+  border-radius: 1.25rem;
+  padding: 1.25rem 2.25rem 1.25rem 2.25rem;
   color: #ffffff;
   position: relative;
-  box-shadow: 0 20px 50px rgba(35, 61, 49, 0.25);
+  box-shadow: 0 15px 35px rgba(35, 61, 49, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 @media (max-width: 900px) {
   .darkBanner {
-    padding: 2rem 1.25rem 2.5rem 1.25rem;
-    border-radius: 1.5rem;
+    padding: 1rem 1rem 1.25rem 1rem;
+    border-radius: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .darkBanner {
-    padding: 1.5rem 0.85rem 2rem 0.85rem;
-    border-radius: 1.25rem;
+    padding: 0.85rem 0.75rem 1.15rem 0.75rem;
+    border-radius: 0.85rem;
   }
 }
 
-/* Center Section Title */
+/* Center Section Title (Small & Refined Size) */
 .mainTitle {
   font-family: var(--font-serif, "Playfair Display", Georgia, serif);
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.15rem, 3vw, 2.2rem);
   font-weight: 700;
   text-align: center;
   color: #ffffff;
@@ -57,145 +57,114 @@
 
 @media (max-width: 480px) {
   .mainTitle {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
   }
 }
 
-/* Top Rating Summary Banner */
-.summaryBanner {
-  background-color: #fbf8f3;
-  border-radius: 1.5rem;
-  padding: 1rem 1.75rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-}
-
-@media (max-width: 768px) {
-  .summaryBanner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.75rem;
-    border-radius: 1.25rem;
-  }
-}
-
-.summaryLeft {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.scoreNumber {
-  font-family: var(--font-serif, "Playfair Display", serif);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #233d31;
-  line-height: 1;
-}
-
-.scoreMeta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.starsRow {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.starGold {
-  color: #f59e0b;
-}
-
-.googleBrandLabel {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #374151;
-}
-
-.googleBrandText {
-  color: #4285f4;
-  font-weight: 800;
-}
-
-.reviewCountText {
-  font-size: 0.85rem;
-  color: #6b7280;
-  font-weight: 500;
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
-  padding-left: 0.85rem;
-}
-
-.writeReviewBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 0.65rem 1.35rem;
-  border-radius: 2rem;
-  border: 1.5px solid #233d31;
-  background-color: transparent;
-  color: #233d31;
-  font-size: 0.88rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  white-space: nowrap;
-}
-
-.writeReviewBtn:hover {
-  background-color: #233d31;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(35, 61, 49, 0.25);
-}
-
-/* Live Widget Frame & Styling Overrides */
+/* Elfsight Live Widget Frame */
 .liveWidgetFrame {
   width: 100%;
-  min-height: 250px;
+  min-height: 220px;
   position: relative;
+  overflow: visible !important;
 }
 
-/* Hide redundant inner headers inside Featurable widget */
-.liveWidgetFrame :global(h2),
-.liveWidgetFrame :global(h3),
-.liveWidgetFrame :global([class*="Header__Title"]),
-.liveWidgetFrame :global([class*="header_title"]) {
+/* Hide ONLY the bottom Elfsight link & toolbar without hiding the reviews */
+.liveWidgetFrame :global(a[href*="elfsight"]),
+.liveWidgetFrame :global([class*="eapps-widget-toolbar"]),
+.liveWidgetFrame :global([class*="eapps-google-reviews-watermark"]),
+.liveWidgetFrame :global([class*="es-widget-badge"]) {
   display: none !important;
 }
 
-/* Style cards inside Featurable widget to match cream background and theme */
-.liveWidgetFrame :global([class*="card"]),
-.liveWidgetFrame :global([class*="Card"]) {
+/* Compact Elfsight top header bar */
+.liveWidgetFrame :global([class*="HeaderContainer"]),
+.liveWidgetFrame :global([class*="header-container"]),
+.liveWidgetFrame :global([class*="HeaderComponent"]),
+.liveWidgetFrame :global([class*="header-component"]),
+.liveWidgetFrame :global([class*="Header__Container"]),
+.liveWidgetFrame :global([class*="header__container"]),
+.liveWidgetFrame :global([class*="es-header-container"]) {
   background-color: #fbf8f3 !important;
-  border-radius: 1.5rem !important;
+  border-radius: 1rem !important;
+  padding: 0.5rem 1.15rem !important;
+  margin-bottom: 1rem !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
   border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
   color: #2d3748 !important;
 }
 
-/* Override inner buttons inside Featurable widget to forest green */
-.liveWidgetFrame :global(button),
-.liveWidgetFrame :global([class*="button"]),
-.liveWidgetFrame :global([class*="Button"]) {
-  background-color: #233d31 !important;
+/* COMPACT SPEECH BUBBLE CARDS (Height reduced to 175px) */
+.liveWidgetFrame :global([class*="CardContainer"]),
+.liveWidgetFrame :global([class*="card-container"]),
+.liveWidgetFrame :global([class*="CardComponent"]),
+.liveWidgetFrame :global([class*="card-component"]),
+.liveWidgetFrame :global([class*="Card__Component"]),
+.liveWidgetFrame :global([class*="BubbleComponent"]),
+.liveWidgetFrame :global([class*="bubble-component"]),
+.liveWidgetFrame :global([class*="es-review-bubble"]),
+.liveWidgetFrame :global([class*="es-review-card"]) {
+  background-color: #fbf8f3 !important;
+  border-radius: 1.1rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
+  color: #2d3748 !important;
+  max-height: 175px !important;
+  height: 175px !important;
+  overflow: hidden !important;
+  padding: 0.85rem 1rem !important;
+}
+
+/* Scale down attached review images inside cards */
+.liveWidgetFrame :global([class*="Media"]),
+.liveWidgetFrame :global([class*="media"]),
+.liveWidgetFrame :global([class*="Image"]),
+.liveWidgetFrame :global([class*="image"]),
+.liveWidgetFrame :global(img[class*="review"]) {
+  max-height: 50px !important;
+  border-radius: 0.4rem !important;
+  object-fit: cover !important;
+}
+
+/* Ensure text INSIDE the card is dark for readability and clamped to 3 lines */
+.liveWidgetFrame :global([class*="CardContainer"]) :global(p),
+.liveWidgetFrame :global([class*="card-container"]) :global(p),
+.liveWidgetFrame :global([class*="CardComponent"]) :global(p),
+.liveWidgetFrame :global([class*="card-component"]) :global(p),
+.liveWidgetFrame :global([class*="es-review-bubble"]) :global(*),
+.liveWidgetFrame :global([class*="es-review-card"]) :global(*) {
+  color: #2d3748 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+/* FORCE ALL REVIEWER AUTHOR NAMES & DATES OUTSIDE CARDS TO BRIGHT WHITE */
+.liveWidgetFrame :global([class*="author"]),
+.liveWidgetFrame :global([class*="Author"]),
+.liveWidgetFrame :global([class*="user"]),
+.liveWidgetFrame :global([class*="User"]),
+.liveWidgetFrame :global([class*="name"]),
+.liveWidgetFrame :global([class*="Name"]),
+.liveWidgetFrame :global([class*="date"]),
+.liveWidgetFrame :global([class*="Date"]),
+.liveWidgetFrame :global([class*="time"]),
+.liveWidgetFrame :global([class*="Time"]),
+.liveWidgetFrame :global([class*="info"]),
+.liveWidgetFrame :global([class*="Info"]),
+.liveWidgetFrame :global([class*="es-author-name"]),
+.liveWidgetFrame :global([class*="es-author-date"]),
+.liveWidgetFrame :global([class*="es-widget-author"]) {
   color: #ffffff !important;
-  border-radius: 2rem !important;
-  font-weight: 600 !important;
-  border: none !important;
-  transition: all 0.3s ease !important;
+  opacity: 1 !important;
+}
+
+/* Make sure links or spans inside author container inherit white color */
+.liveWidgetFrame :global([class*="author"]) :global(*),
+.liveWidgetFrame :global([class*="Author"]) :global(*),
+.liveWidgetFrame :global([class*="user"]) :global(*),
+.liveWidgetFrame :global([class*="User"]) :global(*) {
+  color: #ffffff !important;
 }

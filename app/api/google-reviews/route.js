@@ -85,7 +85,7 @@ export async function GET() {
         const findRes = await fetch(findUrl, { cache: "no-store" });
         const findData = await findRes.json();
         console.log(`[Google API] FindPlace status: ${findData.status}`, findData.candidates || findData.error_message);
-        
+
         if (findData.status === "OK" && findData.candidates && findData.candidates.length > 0) {
           placeId = findData.candidates[0].place_id;
           console.log(`[Google API] Found Place ID: ${placeId}`);

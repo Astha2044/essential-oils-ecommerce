@@ -8,13 +8,12 @@ export default function Testimonial() {
   const defaultLocationLink = process.env.NEXT_PUBLIC_GOOGLE_LOCATION_LINK || "https://share.google/S9AoDFRkzoOCADefs";
 
   useEffect(() => {
-    // Load Featurable script for 100% Live Auto-Syncing Google Reviews
-    const existingScript = document.querySelector('script[src="https://cdn.featurable.com/widget/v2/embed.js"]');
+    // Load Elfsight Platform Script for Live Auto-Syncing Google Reviews
+    const existingScript = document.querySelector('script[src="https://elfsightcdn.com/platform.js"]');
     if (!existingScript) {
       const script = document.createElement("script");
-      script.src = "https://cdn.featurable.com/widget/v2/embed.js";
-      script.defer = true;
-      script.charset = "UTF-8";
+      script.src = "https://elfsightcdn.com/platform.js";
+      script.async = true;
       document.body.appendChild(script);
     }
   }, []);
@@ -27,38 +26,9 @@ export default function Testimonial() {
           {/* Main Title */}
           <h2 className={styles.mainTitle}>What Our Customers Say</h2>
 
-          {/* Top Rating Summary Banner */}
-          <div className={styles.summaryBanner}>
-            <div className={styles.summaryLeft}>
-              <span className={styles.scoreNumber}>5.0</span>
-              <div className={styles.scoreMeta}>
-                <div className={styles.starsRow}>
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} size={15} className={styles.starGold} />
-                  ))}
-                </div>
-                <div className={styles.googleBrandLabel}>
-                  <span className={styles.googleBrandText}>Google</span> Rating
-                </div>
-              </div>
-              <span className={styles.reviewCountText}>Live Google Reviews</span>
-            </div>
-
-            <a
-              href={defaultLocationLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.writeReviewBtn}
-            >
-              <FaGoogle size={14} style={{ color: "#4285F4" }} />
-              <span>Review us on Google</span>
-              <FaExternalLinkAlt size={11} />
-            </a>
-          </div>
-
-          {/* Direct 100% Live Google Reviews Widget Styled into Theme */}
+          {/* Direct 100% Live Elfsight Google Reviews Widget */}
           <div className={styles.liveWidgetFrame}>
-            <div id="featurable-264d6a37-4f02-4872-ba5b-54b7701d4df3" data-featurable-async></div>
+            <div className="elfsight-app-3cfff90e-c703-4e6f-bf14-6e4f51c03dbc" data-elfsight-app-lazy></div>
           </div>
 
         </div>
