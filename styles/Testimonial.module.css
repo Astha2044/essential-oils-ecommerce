@@ -95,7 +95,7 @@
   color: #2d3748 !important;
 }
 
-/* COMPACT SPEECH BUBBLE CARDS (Height reduced to 175px) */
+/* COMPACT SPEECH BUBBLE CARDS */
 .liveWidgetFrame :global([class*="CardContainer"]),
 .liveWidgetFrame :global([class*="card-container"]),
 .liveWidgetFrame :global([class*="CardComponent"]),
@@ -107,13 +107,45 @@
 .liveWidgetFrame :global([class*="es-review-card"]) {
   background-color: #fbf8f3 !important;
   border-radius: 1.1rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
+  border: none !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04) !important;
   color: #2d3748 !important;
   max-height: 175px !important;
   height: 175px !important;
   overflow: hidden !important;
   padding: 0.85rem 1rem !important;
+}
+
+/* REMOVE BLACK LINE ACROSS SPEECH BUBBLE TIP */
+.liveWidgetFrame :global([class*="Arrow"]),
+.liveWidgetFrame :global([class*="arrow"]),
+.liveWidgetFrame :global([class*="Tip"]),
+.liveWidgetFrame :global([class*="tip"]),
+.liveWidgetFrame :global([class*="Tail"]),
+.liveWidgetFrame :global([class*="tail"]),
+.liveWidgetFrame :global([class*="Corner"]),
+.liveWidgetFrame :global([class*="corner"]) {
+  border-top-color: #fbf8f3 !important;
+  border-bottom: none !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  margin-top: -2px !important;
+  box-shadow: none !important;
+  stroke: none !important;
+}
+
+.liveWidgetFrame :global([class*="BubbleComponent"])::after,
+.liveWidgetFrame :global([class*="bubble-component"])::after,
+.liveWidgetFrame :global([class*="es-review-bubble"])::after,
+.liveWidgetFrame :global([class*="es-review-card"])::after,
+.liveWidgetFrame :global([class*="BubbleComponent"])::before,
+.liveWidgetFrame :global([class*="bubble-component"])::before,
+.liveWidgetFrame :global([class*="es-review-bubble"])::before,
+.liveWidgetFrame :global([class*="es-review-card"])::before {
+  border-top-color: #fbf8f3 !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  margin-top: -2px !important;
 }
 
 /* Scale down attached review images inside cards */
