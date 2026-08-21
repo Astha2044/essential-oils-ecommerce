@@ -104,7 +104,9 @@
 .liveWidgetFrame :global([class*="BubbleComponent"]),
 .liveWidgetFrame :global([class*="bubble-component"]),
 .liveWidgetFrame :global([class*="es-review-bubble"]),
-.liveWidgetFrame :global([class*="es-review-card"]) {
+.liveWidgetFrame :global([class*="es-review-card"]),
+.liveWidgetFrame :global([class*="ReviewBackground"]),
+.liveWidgetFrame :global([class*="review-background"]) {
   background-color: #fbf8f3 !important;
   border-radius: 1.1rem !important;
   border: none !important;
@@ -112,11 +114,12 @@
   color: #2d3748 !important;
   max-height: 175px !important;
   height: 175px !important;
-  overflow: hidden !important;
   padding: 0.85rem 1rem !important;
+  position: relative !important;
+  filter: none !important;
 }
 
-/* REMOVE BLACK LINE ACROSS SPEECH BUBBLE TIP */
+/* REMOVE GREEN SEAM LINE ACROSS SPEECH BUBBLE TIP & TAIL */
 .liveWidgetFrame :global([class*="Arrow"]),
 .liveWidgetFrame :global([class*="arrow"]),
 .liveWidgetFrame :global([class*="Tip"]),
@@ -125,13 +128,36 @@
 .liveWidgetFrame :global([class*="tail"]),
 .liveWidgetFrame :global([class*="Corner"]),
 .liveWidgetFrame :global([class*="corner"]) {
+  background-color: #fbf8f3 !important;
+  border: none !important;
   border-top-color: #fbf8f3 !important;
   border-bottom: none !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  margin-top: -2px !important;
-  box-shadow: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  margin-top: -5px !important;
+  box-shadow: 0 -3px 0 0 #fbf8f3 !important;
+  filter: none !important;
+  outline: none !important;
+  transform: translateY(-1px) !important;
+}
+
+.liveWidgetFrame :global([class*="Arrow"]) svg,
+.liveWidgetFrame :global([class*="arrow"]) svg,
+.liveWidgetFrame :global([class*="Tip"]) svg,
+.liveWidgetFrame :global([class*="tip"]) svg,
+.liveWidgetFrame :global([class*="Tail"]) svg,
+.liveWidgetFrame :global([class*="tail"]) svg,
+.liveWidgetFrame :global([class*="Corner"]) svg,
+.liveWidgetFrame :global([class*="corner"]) svg,
+.liveWidgetFrame :global([class*="Arrow"]) path,
+.liveWidgetFrame :global([class*="arrow"]) path,
+.liveWidgetFrame :global([class*="Tail"]) path,
+.liveWidgetFrame :global([class*="tail"]) path {
+  fill: #fbf8f3 !important;
   stroke: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .liveWidgetFrame :global([class*="BubbleComponent"])::after,
@@ -142,10 +168,13 @@
 .liveWidgetFrame :global([class*="bubble-component"])::before,
 .liveWidgetFrame :global([class*="es-review-bubble"])::before,
 .liveWidgetFrame :global([class*="es-review-card"])::before {
+  background-color: #fbf8f3 !important;
+  border: none !important;
   border-top-color: #fbf8f3 !important;
   border-bottom: none !important;
-  box-shadow: none !important;
-  margin-top: -2px !important;
+  box-shadow: 0 -3px 0 0 #fbf8f3 !important;
+  filter: none !important;
+  margin-top: -5px !important;
 }
 
 /* Scale down attached review images inside cards */
@@ -159,44 +188,18 @@
   object-fit: cover !important;
 }
 
-/* Ensure text INSIDE the card is dark for readability and clamped to 3 lines */
+/* Clamp review text to 3 lines */
 .liveWidgetFrame :global([class*="CardContainer"]) :global(p),
 .liveWidgetFrame :global([class*="card-container"]) :global(p),
 .liveWidgetFrame :global([class*="CardComponent"]) :global(p),
 .liveWidgetFrame :global([class*="card-component"]) :global(p),
-.liveWidgetFrame :global([class*="es-review-bubble"]) :global(*),
-.liveWidgetFrame :global([class*="es-review-card"]) :global(*) {
-  color: #2d3748 !important;
+.liveWidgetFrame :global([class*="Text"]),
+.liveWidgetFrame :global([class*="text"]),
+.liveWidgetFrame :global([class*="Content"]),
+.liveWidgetFrame :global([class*="content"]) {
   display: -webkit-box !important;
+  line-clamp: 3 !important;
   -webkit-line-clamp: 3 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
-}
-
-/* FORCE ALL REVIEWER AUTHOR NAMES & DATES OUTSIDE CARDS TO BRIGHT WHITE */
-.liveWidgetFrame :global([class*="author"]),
-.liveWidgetFrame :global([class*="Author"]),
-.liveWidgetFrame :global([class*="user"]),
-.liveWidgetFrame :global([class*="User"]),
-.liveWidgetFrame :global([class*="name"]),
-.liveWidgetFrame :global([class*="Name"]),
-.liveWidgetFrame :global([class*="date"]),
-.liveWidgetFrame :global([class*="Date"]),
-.liveWidgetFrame :global([class*="time"]),
-.liveWidgetFrame :global([class*="Time"]),
-.liveWidgetFrame :global([class*="info"]),
-.liveWidgetFrame :global([class*="Info"]),
-.liveWidgetFrame :global([class*="es-author-name"]),
-.liveWidgetFrame :global([class*="es-author-date"]),
-.liveWidgetFrame :global([class*="es-widget-author"]) {
-  color: #ffffff !important;
-  opacity: 1 !important;
-}
-
-/* Make sure links or spans inside author container inherit white color */
-.liveWidgetFrame :global([class*="author"]) :global(*),
-.liveWidgetFrame :global([class*="Author"]) :global(*),
-.liveWidgetFrame :global([class*="user"]) :global(*),
-.liveWidgetFrame :global([class*="User"]) :global(*) {
-  color: #ffffff !important;
 }

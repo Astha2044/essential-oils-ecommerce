@@ -15,6 +15,12 @@ export default function Testimonial() {
       script.src = "https://elfsightcdn.com/platform.js";
       script.async = true;
       document.body.appendChild(script);
+    } else if (typeof window !== "undefined" && window.ElfsightApp) {
+      try {
+        window.ElfsightApp.init();
+      } catch (e) {
+        console.error(e);
+      }
     }
   }, []);
 
