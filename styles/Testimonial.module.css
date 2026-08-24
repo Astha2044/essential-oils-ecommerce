@@ -96,15 +96,10 @@
 }
 
 /* COMPACT SPEECH BUBBLE CARDS */
-.liveWidgetFrame :global([class*="CardContainer"]),
-.liveWidgetFrame :global([class*="card-container"]),
-.liveWidgetFrame :global([class*="CardComponent"]),
-.liveWidgetFrame :global([class*="card-component"]),
-.liveWidgetFrame :global([class*="Card__Component"]),
-.liveWidgetFrame :global([class*="BubbleComponent"]),
-.liveWidgetFrame :global([class*="bubble-component"]),
 .liveWidgetFrame :global([class*="es-review-bubble"]),
 .liveWidgetFrame :global([class*="es-review-card"]),
+.liveWidgetFrame :global([class*="BubbleComponent"]),
+.liveWidgetFrame :global([class*="bubble-component"]),
 .liveWidgetFrame :global([class*="ReviewBackground"]),
 .liveWidgetFrame :global([class*="review-background"]) {
   background-color: #fbf8f3 !important;
@@ -112,11 +107,25 @@
   border: none !important;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04) !important;
   color: #2d3748 !important;
-  max-height: 175px !important;
-  height: 175px !important;
+  max-height: 180px !important;
   padding: 0.85rem 1rem !important;
   position: relative !important;
   filter: none !important;
+}
+
+/* Ensure Pagination Dots & Arrows are interactive & unhindered */
+.liveWidgetFrame :global([class*="Dot"]),
+.liveWidgetFrame :global([class*="dot"]),
+.liveWidgetFrame :global([class*="Pagination"]),
+.liveWidgetFrame :global([class*="pagination"]),
+.liveWidgetFrame :global([class*="Bullet"]),
+.liveWidgetFrame :global([class*="bullet"]),
+.liveWidgetFrame :global([class*="Control"]),
+.liveWidgetFrame :global([class*="control"]) {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  z-index: 25 !important;
+  position: relative !important;
 }
 
 /* REMOVE GREEN SEAM LINE ACROSS SPEECH BUBBLE TIP & TAIL */
