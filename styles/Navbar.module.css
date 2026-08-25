@@ -293,7 +293,7 @@
 .arrow {
   font-size: 1.1rem;
   transition: transform 0.3s ease;
-  color: #4B5563;
+  color: var(--color-green-dark);
   display: flex !important;
   align-items: center;
   margin-top: 2px;
@@ -319,7 +319,7 @@
 .mobileArrowToggle {
   background: transparent;
   border: none;
-  color: #4B5563;
+  color: var(--color-green-dark);
   font-size: 1.5rem;
   padding: 0.5rem;
   display: flex;
@@ -432,7 +432,7 @@
 
   .arrow {
     font-size: 0.85rem;
-    opacity: 0.8;
+    color: var(--color-green-dark);
   }
 
   .dropdown:hover .arrow {
